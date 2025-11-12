@@ -1,5 +1,6 @@
 // Inventory feature Redux slice
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { apiClient } from '@/lib/api/client';
 import type { Chemical } from '../types';
 
 interface InventoryState {
@@ -17,6 +18,19 @@ const initialState: InventoryState = {
   error: null,
   searchQuery: '',
 };
+
+// Async thunk for fetching chemicals
+export const fetchChemicals = createAsyncThunk(
+  'inventory/fetchChemicals',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await apiClient.get<Chemical[]>('inventory');
+      return data;
+    } catch (err) {
+      return rejectWithValue(err instanceof Error ? err.message : 'Failed to fetch chemicals');
+    }
+  }
+);
 
 const inventorySlice = createSlice({
   name: 'inventory',
@@ -52,6 +66,22 @@ const inventorySlice = createSlice({
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchChemicals.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchChemicals.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.items = action.payload;
+        state.error = null;
+      })
+      .addCase(fetchChemicals.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      });
   },
 });
 

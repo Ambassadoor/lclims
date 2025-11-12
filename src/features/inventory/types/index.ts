@@ -1,15 +1,18 @@
 // Inventory feature - Type definitions
 export interface Chemical {
-  id: string;
-  name: string;
-  casNumber: string;
-  quantity: number;
-  unit: string;
-  sdsUrl?: string;
-  locationId: string;
-  expirationDate?: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  ID: string;
+  Name: string;
+  CAS: string;
+  'Unit of Measurement': string;
+  'Storage Location': string;
+  Status: string;
+  Company: string;
+  'Product #': string;
+  'Max Volume': {
+    Mass: number;
+  };
+  'Percent Remaining': string;
+  'Group #'?: string;
 }
 
-export type ChemicalFormData = Omit<Chemical, 'id' | 'createdAt' | 'updatedAt'>;
+export type ChemicalFormData = Omit<Chemical, 'ID'>;
