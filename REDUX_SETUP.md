@@ -1,6 +1,7 @@
 # Redux Setup Guide for LIMS
 
 ## Overview
+
 Redux is set up using Redux Toolkit (the official, recommended way) with TypeScript support.
 
 ## Installation
@@ -32,6 +33,7 @@ src/
 ## Key Changes Made
 
 ### 1. Root Layout (`src/app/layout.tsx`)
+
 Wrapped the app with `ReduxProvider`:
 
 ```tsx
@@ -45,16 +47,21 @@ Wrapped the app with `ReduxProvider`:
 **Note:** ReduxProvider must be a Client Component ('use client'), but it wraps everything so all child components can access Redux.
 
 ### 2. Store Configuration (`src/lib/store/store.ts`)
+
 - Combines all feature slices
 - Exports typed `RootState` and `AppDispatch`
 
 ### 3. Typed Hooks (`src/lib/store/hooks.ts`)
+
 Instead of using plain `useDispatch` and `useSelector`, use:
+
 - `useAppDispatch()` - Typed dispatch
 - `useAppSelector()` - Typed selector
 
 ### 4. Feature Slices
+
 Each feature has its own slice:
+
 - **authSlice**: User authentication state
 - **inventorySlice**: Chemical inventory state
 
@@ -81,7 +88,7 @@ export default function InventoryPage() {
 
   return (
     <div>
-      {isLoading ? 'Loading...' : items.map(item => <div key={item.id}>{item.name}</div>)}
+      {isLoading ? 'Loading...' : items.map((item) => <div key={item.id}>{item.name}</div>)}
     </div>
   );
 }
@@ -152,12 +159,14 @@ export const store = configureStore({
 ## When to Use Redux vs React State
 
 **Use Redux for:**
+
 - Global state (user auth, app settings)
 - State shared across many components
 - State that needs to persist across navigation
 - Complex state logic
 
 **Use React State (useState) for:**
+
 - Local component state (form inputs, toggles)
 - UI state (modals, dropdowns)
 - State that doesn't need to be shared
@@ -165,6 +174,7 @@ export const store = configureStore({
 ## Alternative: If You Don't Need Redux
 
 If Redux feels like overkill, consider:
+
 - **React Context** - For simple global state
 - **Zustand** - Lighter alternative to Redux
 - **TanStack Query** - For server state (better for API data)
