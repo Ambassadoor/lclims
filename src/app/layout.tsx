@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/lib/theme/ThemeProvider';
+import { ReduxProvider } from '@/lib/store/ReduxProvider';
 import AppLayout from '@/shared/components/layout/AppLayout';
 
 const inter = Inter({
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <ThemeProvider>
-          <AppLayout>{children}</AppLayout>
-        </ThemeProvider>
+        <ReduxProvider>
+          <ThemeProvider>
+            <AppLayout>{children}</AppLayout>
+          </ThemeProvider>
+        </ReduxProvider>
       </body>
     </html>
   );
