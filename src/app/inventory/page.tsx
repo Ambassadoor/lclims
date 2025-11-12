@@ -1,4 +1,5 @@
-import { Container, Typography, Card, CardContent } from '@mui/material';
+import { Container, Typography } from '@mui/material';
+import InventoryTable from '@/features/inventory/components/InventoryTable';
 
 export default function InventoryPage() {
   return (
@@ -7,14 +8,7 @@ export default function InventoryPage() {
         Chemical Inventory
       </Typography>
 
-      <Card>
-        <CardContent>
-          <Typography color="text.secondary">
-            Inventory table will be displayed here. Add chemicals, search, filter, and manage your
-            lab inventory.
-          </Typography>
-        </CardContent>
-      </Card>
+      <InventoryTable />
     </Container>
   );
 }
