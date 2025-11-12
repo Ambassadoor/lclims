@@ -26,8 +26,18 @@ interface Chemical {
   Status: string;
   Company: string;
   'Product #': string;
-  'Max Volume/Mass': number;
+  'Max Volume': {
+    Mass: number;
+  };
   'Percent Remaining': string;
+  'Group #'?: string;
+  'Current Weight'?: number;
+  'Initial Weight (g)'?: number;
+  'Safety Data Sheet'?: string;
+  Synonyms?: string;
+  Density: {
+    'Specific Gravity (g': { 'mL)'?: number };
+  };
 }
 
 export default function MultiEditForm() {
@@ -136,10 +146,13 @@ export default function MultiEditForm() {
       {/* Form */}
       <Paper sx={{ p: 3 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          {/* Read-only ID */}
           <TextField label="ID" value={currentChemical.ID} disabled fullWidth />
 
+          {/* Name */}
           <TextField
             label="Chemical Name"
+            required
             value={currentChemical.Name}
             onChange={(e) => {
               const updated = [...chemicals];
@@ -149,9 +162,10 @@ export default function MultiEditForm() {
             fullWidth
           />
 
+          {/* CAS Number */}
           <TextField
             label="CAS Number"
-            value={currentChemical.CAS}
+            value={currentChemical.CAS || ''}
             onChange={(e) => {
               const updated = [...chemicals];
               updated[currentIndex].CAS = e.target.value;
@@ -160,20 +174,10 @@ export default function MultiEditForm() {
             fullWidth
           />
 
-          <TextField
-            label="Storage Location"
-            value={currentChemical['Storage Location']}
-            onChange={(e) => {
-              const updated = [...chemicals];
-              updated[currentIndex]['Storage Location'] = e.target.value;
-              setChemicals(updated);
-            }}
-            fullWidth
-          />
-
+          {/* Company */}
           <TextField
             label="Company"
-            value={currentChemical.Company}
+            value={currentChemical.Company || ''}
             onChange={(e) => {
               const updated = [...chemicals];
               updated[currentIndex].Company = e.target.value;
@@ -182,10 +186,155 @@ export default function MultiEditForm() {
             fullWidth
           />
 
+          {/* Product # */}
+          <TextField
+            label="Product #"
+            value={currentChemical['Product #'] || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex]['Product #'] = e.target.value;
+              setChemicals(updated);
+            }}
+            fullWidth
+          />
+
+          {/* Group # */}
+          <TextField
+            label="Group #"
+            value={currentChemical['Group #'] || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex]['Group #'] = e.target.value;
+              setChemicals(updated);
+            }}
+            fullWidth
+          />
+
+          {/* Max Volume and Unit - side by side */}
+          <Box sx={{ display: 'flex', gap: 2 }}>
+            <TextField
+              label="Max Volume/Mass"
+              type="number"
+              required
+              value={currentChemical['Max Volume']?.Mass || ''}
+              onChange={(e) => {
+                const updated = [...chemicals];
+                if (!updated[currentIndex]['Max Volume']) {
+                  updated[currentIndex]['Max Volume'] = { Mass: 0 };
+                }
+                updated[currentIndex]['Max Volume'].Mass = parseFloat(e.target.value) || 0;
+                setChemicals(updated);
+              }}
+              fullWidth
+            />
+            <TextField
+              label="Unit of Measurement"
+              select
+              required
+              value={currentChemical['Unit of Measurement'] || 'g'}
+              onChange={(e) => {
+                const updated = [...chemicals];
+                updated[currentIndex]['Unit of Measurement'] = e.target.value;
+                setChemicals(updated);
+              }}
+              fullWidth
+            >
+              <MenuItem value="g">g</MenuItem>
+              <MenuItem value="mL">mL</MenuItem>
+              <MenuItem value="kg">kg</MenuItem>
+              <MenuItem value="L">L</MenuItem>
+            </TextField>
+          </Box>
+
+          {/* Density/Specific Gravity - only for volume units */}
+          <TextField
+            label="Density/Specific Gravity"
+            type="number"
+            value={currentChemical['Density']['Specific Gravity (g']['mL)'] || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex]['Density']['Specific Gravity (g']['mL)'] =
+                parseFloat(e.target.value) || undefined;
+              setChemicals(updated);
+            }}
+            disabled={!['mL', 'L'].includes(currentChemical['Unit of Measurement'] || '')}
+            helperText={
+              ['mL', 'L'].includes(currentChemical['Unit of Measurement'] || '')
+                ? 'Density in g/mL or g/L'
+                : 'Only available for volume units (mL, L)'
+            }
+            fullWidth
+          />
+
+          {/* Current Weight and Initial Weight - side by side */}
+          <Box sx={{ display: 'flex', gap: 2 }}>
+            <TextField
+              label="Current Weight"
+              type="number"
+              value={currentChemical['Current Weight'] || ''}
+              onChange={(e) => {
+                const updated = [...chemicals];
+                updated[currentIndex]['Current Weight'] = parseFloat(e.target.value) || undefined;
+                setChemicals(updated);
+              }}
+              helperText="Current measured weight"
+              fullWidth
+            />
+            <TextField
+              label="Initial Weight"
+              type="number"
+              value={currentChemical['Initial Weight (g)'] || ''}
+              onChange={(e) => {
+                const updated = [...chemicals];
+                updated[currentIndex]['Initial Weight (g)'] =
+                  parseFloat(e.target.value) || undefined;
+                setChemicals(updated);
+              }}
+              helperText="Override required"
+              fullWidth
+            />
+          </Box>
+
+          {/* Percent Remaining / Fill % */}
+          <TextField
+            label="Fill % / Percent Remaining"
+            value={currentChemical['Percent Remaining'] || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex]['Percent Remaining'] = e.target.value;
+              setChemicals(updated);
+            }}
+            helperText="Editable if Current/Initial Weight are null"
+            disabled={
+              !!currentChemical['Current Weight'] || !!currentChemical['Initial Weight (g)']
+            }
+            fullWidth
+          />
+
+          {/* Storage Location - placeholder select */}
+          <TextField
+            label="Storage Location"
+            select
+            value={currentChemical['Storage Location'] || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex]['Storage Location'] = e.target.value;
+              setChemicals(updated);
+            }}
+            helperText="Will populate from database"
+            fullWidth
+          >
+            <MenuItem value="Fridge A">Fridge A</MenuItem>
+            <MenuItem value="Freezer B">Freezer B</MenuItem>
+            <MenuItem value="Cabinet 1">Cabinet 1</MenuItem>
+            <MenuItem value="Shelf 2">Shelf 2</MenuItem>
+          </TextField>
+
+          {/* Status */}
           <TextField
             label="Status"
             select
-            value={currentChemical.Status}
+            value={currentChemical.Status || 'Unopened'}
             onChange={(e) => {
               const updated = [...chemicals];
               updated[currentIndex].Status = e.target.value;
@@ -196,7 +345,36 @@ export default function MultiEditForm() {
             <MenuItem value="Unopened">Unopened</MenuItem>
             <MenuItem value="Open">Open</MenuItem>
             <MenuItem value="Empty">Empty</MenuItem>
+            <MenuItem value="Disposed">Disposed</MenuItem>
           </TextField>
+
+          {/* Safety Data Sheet - placeholder */}
+          <TextField
+            label="Safety Data Sheet"
+            value={currentChemical['Safety Data Sheet'] || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex]['Safety Data Sheet'] = e.target.value;
+              setChemicals(updated);
+            }}
+            helperText="Placeholder - will be drag & drop file uploader"
+            fullWidth
+          />
+
+          {/* Synonyms */}
+          <TextField
+            label="Synonyms"
+            multiline
+            rows={2}
+            value={currentChemical.Synonyms || ''}
+            onChange={(e) => {
+              const updated = [...chemicals];
+              updated[currentIndex].Synonyms = e.target.value;
+              setChemicals(updated);
+            }}
+            helperText="Alternative names, comma separated"
+            fullWidth
+          />
         </Box>
 
         {/* Navigation Buttons */}
