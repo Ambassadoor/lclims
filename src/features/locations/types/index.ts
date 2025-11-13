@@ -8,7 +8,8 @@ export type LocationType =
   | 'freezer'
   | 'hood'
   | 'bench'
-  | 'drawer';
+  | 'drawer'
+  | 'bin';
 
 export type TemperatureType = 'ambient' | 'cold' | 'frozen';
 

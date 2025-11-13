@@ -9,6 +9,7 @@ export const LOCATION_TYPES: LocationType[] = [
   'hood',
   'bench',
   'drawer',
+  'bin'
 ];
 
 export const TEMPERATURE_TYPES: TemperatureType[] = ['ambient', 'cold', 'frozen'];

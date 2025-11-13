@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { DragEndEvent } from '@dnd-kit/core';
 import { useAppDispatch } from '@/lib/store/hooks';
 import { updateLocation, reorderLocations, fetchLocations } from '../store/locationsSlice';
-import { LocationNode } from '../types';
+import { Location, LocationNode } from '../types';
 
 /**
  * Custom hook for handling drag and drop reordering of locations
@@ -26,8 +26,17 @@ export const useLocationDragDrop = () => {
           reordered.splice(newIndex, 0, moved);
 
           // Prepare updates for locations that need new sort_order
+          // Strip computed properties (children, full_path, depth) from LocationNode
           const updates = reordered
-            .map((loc, i) => (loc.sort_order !== i ? { ...loc, sort_order: i } : null))
+            .map((loc, i) => {
+              if (loc.sort_order !== i) {
+                // Extract only Location properties, excluding computed tree properties
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const { children, full_path, depth, ...locationData } = loc;
+                return { ...locationData, sort_order: i } as Location;
+              }
+              return null;
+            })
             .filter((loc) => loc !== null);
 
           if (updates.length > 0) {
