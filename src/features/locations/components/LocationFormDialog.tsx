@@ -14,6 +14,8 @@ import {
   Switch,
   Chip,
   Typography,
+  Checkbox,
+  Alert,
 } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { createLocation, updateLocation } from '../store/locationsSlice';
@@ -55,7 +57,7 @@ const RESTRICTION_OPTIONS = [
   'bases_only',
   'no_oxidizers',
   'no_water_reactive',
-  'high_hazard'
+  'high_hazard',
 ];
 
 const getInitialFormData = (
@@ -113,7 +115,11 @@ export default function LocationFormDialog({
   const [formData, setFormData] = useState<LocationFormData>(() =>
     getInitialFormData(location, parentLocation)
   );
-  
+
+  const [createMultiple, setCreateMultiple] = useState(false);
+  const [quantity, setQuantity] = useState(3);
+  const [startNumber, setStartNumber] = useState(1);
+
   const nameInputRef = useRef<HTMLInputElement>(null);
 
   // Auto-focus name input when dialog opens
@@ -122,6 +128,17 @@ export default function LocationFormDialog({
       setTimeout(() => nameInputRef.current?.focus(), 100);
     }
   }, [open]);
+
+  // Generate preview names for multi-create
+  const previewNames =
+    createMultiple && formData.name.trim()
+      ? Array.from(
+          { length: Math.min(quantity, 3) },
+          (_, i) => `${formData.name} ${startNumber + i}`
+        )
+      : [];
+
+  const remainingCount = quantity > 3 ? quantity - 3 : 0;
 
   const handleChange =
     (field: keyof LocationFormData) =>
@@ -137,17 +154,25 @@ export default function LocationFormDialog({
   };
 
   const handleSubmit = async () => {
-    const locationData: Omit<Location, 'id'> | Location = location
-      ? { ...formData, id: location.id }
-      : formData;
-
     try {
       if (location) {
+        // Edit mode - single update
+        const locationData = { ...formData, id: location.id };
         await dispatch(updateLocation(locationData as Location)).unwrap();
         onClose();
+      } else if (createMultiple) {
+        // Multi-create mode
+        const baseData: Omit<Location, 'id'> = formData;
+
+        for (let i = 0; i < quantity; i++) {
+          const numberedName = `${formData.name} ${startNumber + i}`;
+          await dispatch(createLocation({ ...baseData, name: numberedName })).unwrap();
+        }
+
+        onClose(formData.parent_id);
       } else {
-        await dispatch(createLocation(locationData as Omit<Location, 'id'>)).unwrap();
-        // Pass parent_id to auto-expand after adding child
+        // Single create mode
+        await dispatch(createLocation(formData as Omit<Location, 'id'>)).unwrap();
         onClose(formData.parent_id);
       }
     } catch (error) {
@@ -155,8 +180,12 @@ export default function LocationFormDialog({
     }
   };
 
+  const handleCancel = () => {
+    onClose();
+  };
+
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+    <Dialog open={open} onClose={handleCancel} maxWidth="sm" fullWidth>
       <DialogTitle>{location ? 'Edit Location' : 'Add New Location'}</DialogTitle>
       <DialogContent>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 1 }}>
@@ -170,6 +199,62 @@ export default function LocationFormDialog({
             placeholder="e.g., Room 415, Cabinet A, Top Shelf"
             inputRef={nameInputRef}
           />
+
+          {/* Multi-create option (only for new locations) */}
+          {!location && (
+            <Box>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={createMultiple}
+                    onChange={(e) => setCreateMultiple(e.target.checked)}
+                  />
+                }
+                label="Create multiple locations"
+              />
+
+              {createMultiple && (
+                <Box sx={{ mt: 2, p: 2, bgcolor: 'action.hover', borderRadius: 1 }}>
+                  <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+                    <TextField
+                      label="Quantity"
+                      type="number"
+                      value={quantity}
+                      onChange={(e) =>
+                        setQuantity(Math.max(1, Math.min(50, parseInt(e.target.value) || 1)))
+                      }
+                      slotProps={{
+                        htmlInput: { min: 1, max: 50 },
+                      }}
+                      sx={{ width: 120 }}
+                    />
+                    <TextField
+                      label="Start Number"
+                      type="number"
+                      value={startNumber}
+                      onChange={(e) => setStartNumber(Math.max(1, parseInt(e.target.value) || 1))}
+                      slotProps={{
+                        htmlInput: { min: 1 },
+                      }}
+                      sx={{ width: 140 }}
+                    />
+                  </Box>
+
+                  {previewNames.length > 0 && (
+                    <Alert severity="info" sx={{ mt: 1 }}>
+                      <Typography variant="body2" sx={{ fontWeight: 500, mb: 0.5 }}>
+                        Preview:
+                      </Typography>
+                      <Typography variant="body2">
+                        {previewNames.join(', ')}
+                        {remainingCount > 0 && ` ...and ${remainingCount} more`}
+                      </Typography>
+                    </Alert>
+                  )}
+                </Box>
+              )}
+            </Box>
+          )}
 
           {/* Type */}
           <TextField
@@ -282,9 +367,9 @@ export default function LocationFormDialog({
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
+        <Button onClick={handleCancel}>Cancel</Button>
         <Button onClick={handleSubmit} variant="contained" disabled={!formData.name.trim()}>
-          {location ? 'Update' : 'Create'}
+          {location ? 'Update' : createMultiple ? `Create ${quantity}` : 'Create'}
         </Button>
       </DialogActions>
     </Dialog>

@@ -84,15 +84,15 @@ export default function LocationManager() {
     setEditingLocation(null);
     setFormDialogOpen(true);
   };
-  
+
   const handleFormClose = (parentIdToExpand?: string | null) => {
     setFormDialogOpen(false);
     setEditingLocation(null);
     setParentLocation(null);
-    
+
     // Auto-expand parent if a child was just added
     if (parentIdToExpand) {
-      setExpanded(prev => new Set(prev).add(parentIdToExpand));
+      setExpanded((prev) => new Set(prev).add(parentIdToExpand));
     }
   };
 
