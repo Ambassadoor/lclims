@@ -1,7 +1,7 @@
 import { GridColDef } from '@mui/x-data-grid';
 import { Chip } from '@mui/material';
 
-export const inventoryColumns: GridColDef[] = [
+export const getInventoryColumns = (isEditMode: boolean): GridColDef[] => [
   {
     field: 'ID',
     headerName: 'ID',
@@ -23,11 +23,15 @@ export const inventoryColumns: GridColDef[] = [
     field: 'Storage Location',
     headerName: 'Location',
     width: 180,
+    editable: isEditMode,
+    type: 'singleSelect',
+    valueOptions: ['Fridge A', 'Freezer B', 'Cabinet 1', 'Shelf 2', 'Bench', 'Cold Room'],
   },
   {
     field: 'Group #',
     headerName: 'Group',
     width: 75,
+    editable: isEditMode,
   },
   {
     field: 'CAS',
@@ -62,6 +66,9 @@ export const inventoryColumns: GridColDef[] = [
     field: 'Status',
     headerName: 'Status',
     width: 120,
+    editable: isEditMode,
+    type: 'singleSelect',
+    valueOptions: ['Unopened', 'Open', 'Empty', 'Disposed'],
     renderCell: (params) => {
       const status = params.value || 'Unknown';
       const color =
@@ -73,5 +80,6 @@ export const inventoryColumns: GridColDef[] = [
     field: 'Percent Remaining',
     headerName: 'Remaining',
     width: 110,
+    editable: isEditMode,
   },
 ];
