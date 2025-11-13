@@ -19,6 +19,7 @@ export interface Location {
   name: string;
   type: LocationType;
   parent_id: string | null; // null for top-level (rooms)
+  sort_order: number; // for drag/drop reordering within same parent
 
   // Environmental/Safety metadata
   temperature?: TemperatureType;

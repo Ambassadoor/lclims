@@ -49,6 +49,17 @@ const buildLocationTree = (locations: Location[]): LocationNode[] => {
     }
   });
 
+  // Third pass: sort children by sort_order
+  const sortChildren = (nodes: LocationNode[]) => {
+    nodes.sort((a, b) => a.sort_order - b.sort_order);
+    nodes.forEach((node) => {
+      if (node.children.length > 0) {
+        sortChildren(node.children);
+      }
+    });
+  };
+  sortChildren(roots);
+
   return roots;
 };
 
@@ -60,7 +71,10 @@ export const fetchLocations = createAsyncThunk('locations/fetchLocations', async
 
 export const createLocation = createAsyncThunk(
   'locations/createLocation',
-  async (location: Omit<Location, 'id' | 'created_at' | 'updated_at'>, { getState }) => {
+  async (
+    location: Omit<Location, 'id' | 'created_at' | 'updated_at' | 'sort_order'>,
+    { getState }
+  ) => {
     const state = getState() as { locations: LocationsState };
     const existingLocations = state.locations.items;
 
@@ -72,11 +86,17 @@ export const createLocation = createAsyncThunk(
     }
     const paddedId = nextId.toString().padStart(4, '0');
 
-    // Add timestamps
+    // Calculate sort_order: find max sort_order among siblings + 1
+    const siblings = existingLocations.filter((loc) => loc.parent_id === location.parent_id);
+    const maxSortOrder =
+      siblings.length > 0 ? Math.max(...siblings.map((loc) => loc.sort_order)) : -1;
+
+    // Add timestamps and sort_order
     const now = new Date().toISOString();
     const locationWithId = {
       ...location,
       id: paddedId,
+      sort_order: maxSortOrder + 1,
       created_at: now,
       updated_at: now,
     };
@@ -117,6 +137,18 @@ const locationsSlice = createSlice({
     clearError: (state) => {
       state.error = null;
     },
+    // Optimistic update for drag and drop reordering
+    reorderLocations: (state, action: PayloadAction<{ id: string; sort_order: number }[]>) => {
+      // Update sort_order for all affected locations
+      action.payload.forEach(({ id, sort_order }) => {
+        const location = state.items.find((loc) => loc.id === id);
+        if (location) {
+          location.sort_order = sort_order;
+        }
+      });
+      // Rebuild tree with new order
+      state.tree = buildLocationTree(state.items);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -155,5 +187,5 @@ const locationsSlice = createSlice({
   },
 });
 
-export const { setSelectedLocation, clearError } = locationsSlice.actions;
+export const { setSelectedLocation, clearError, reorderLocations } = locationsSlice.actions;
 export default locationsSlice.reducer;

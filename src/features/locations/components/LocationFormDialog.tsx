@@ -157,12 +157,13 @@ export default function LocationFormDialog({
     try {
       if (location) {
         // Edit mode - single update
-        const locationData = { ...formData, id: location.id };
+        const locationData = { ...formData, id: location.id, sort_order: location.sort_order };
         await dispatch(updateLocation(locationData as Location)).unwrap();
         onClose();
       } else if (createMultiple) {
         // Multi-create mode
-        const baseData: Omit<Location, 'id'> = formData;
+        const baseData: Omit<Location, 'id' | 'created_at' | 'updated_at' | 'sort_order'> =
+          formData;
 
         for (let i = 0; i < quantity; i++) {
           const numberedName = `${formData.name} ${startNumber + i}`;
@@ -172,7 +173,7 @@ export default function LocationFormDialog({
         onClose(formData.parent_id);
       } else {
         // Single create mode
-        await dispatch(createLocation(formData as Omit<Location, 'id'>)).unwrap();
+        await dispatch(createLocation(formData)).unwrap();
         onClose(formData.parent_id);
       }
     } catch (error) {
