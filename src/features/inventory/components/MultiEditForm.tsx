@@ -40,7 +40,11 @@ interface Chemical {
   };
 }
 
-export default function MultiEditForm() {
+interface MultiEditFormProps {
+  readOnly?: boolean;
+}
+
+export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -128,7 +132,7 @@ export default function MultiEditForm() {
           <ArrowBackIcon />
         </IconButton>
         <Typography variant="h5" sx={{ flexGrow: 1 }}>
-          Edit Chemicals
+          {readOnly ? 'View Chemicals' : 'Edit Chemicals'}
         </Typography>
       </Box>
 
@@ -159,6 +163,12 @@ export default function MultiEditForm() {
               updated[currentIndex].Name = e.target.value;
               setChemicals(updated);
             }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             fullWidth
           />
 
@@ -170,6 +180,12 @@ export default function MultiEditForm() {
               const updated = [...chemicals];
               updated[currentIndex].CAS = e.target.value;
               setChemicals(updated);
+            }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
             }}
             fullWidth
           />
@@ -183,6 +199,12 @@ export default function MultiEditForm() {
               updated[currentIndex].Company = e.target.value;
               setChemicals(updated);
             }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             fullWidth
           />
 
@@ -195,6 +217,12 @@ export default function MultiEditForm() {
               updated[currentIndex]['Product #'] = e.target.value;
               setChemicals(updated);
             }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             fullWidth
           />
 
@@ -206,6 +234,12 @@ export default function MultiEditForm() {
               const updated = [...chemicals];
               updated[currentIndex]['Group #'] = e.target.value;
               setChemicals(updated);
+            }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
             }}
             fullWidth
           />
@@ -225,6 +259,12 @@ export default function MultiEditForm() {
                 updated[currentIndex]['Max Volume'].Mass = parseFloat(e.target.value) || 0;
                 setChemicals(updated);
               }}
+              disabled={readOnly}
+              slotProps={{
+                input: {
+                  readOnly,
+                },
+              }}
               fullWidth
             />
             <TextField
@@ -236,6 +276,12 @@ export default function MultiEditForm() {
                 const updated = [...chemicals];
                 updated[currentIndex]['Unit of Measurement'] = e.target.value;
                 setChemicals(updated);
+              }}
+              disabled={readOnly}
+              slotProps={{
+                input: {
+                  readOnly,
+                },
               }}
               fullWidth
             >
@@ -257,7 +303,14 @@ export default function MultiEditForm() {
                 parseFloat(e.target.value) || undefined;
               setChemicals(updated);
             }}
-            disabled={!['mL', 'L'].includes(currentChemical['Unit of Measurement'] || '')}
+            disabled={
+              readOnly || !['mL', 'L'].includes(currentChemical['Unit of Measurement'] || '')
+            }
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             helperText={
               ['mL', 'L'].includes(currentChemical['Unit of Measurement'] || '')
                 ? 'Density in g/mL or g/L'
@@ -277,6 +330,12 @@ export default function MultiEditForm() {
                 updated[currentIndex]['Current Weight'] = parseFloat(e.target.value) || undefined;
                 setChemicals(updated);
               }}
+              disabled={readOnly}
+              slotProps={{
+                input: {
+                  readOnly,
+                },
+              }}
               helperText="Current measured weight"
               fullWidth
             />
@@ -289,6 +348,12 @@ export default function MultiEditForm() {
                 updated[currentIndex]['Initial Weight (g)'] =
                   parseFloat(e.target.value) || undefined;
                 setChemicals(updated);
+              }}
+              disabled={readOnly}
+              slotProps={{
+                input: {
+                  readOnly,
+                },
               }}
               helperText="Override required"
               fullWidth
@@ -306,8 +371,15 @@ export default function MultiEditForm() {
             }}
             helperText="Editable if Current/Initial Weight are null"
             disabled={
-              !!currentChemical['Current Weight'] || !!currentChemical['Initial Weight (g)']
+              readOnly ||
+              !!currentChemical['Current Weight'] ||
+              !!currentChemical['Initial Weight (g)']
             }
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             fullWidth
           />
 
@@ -320,6 +392,12 @@ export default function MultiEditForm() {
               const updated = [...chemicals];
               updated[currentIndex]['Storage Location'] = e.target.value;
               setChemicals(updated);
+            }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
             }}
             helperText="Will populate from database"
             fullWidth
@@ -340,6 +418,12 @@ export default function MultiEditForm() {
               updated[currentIndex].Status = e.target.value;
               setChemicals(updated);
             }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             fullWidth
           >
             <MenuItem value="Unopened">Unopened</MenuItem>
@@ -357,6 +441,12 @@ export default function MultiEditForm() {
               updated[currentIndex]['Safety Data Sheet'] = e.target.value;
               setChemicals(updated);
             }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
+            }}
             helperText="Placeholder - will be drag & drop file uploader"
             fullWidth
           />
@@ -371,6 +461,12 @@ export default function MultiEditForm() {
               const updated = [...chemicals];
               updated[currentIndex].Synonyms = e.target.value;
               setChemicals(updated);
+            }}
+            disabled={readOnly}
+            slotProps={{
+              input: {
+                readOnly,
+              },
             }}
             helperText="Alternative names, comma separated"
             fullWidth
@@ -387,14 +483,16 @@ export default function MultiEditForm() {
             Previous
           </Button>
 
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <Button variant="outlined" onClick={handleSave}>
-              Save
-            </Button>
-            <Button variant="contained" onClick={handleSaveAndNext}>
-              {currentIndex < chemicals.length - 1 ? 'Save & Next' : 'Save & Finish'}
-            </Button>
-          </Box>
+          {!readOnly && (
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <Button variant="outlined" onClick={handleSave}>
+                Save
+              </Button>
+              <Button variant="contained" onClick={handleSaveAndNext}>
+                {currentIndex < chemicals.length - 1 ? 'Save & Next' : 'Save & Finish'}
+              </Button>
+            </Box>
+          )}
 
           <Button
             endIcon={<NavigateNextIcon />}

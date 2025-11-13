@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import { DataGrid, GridPaginationModel } from '@mui/x-data-grid';
 import { Box, Button, CircularProgress, Alert, TextField, InputAdornment } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -14,6 +15,7 @@ import ChemicalFormDialog from './ChemicalFormDialog';
 import EditConfirmDialog from './EditConfirmDialog';
 
 export default function InventoryTable() {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const { items: chemicals, isLoading, error } = useAppSelector((state) => state.inventory);
 
@@ -147,7 +149,10 @@ export default function InventoryTable() {
           onPaginationModelChange={setPaginationModel}
           pageSizeOptions={[10, 25, 50, 100]}
           checkboxSelection
-          disableRowSelectionOnClick
+          onRowClick={(params) => {
+            // Navigate to view page with the chemical ID
+            router.push(`/inventory/view?ids=${params.row.ID}`);
+          }}
           onRowSelectionModelChange={(newSelection) => {
             // newSelection.ids is a Set, convert to array
             const selectedIds = Array.from(newSelection.ids) as string[];
@@ -163,6 +168,11 @@ export default function InventoryTable() {
           slotProps={{
             toolbar: {
               showQuickFilter: false,
+            },
+          }}
+          sx={{
+            '& .MuiDataGrid-row': {
+              cursor: 'pointer',
             },
           }}
         />
