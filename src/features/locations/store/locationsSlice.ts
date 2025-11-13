@@ -60,8 +60,28 @@ export const fetchLocations = createAsyncThunk('locations/fetchLocations', async
 
 export const createLocation = createAsyncThunk(
   'locations/createLocation',
-  async (location: Omit<Location, 'id'>) => {
-    const newLocation = await apiClient.post<Location>('locations', location);
+  async (location: Omit<Location, 'id' | 'created_at' | 'updated_at'>, { getState }) => {
+    const state = getState() as { locations: LocationsState };
+    const existingLocations = state.locations.items;
+
+    // Generate next ID with 4-digit padding
+    let nextId = 1;
+    if (existingLocations.length > 0) {
+      const maxId = Math.max(...existingLocations.map((loc) => parseInt(loc.id, 10)));
+      nextId = maxId + 1;
+    }
+    const paddedId = nextId.toString().padStart(4, '0');
+
+    // Add timestamps
+    const now = new Date().toISOString();
+    const locationWithId = {
+      ...location,
+      id: paddedId,
+      created_at: now,
+      updated_at: now,
+    };
+
+    const newLocation = await apiClient.post<Location>('locations', locationWithId);
     return newLocation;
   }
 );
@@ -69,7 +89,15 @@ export const createLocation = createAsyncThunk(
 export const updateLocation = createAsyncThunk(
   'locations/updateLocation',
   async (location: Location) => {
-    const updated = await apiClient.put<Location>(`locations/${location.id}`, location);
+    // Update timestamp
+    const locationWithTimestamp = {
+      ...location,
+      updated_at: new Date().toISOString(),
+    };
+    const updated = await apiClient.put<Location>(
+      `locations/${location.id}`,
+      locationWithTimestamp
+    );
     return updated;
   }
 );
