@@ -3,7 +3,16 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { DataGrid, GridPaginationModel } from '@mui/x-data-grid';
-import { Box, Button, CircularProgress, Alert, TextField, InputAdornment, ToggleButton, Tooltip } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Alert,
+  TextField,
+  InputAdornment,
+  ToggleButton,
+  Tooltip,
+} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import SearchIcon from '@mui/icons-material/Search';
@@ -76,7 +85,7 @@ export default function InventoryTable() {
       // TODO: Replace with actual API call
       console.log('Updating row:', { newRow, oldRow });
       // await apiClient.put(`inventory/${newRow.ID}`, newRow);
-      
+
       // For now, just return the new row to update the UI
       return newRow;
     } catch (error) {
@@ -196,7 +205,7 @@ export default function InventoryTable() {
             const target = event.target as HTMLElement;
             const isEditableCell = target.closest('.MuiDataGrid-cell--editable');
             const isCheckbox = target.closest('.MuiCheckbox-root');
-            
+
             if (!isEditableCell && !isCheckbox && !isEditMode) {
               router.push(`/inventory/view?ids=${params.row.ID}`);
             }

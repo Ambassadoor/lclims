@@ -145,8 +145,6 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
             >
               <MenuItem value="g">g</MenuItem>
               <MenuItem value="mL">mL</MenuItem>
-              <MenuItem value="kg">kg</MenuItem>
-              <MenuItem value="L">L</MenuItem>
             </TextField>
           </Box>
 
