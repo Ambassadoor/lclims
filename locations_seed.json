@@ -1,0 +1,137 @@
+[
+  {
+    "id": "loc-room-415",
+    "name": "Room 415",
+    "type": "room",
+    "parent_id": null,
+    "temperature": "ambient",
+    "ventilation": "standard",
+    "restrictions": [],
+    "notes": "Main chemistry lab",
+    "is_active": true
+  },
+  {
+    "id": "loc-cabinet-fire-415",
+    "name": "Fire Cabinet",
+    "type": "cabinet",
+    "parent_id": "loc-room-415",
+    "temperature": "ambient",
+    "ventilation": "vented_cabinet",
+    "restrictions": ["flammables_only"],
+    "notes": "For flammable materials only",
+    "is_active": true
+  },
+  {
+    "id": "loc-shelf-fire-1",
+    "name": "Shelf 1",
+    "type": "shelf",
+    "parent_id": "loc-cabinet-fire-415",
+    "temperature": "ambient",
+    "is_active": true
+  },
+  {
+    "id": "loc-shelf-fire-2",
+    "name": "Shelf 2",
+    "type": "shelf",
+    "parent_id": "loc-cabinet-fire-415",
+    "temperature": "ambient",
+    "is_active": true
+  },
+  {
+    "id": "loc-shelf-fire-3",
+    "name": "Shelf 3",
+    "type": "shelf",
+    "parent_id": "loc-cabinet-fire-415",
+    "temperature": "ambient",
+    "is_active": true
+  },
+  {
+    "id": "loc-hood-415-1",
+    "name": "Fume Hood 1",
+    "type": "hood",
+    "parent_id": "loc-room-415",
+    "temperature": "ambient",
+    "ventilation": "fume_hood",
+    "notes": "Working fume hood with airflow monitor",
+    "is_active": true
+  },
+  {
+    "id": "loc-bench-415",
+    "name": "Bench Top",
+    "type": "bench",
+    "parent_id": "loc-room-415",
+    "temperature": "ambient",
+    "ventilation": "standard",
+    "is_active": true
+  },
+  {
+    "id": "loc-room-302",
+    "name": "Room 302",
+    "type": "room",
+    "parent_id": null,
+    "temperature": "cold",
+    "ventilation": "standard",
+    "notes": "Cold room for refrigerated storage",
+    "is_active": true
+  },
+  {
+    "id": "loc-fridge-302-a",
+    "name": "Fridge A",
+    "type": "fridge",
+    "parent_id": "loc-room-302",
+    "temperature": "cold",
+    "ventilation": "standard",
+    "notes": "Maintains 4°C",
+    "is_active": true
+  },
+  {
+    "id": "loc-fridge-shelf-top",
+    "name": "Top Shelf",
+    "type": "shelf",
+    "parent_id": "loc-fridge-302-a",
+    "temperature": "cold",
+    "is_active": true
+  },
+  {
+    "id": "loc-fridge-shelf-middle",
+    "name": "Middle Shelf",
+    "type": "shelf",
+    "parent_id": "loc-fridge-302-a",
+    "temperature": "cold",
+    "is_active": true
+  },
+  {
+    "id": "loc-fridge-shelf-bottom",
+    "name": "Bottom Shelf",
+    "type": "shelf",
+    "parent_id": "loc-fridge-302-a",
+    "temperature": "cold",
+    "is_active": true
+  },
+  {
+    "id": "loc-freezer-302-b",
+    "name": "Freezer B",
+    "type": "freezer",
+    "parent_id": "loc-room-302",
+    "temperature": "frozen",
+    "ventilation": "standard",
+    "notes": "Maintains -20°C",
+    "is_active": true
+  },
+  {
+    "id": "loc-freezer-drawer-top",
+    "name": "Top Drawer",
+    "type": "drawer",
+    "parent_id": "loc-freezer-302-b",
+    "temperature": "frozen",
+    "is_active": true
+  },
+  {
+    "id": "loc-freezer-drawer-bottom",
+    "name": "Bottom Drawer",
+    "type": "drawer",
+    "parent_id": "loc-freezer-302-b",
+    "temperature": "frozen",
+    "is_active": true
+  }
+]

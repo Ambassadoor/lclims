@@ -21,15 +21,42 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useDebounce } from '@/shared/hooks/useDebounce';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { fetchChemicals } from '../store/inventorySlice';
+import { fetchLocations } from '@/features/locations/store/locationsSlice';
 import { getInventoryColumns } from '../config/inventoryColumns';
 import { Chemical } from '../types';
 import ChemicalFormDialog from './ChemicalFormDialog';
 import EditConfirmDialog from './EditConfirmDialog';
 
+// Helper to build full paths for locations
+const buildLocationPaths = (locations: { id: string; name: string; parent_id?: string | null }[]): string[] => {
+  const locationMap = new Map();
+  const paths: string[] = [];
+
+  // First pass: create map
+  locations.forEach((loc) => {
+    locationMap.set(loc.id, loc);
+  });
+
+  // Second pass: build paths
+  locations.forEach((loc) => {
+    const buildPath = (location: { id: string; name: string; parent_id?: string | null }): string => {
+      if (!location.parent_id) {
+        return location.name;
+      }
+      const parent = locationMap.get(location.parent_id);
+      return parent ? `${buildPath(parent)} / ${location.name}` : location.name;
+    };
+    paths.push(buildPath(loc));
+  });
+
+  return paths.sort();
+};
+
 export default function InventoryTable() {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { items: chemicals, isLoading, error } = useAppSelector((state) => state.inventory);
+  const { items: locations } = useAppSelector((state) => state.locations);
 
   const [localSearchQuery, setLocalSearchQuery] = useState('');
   const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
@@ -49,9 +76,10 @@ export default function InventoryTable() {
     return chemicals.filter((chemical) => selectedRows.includes(chemical.ID));
   }, [chemicals, selectedRows]);
 
-  // Fetch chemicals on mount
+  // Fetch chemicals and locations on mount
   useEffect(() => {
     dispatch(fetchChemicals());
+    dispatch(fetchLocations());
   }, [dispatch]);
 
   // Reset pagination when search changes
@@ -76,8 +104,14 @@ export default function InventoryTable() {
     });
   }, [chemicals, debouncedSearchQuery]);
 
-  // Generate columns based on edit mode
-  const columns = useMemo(() => getInventoryColumns(isEditMode), [isEditMode]);
+  // Build location paths for dropdown
+  const locationPaths = useMemo(() => buildLocationPaths(locations), [locations]);
+
+  // Generate columns based on edit mode and available locations
+  const columns = useMemo(
+    () => getInventoryColumns(isEditMode, locationPaths),
+    [isEditMode, locationPaths]
+  );
 
   // Handle inline cell edits
   const handleProcessRowUpdate = async (newRow: Chemical, oldRow: Chemical) => {

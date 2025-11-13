@@ -2,11 +2,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '@/features/auth/store/authSlice';
 import inventoryReducer from '@/features/inventory/store/inventorySlice';
+import locationsReducer from '@/features/locations/store/locationsSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     inventory: inventoryReducer,
+    locations: locationsReducer,
     // Add more feature slices here
   },
   middleware: (getDefaultMiddleware) =>

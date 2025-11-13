@@ -1,7 +1,10 @@
 import { GridColDef } from '@mui/x-data-grid';
 import { Chip } from '@mui/material';
 
-export const getInventoryColumns = (isEditMode: boolean): GridColDef[] => [
+export const getInventoryColumns = (
+  isEditMode: boolean,
+  locationOptions: string[] = []
+): GridColDef[] => [
   {
     field: 'ID',
     headerName: 'ID',
@@ -25,7 +28,7 @@ export const getInventoryColumns = (isEditMode: boolean): GridColDef[] => [
     width: 180,
     editable: isEditMode,
     type: 'singleSelect',
-    valueOptions: ['Fridge A', 'Freezer B', 'Cabinet 1', 'Shelf 2', 'Bench', 'Cold Room'],
+    valueOptions: locationOptions.length > 0 ? locationOptions : ['Loading...'],
   },
   {
     field: 'Group #',
