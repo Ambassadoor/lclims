@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   Box,
   Paper,
@@ -24,124 +24,35 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-  DragEndEvent,
 } from '@dnd-kit/core';
 import {
   SortableContext,
   sortableKeyboardCoordinates,
-  useSortable,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
-import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
-import KitchenIcon from '@mui/icons-material/Kitchen';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ScienceIcon from '@mui/icons-material/Science';
-import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
-import { fetchLocations, deleteLocation, updateLocation, reorderLocations } from '../store/locationsSlice';
-import { Location as StorageLocation, LocationNode, LocationType } from '../types';
+import { useAppDispatch } from '@/lib/store/hooks';
+import { deleteLocation } from '../store/locationsSlice';
+import { LocationNode } from '../types';
+import { useLocations, useLocationTree, useLocationDragDrop } from '../hooks';
+import { getAllDescendants } from '../utils/locationHelpers';
+import { getLocationIcon, getTemperatureColor } from '../utils/locationIconHelpers';
 import LocationFormDialog from './LocationFormDialog';
-
-// Icon mapping for different location types
-const getLocationIcon = (type: LocationType) => {
-  switch (type) {
-    case 'room':
-      return <MeetingRoomIcon fontSize="small" />;
-    case 'fridge':
-      return <KitchenIcon fontSize="small" />;
-    case 'freezer':
-      return <AcUnitIcon fontSize="small" />;
-    case 'cabinet':
-    case 'shelf':
-    case 'drawer':
-      return <DashboardIcon fontSize="small" />;
-    case 'hood':
-    case 'bench':
-      return <ScienceIcon fontSize="small" />;
-    default:
-      return <DashboardIcon fontSize="small" />;
-  }
-};
-
-// Color coding for temperature
-const getTemperatureColor = (
-  temperature?: 'ambient' | 'cold' | 'frozen'
-): 'default' | 'info' | 'primary' => {
-  switch (temperature) {
-    case 'cold':
-      return 'info';
-    case 'frozen':
-      return 'primary';
-    default:
-      return 'default';
-  }
-};
-
-// Sortable wrapper for drag and drop
-interface SortableItemProps {
-  id: string;
-  children: React.ReactNode;
-}
-
-function SortableItem({ id, children }: SortableItemProps) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
-    id,
-  });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    opacity: isDragging ? 0.5 : 1,
-  };
-
-  return (
-    <Box ref={setNodeRef} style={style}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <IconButton size="small" {...attributes} {...listeners} sx={{ cursor: 'grab', mr: 0.5 }}>
-          <DragIndicatorIcon fontSize="small" />
-        </IconButton>
-        {children}
-      </Box>
-    </Box>
-  );
-}
-
-// Helper to find all descendants of a location
-const getAllDescendants = (
-  locationId: string,
-  allLocations: StorageLocation[]
-): StorageLocation[] => {
-  const descendants: StorageLocation[] = [];
-  const queue = [locationId];
-
-  while (queue.length > 0) {
-    const currentId = queue.shift()!;
-    const children = allLocations.filter((loc) => loc.parent_id === currentId);
-    descendants.push(...children);
-    queue.push(...children.map((child) => child.id));
-  }
-
-  return descendants;
-};
+import SortableLocationItem from './SortableLocationItem';
 
 export default function LocationManager() {
   const dispatch = useAppDispatch();
-  const { tree, items, isLoading, error } = useAppSelector((state) => state.locations);
+  const { tree, locations, isLoading, error } = useLocations();
+  const { expanded, toggleExpand, expandLocation } = useLocationTree();
+  const { handleDragEnd } = useLocationDragDrop();
 
   const [formDialogOpen, setFormDialogOpen] = useState(false);
   const [editingLocation, setEditingLocation] = useState<LocationNode | null>(null);
   const [parentLocation, setParentLocation] = useState<LocationNode | null>(null);
-
-  useEffect(() => {
-    dispatch(fetchLocations());
-  }, [dispatch]);
 
   // Drag and drop sensors
   const sensors = useSensors(
@@ -164,7 +75,7 @@ export default function LocationManager() {
 
     // Auto-expand parent if a child was just added
     if (parentIdToExpand) {
-      setExpanded((prev) => new Set(prev).add(parentIdToExpand));
+      expandLocation(parentIdToExpand);
     }
   };
 
@@ -176,7 +87,7 @@ export default function LocationManager() {
 
   const handleDeleteLocation = async (id: string, locationName: string) => {
     // Find all descendants that will be deleted
-    const descendants = getAllDescendants(id, items);
+    const descendants = getAllDescendants(id, locations);
 
     let confirmMessage = `Are you sure you want to delete "${locationName}"?`;
     if (descendants.length > 0) {
@@ -203,55 +114,6 @@ export default function LocationManager() {
     }
   };
 
-  const [expanded, setExpanded] = useState<Set<string>>(new Set());
-
-  const toggleExpand = (id: string) => {
-    const newExpanded = new Set(expanded);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpanded(newExpanded);
-  };
-
-  const handleDragEnd = async (event: DragEndEvent, siblings: LocationNode[]) => {
-    const { active, over } = event;
-
-    if (over && active.id !== over.id) {
-      const oldIndex = siblings.findIndex((loc) => loc.id === active.id);
-      const newIndex = siblings.findIndex((loc) => loc.id === over.id);
-
-      if (oldIndex !== -1 && newIndex !== -1) {
-        // Reorder siblings array
-        const reordered = [...siblings];
-        const [moved] = reordered.splice(oldIndex, 1);
-        reordered.splice(newIndex, 0, moved);
-
-        // Prepare updates for locations that need new sort_order
-        const updates = reordered
-          .map((loc, i) => (loc.sort_order !== i ? { ...loc, sort_order: i } : null))
-          .filter((loc) => loc !== null);
-
-        if (updates.length > 0) {
-          // Optimistic update - immediately update UI
-          dispatch(
-            reorderLocations(updates.map((loc) => ({ id: loc!.id, sort_order: loc!.sort_order })))
-          );
-
-          // Fire API calls in background (don't await)
-          Promise.all(updates.map((loc) => dispatch(updateLocation(loc!)).unwrap())).catch(
-            (error) => {
-              console.error('Failed to update location order:', error);
-              // On error, refresh to ensure consistency
-              dispatch(fetchLocations());
-            }
-          );
-        }
-      }
-    }
-  };
-
   const renderTree = (nodes: LocationNode[], depth = 0) => {
     const items = nodes.map((node) => node.id);
 
@@ -268,7 +130,7 @@ export default function LocationManager() {
 
             return (
               <Box key={node.id}>
-                <SortableItem id={node.id}>
+                <SortableLocationItem id={node.id}>
                   <ListItem
                     disablePadding
                     sx={{
@@ -333,7 +195,7 @@ export default function LocationManager() {
                       </Box>
                     </ListItemButton>
                   </ListItem>
-                </SortableItem>
+                </SortableLocationItem>
                 {hasChildren && (
                   <Collapse in={isExpanded} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
