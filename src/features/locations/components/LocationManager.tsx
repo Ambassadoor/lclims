@@ -84,6 +84,17 @@ export default function LocationManager() {
     setEditingLocation(null);
     setFormDialogOpen(true);
   };
+  
+  const handleFormClose = (parentIdToExpand?: string | null) => {
+    setFormDialogOpen(false);
+    setEditingLocation(null);
+    setParentLocation(null);
+    
+    // Auto-expand parent if a child was just added
+    if (parentIdToExpand) {
+      setExpanded(prev => new Set(prev).add(parentIdToExpand));
+    }
+  };
 
   const handleEditLocation = (location: LocationNode) => {
     setEditingLocation(location);
@@ -233,11 +244,7 @@ export default function LocationManager() {
       <LocationFormDialog
         key={`${formDialogOpen}-${editingLocation?.id || 'new'}-${parentLocation?.id || 'root'}`}
         open={formDialogOpen}
-        onClose={() => {
-          setFormDialogOpen(false);
-          setEditingLocation(null);
-          setParentLocation(null);
-        }}
+        onClose={handleFormClose}
         location={editingLocation}
         parentLocation={parentLocation}
       />

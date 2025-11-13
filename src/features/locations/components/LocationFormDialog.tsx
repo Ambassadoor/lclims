@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -13,6 +13,7 @@ import {
   FormControlLabel,
   Switch,
   Chip,
+  Typography,
 } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
 import { createLocation, updateLocation } from '../store/locationsSlice';
@@ -20,7 +21,7 @@ import { Location, LocationNode, LocationType, TemperatureType, VentilationType 
 
 interface LocationFormDialogProps {
   open: boolean;
-  onClose: () => void;
+  onClose: (parentIdToExpand?: string | null) => void;
   location?: LocationNode | null;
   parentLocation?: LocationNode | null;
 }
@@ -54,6 +55,7 @@ const RESTRICTION_OPTIONS = [
   'bases_only',
   'no_oxidizers',
   'no_water_reactive',
+  'high_hazard'
 ];
 
 const getInitialFormData = (
@@ -111,6 +113,15 @@ export default function LocationFormDialog({
   const [formData, setFormData] = useState<LocationFormData>(() =>
     getInitialFormData(location, parentLocation)
   );
+  
+  const nameInputRef = useRef<HTMLInputElement>(null);
+
+  // Auto-focus name input when dialog opens
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => nameInputRef.current?.focus(), 100);
+    }
+  }, [open]);
 
   const handleChange =
     (field: keyof LocationFormData) =>
@@ -133,10 +144,12 @@ export default function LocationFormDialog({
     try {
       if (location) {
         await dispatch(updateLocation(locationData as Location)).unwrap();
+        onClose();
       } else {
         await dispatch(createLocation(locationData as Omit<Location, 'id'>)).unwrap();
+        // Pass parent_id to auto-expand after adding child
+        onClose(formData.parent_id);
       }
-      onClose();
     } catch (error) {
       console.error('Failed to save location:', error);
     }
@@ -155,6 +168,7 @@ export default function LocationFormDialog({
             onChange={handleChange('name')}
             fullWidth
             placeholder="e.g., Room 415, Cabinet A, Top Shelf"
+            inputRef={nameInputRef}
           />
 
           {/* Type */}
@@ -164,14 +178,7 @@ export default function LocationFormDialog({
             required
             value={formData.type}
             onChange={handleChange('type')}
-            disabled={!!location}
-            helperText={
-              location
-                ? 'Cannot change type of existing location'
-                : parentLocation
-                  ? 'Adding child to: ' + parentLocation.name
-                  : ''
-            }
+            helperText={parentLocation ? 'Adding child to: ' + parentLocation.name : ''}
             fullWidth
           >
             {LOCATION_TYPES.map((type) => (
@@ -235,14 +242,10 @@ export default function LocationFormDialog({
 
           {/* Restrictions */}
           <Box>
-            <TextField
-              label="Safety Restrictions"
-              value=""
-              InputProps={{ readOnly: true }}
-              helperText="Select applicable restrictions"
-              fullWidth
-            />
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+              Safety Restrictions
+            </Typography>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {RESTRICTION_OPTIONS.map((restriction) => (
                 <Chip
                   key={restriction}
