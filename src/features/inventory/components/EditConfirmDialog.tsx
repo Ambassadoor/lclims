@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 
 interface Chemical {
-  ID: string;
+  id: string;
   Name: string;
   'Storage Location': string;
 }
@@ -58,10 +58,10 @@ export default function EditConfirmDialog({
         )}
         <List dense sx={{ maxHeight: 300, overflow: 'auto', mt: 2 }}>
           {selectedChemicals.map((chemical) => (
-            <ListItem key={chemical.ID}>
+            <ListItem key={chemical.id}>
               <ListItemText
                 primary={chemical.Name}
-                secondary={`ID: ${chemical.ID} | Location: ${chemical['Storage Location']}`}
+                secondary={`ID: ${chemical.id} | Location: ${chemical['Storage Location']}`}
               />
             </ListItem>
           ))}

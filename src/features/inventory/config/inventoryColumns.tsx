@@ -6,7 +6,7 @@ export const getInventoryColumns = (
   locationOptions: string[] = []
 ): GridColDef[] => [
   {
-    field: 'ID',
+    field: 'id',
     headerName: 'ID',
     width: 120,
     sortComparator: (v1, v2) => {

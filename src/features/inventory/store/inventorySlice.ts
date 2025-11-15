@@ -75,10 +75,10 @@ const inventorySlice = createSlice({
       })
       .addCase(fetchChemicals.fulfilled, (state, action) => {
         state.isLoading = false;
-        // Sort numerically by ID (CHEM-XXXX)
+        // Sort numerically by id (CHEM-XXXX)
         state.items = action.payload.sort((a, b) => {
-          const numA = parseInt(a.ID.replace('CHEM-', ''), 10) || 0;
-          const numB = parseInt(b.ID.replace('CHEM-', ''), 10) || 0;
+          const numA = parseInt(a.id.replace('CHEM-', ''), 10) || 0;
+          const numB = parseInt(b.id.replace('CHEM-', ''), 10) || 0;
           return numB - numA; // Descending order
         });
         state.error = null;

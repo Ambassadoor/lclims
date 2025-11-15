@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -18,6 +18,8 @@ import {
 import { useInventory } from '../hooks/useInventory';
 import { usePrintLabel } from '@/features/hardware/hooks/usePrintLabel';
 import { formatChemicalLabelData } from '@/features/hardware/utils/labelFormatter';
+import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { fetchLocations } from '@/features/locations/store/locationsSlice';
 
 interface ChemicalFormDialogProps {
   open: boolean;
@@ -68,8 +70,34 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
   const [printLabel, setPrintLabel] = useState(true); // Default to true
   const [saveError, setSaveError] = useState<string | null>(null);
 
+  const dispatch = useAppDispatch();
+  const { items: locations } = useAppSelector((state) => state.locations);
   const { createItem, isLoading: isSaving, error: inventoryError } = useInventory();
   const { printLabel: print, isPrinting, error: printError } = usePrintLabel();
+
+  // Fetch locations on mount
+  useEffect(() => {
+    dispatch(fetchLocations());
+  }, [dispatch]);
+
+  // Build location paths for dropdown
+  const locationPaths = useMemo(() => {
+    const locationMap = new Map();
+    locations.forEach((loc) => {
+      locationMap.set(loc.id, loc);
+    });
+
+    return locations.map((loc) => {
+      const buildPath = (location: typeof loc): string => {
+        if (!location.parent_id) {
+          return location.name;
+        }
+        const parent = locationMap.get(location.parent_id);
+        return parent ? `${buildPath(parent)} / ${location.name}` : location.name;
+      };
+      return buildPath(loc);
+    }).sort();
+  }, [locations]);
 
   const handleChange =
     (field: keyof ChemicalFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -257,13 +285,14 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
             required
             value={formData.storageLocation}
             onChange={handleChange('storageLocation')}
-            helperText="Will populate from database"
+            helperText="Select from available locations"
           >
             <MenuItem value="">Select location...</MenuItem>
-            <MenuItem value="Fridge A">Fridge A</MenuItem>
-            <MenuItem value="Freezer B">Freezer B</MenuItem>
-            <MenuItem value="Cabinet 1">Cabinet 1</MenuItem>
-            <MenuItem value="Shelf 2">Shelf 2</MenuItem>
+            {locationPaths.map((path) => (
+              <MenuItem key={path} value={path}>
+                {path}
+              </MenuItem>
+            ))}
           </TextField>
 
           {/* Date Received */}

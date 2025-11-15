@@ -7,7 +7,7 @@
 import { HARDWARE_CONFIG } from '../config';
 
 interface Chemical {
-  ID: string;
+  id: string;
   Name?: string;
   CAS?: string;
   Formula?: string;
@@ -29,21 +29,21 @@ export function formatChemicalLabelData(chemical: Chemical) {
     } catch {
       // If parsing fails, create object from available data
       formulaData = {
-        id: chemical.ID,
+        id: chemical.id,
         uuid: chemical.UUID || '',
       };
     }
   } else {
-    // No Formula field, create from ID and UUID
+    // No Formula field, create from id and UUID
     formulaData = {
-      id: chemical.ID,
+      id: chemical.id,
       uuid: chemical.UUID || '',
     };
   }
 
   return {
     Barcode1: JSON.stringify(formulaData), // QR code data
-    Text1: chemical.ID, // Display ID
+    Text1: chemical.id, // Display ID
   };
 }
 

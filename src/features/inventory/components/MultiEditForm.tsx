@@ -26,7 +26,7 @@ import {
 } from '@/features/hardware/utils/labelFormatter';
 
 interface Chemical {
-  ID: string;
+  id: string;
   Name: string;
   CAS: string;
   'Unit of Measurement': string;
@@ -83,7 +83,7 @@ export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) 
       try {
         // Fetch all chemicals that match the IDs
         const allChemicals = await apiClient.get<Chemical[]>('inventory');
-        const selected = allChemicals.filter((chem) => ids.includes(chem.ID));
+        const selected = allChemicals.filter((chem) => ids.includes(chem.id));
         setChemicals(selected);
       } catch (err) {
         console.error('Failed to fetch chemicals:', err);
@@ -181,7 +181,7 @@ export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) 
       <Paper sx={{ p: 3 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {/* Read-only ID */}
-          <TextField label="ID" value={currentChemical.ID} disabled fullWidth />
+          <TextField label="ID" value={currentChemical.id} disabled fullWidth />
 
           {/* Name */}
           <TextField

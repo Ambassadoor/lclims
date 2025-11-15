@@ -1,6 +1,6 @@
 // Inventory feature - Type definitions
 export interface Chemical {
-  ID: string;
+  id: string;
   Name: string;
   CAS: string;
   'Unit of Measurement': string;
@@ -36,4 +36,4 @@ export interface Chemical {
   [key: string]: unknown;
 }
 
-export type ChemicalFormData = Omit<Chemical, 'ID'>;
+export type ChemicalFormData = Omit<Chemical, 'id'>;

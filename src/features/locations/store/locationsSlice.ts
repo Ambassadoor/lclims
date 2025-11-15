@@ -70,7 +70,7 @@ export const updateLocation = createAsyncThunk(
       ...location,
       updated_at: new Date().toISOString(),
     };
-    const updated = await apiClient.put<Location>(
+    const updated = await apiClient.patch<Location>(
       `locations/${location.id}`,
       locationWithTimestamp
     );

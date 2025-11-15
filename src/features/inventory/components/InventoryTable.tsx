@@ -79,7 +79,7 @@ export default function InventoryTable() {
 
   // Get the full data of selected rows
   const selectedChemicals = useMemo(() => {
-    return chemicals.filter((chemical) => selectedRows.includes(chemical.ID));
+    return chemicals.filter((chemical) => selectedRows.includes(chemical.id));
   }, [chemicals, selectedRows]);
 
   // Fetch chemicals and locations on mount
@@ -101,7 +101,7 @@ export default function InventoryTable() {
     const query = debouncedSearchQuery.toLowerCase();
     return chemicals.filter((chemical) => {
       return (
-        chemical.ID?.toLowerCase().includes(query) ||
+        chemical.id?.toLowerCase().includes(query) ||
         chemical.Name?.toLowerCase().includes(query) ||
         chemical.CAS?.toLowerCase().includes(query) ||
         chemical['Storage Location']?.toLowerCase().includes(query) ||
@@ -124,7 +124,7 @@ export default function InventoryTable() {
     try {
       // TODO: Replace with actual API call
       console.log('Updating row:', { newRow, oldRow });
-      // await apiClient.put(`inventory/${newRow.ID}`, newRow);
+      // await apiClient.put(`inventory/${newRow.id}`, newRow);
 
       // For now, just return the new row to update the UI
       return newRow;
@@ -235,7 +235,7 @@ export default function InventoryTable() {
         <DataGrid
           rows={filteredChemicals}
           columns={columns}
-          getRowId={(row) => row.ID}
+          getRowId={(row) => row.id}
           paginationModel={paginationModel}
           onPaginationModelChange={setPaginationModel}
           pageSizeOptions={[10, 25, 50, 100]}
@@ -247,7 +247,7 @@ export default function InventoryTable() {
             const isCheckbox = target.closest('.MuiCheckbox-root');
 
             if (!isEditableCell && !isCheckbox && !isEditMode) {
-              router.push(`/inventory/view?ids=${params.row.ID}`);
+              router.push(`/inventory/view?ids=${params.row.id}`);
             }
           }}
           onRowSelectionModelChange={(newSelection) => {

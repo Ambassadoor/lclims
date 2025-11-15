@@ -39,10 +39,10 @@ class InventoryService {
       uuid: '', // Empty for now, not using Notion integration
     });
 
-    // Add ID and Formula to the chemical data
+    // Add id and Formula to the chemical data
     const completeChemicalData = {
       ...chemicalData,
-      ID: nextId,
+      id: nextId,
       Formula: formula,
     };
 
@@ -57,7 +57,7 @@ class InventoryService {
     // Extract numeric parts from all IDs (e.g., CHEM-1101 -> 1101)
     const numericIds = chemicals
       .map((c) => {
-        const match = c.ID.match(/CHEM-(\d+)/);
+        const match = c.id.match(/CHEM-(\d+)/);
         return match ? parseInt(match[1], 10) : 0;
       })
       .filter((n) => n > 0);
