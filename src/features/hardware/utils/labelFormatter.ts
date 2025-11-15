@@ -4,13 +4,15 @@
  * Helper functions for formatting chemical data for label printing.
  */
 
+import { HARDWARE_CONFIG } from '../config';
+
 interface Chemical {
   ID: string;
   Name?: string;
   CAS?: string;
   Formula?: string;
   UUID?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -49,7 +51,7 @@ export function formatChemicalLabelData(chemical: Chemical) {
  * Get default template name for chemical labels
  */
 export function getDefaultChemicalTemplate(): string {
-  return 'ChemicalQRCodes.lbx';
+  return HARDWARE_CONFIG.defaultTemplate;
 }
 
 /**

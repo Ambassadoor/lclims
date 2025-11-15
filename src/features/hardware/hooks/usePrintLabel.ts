@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
-import { printerService, type PrintOptions, type PrintResult } from '../services/printerService';
+import { printerService } from '../services/printerService';
+import type { PrintOptions, PrintResult } from '../types';
 
 interface UsePrintLabelOptions {
   onSuccess?: (result: PrintResult) => void;

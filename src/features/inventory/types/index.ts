@@ -33,6 +33,7 @@ export interface Chemical {
   };
   'Mass of Contents (g)'?: number;
   Synonyms?: string;
+  [key: string]: unknown;
 }
 
 export type ChemicalFormData = Omit<Chemical, 'ID'>;

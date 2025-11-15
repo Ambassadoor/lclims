@@ -5,49 +5,32 @@
  * Handles label printing, preview, and printer status.
  */
 
-const PRINT_SERVER_URL = process.env.NEXT_PUBLIC_PRINT_SERVER_URL || 'http://localhost:3001';
+import { ApiClient } from '@/lib/api/client';
+import { HARDWARE_CONFIG } from '../config';
+import type {
+  PrintOptions,
+  PreviewOptions,
+  PrintResult,
+  PreviewResult,
+  Printer,
+  PrintServerHealth,
+} from '../types';
 
-export interface PrintOptions {
-  template: string;
-  data: Record<string, string>;
-  printer?: string;
-  copies?: number;
-}
-
-export interface PreviewOptions {
-  template: string;
-  data: Record<string, string>;
-  width?: number;
-  height?: number;
-}
-
-export interface PrintResult {
-  success: boolean;
-  message: string;
-  jobId?: string;
-  data?: any;
-}
-
-export interface PreviewResult {
-  success: boolean;
-  imageBase64?: string;
-  message?: string;
-}
-
-export interface Printer {
-  name: string;
-  online: boolean;
-  supported: boolean;
-  model?: string;
-  port?: string;
-  supportedMedia?: string[];
-}
+// Re-export types for convenience
+export type {
+  PrintOptions,
+  PreviewOptions,
+  PrintResult,
+  PreviewResult,
+  Printer,
+  PrintServerHealth,
+};
 
 class PrinterService {
-  private baseUrl: string;
+  private apiClient: ApiClient;
 
-  constructor(baseUrl: string = PRINT_SERVER_URL) {
-    this.baseUrl = baseUrl;
+  constructor(baseUrl: string = HARDWARE_CONFIG.printServerUrl) {
+    this.apiClient = new ApiClient(baseUrl);
   }
 
   /**
@@ -55,16 +38,7 @@ class PrinterService {
    */
   async print(options: PrintOptions): Promise<PrintResult> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/labels/print`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(options),
-      });
-
-      const result = await response.json();
-      return result;
+      return await this.apiClient.post<PrintResult>('api/labels/print', options);
     } catch (error) {
       console.error('Print error:', error);
       return {
@@ -79,16 +53,7 @@ class PrinterService {
    */
   async preview(options: PreviewOptions): Promise<PreviewResult> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/labels/preview`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(options),
-      });
-
-      const result = await response.json();
-      return result;
+      return await this.apiClient.post<PreviewResult>('api/labels/preview', options);
     } catch (error) {
       console.error('Preview error:', error);
       return {
@@ -103,8 +68,7 @@ class PrinterService {
    */
   async getPrinters(): Promise<Printer[]> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/labels/printers`);
-      const result = await response.json();
+      const result = await this.apiClient.get<{ printers: Printer[] }>('api/labels/printers');
       return result.printers || [];
     } catch (error) {
       console.error('Get printers error:', error);
@@ -117,8 +81,7 @@ class PrinterService {
    */
   async getTemplates(): Promise<string[]> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/labels/templates`);
-      const result = await response.json();
+      const result = await this.apiClient.get<{ templates: string[] }>('api/labels/templates');
       return result.templates || [];
     } catch (error) {
       console.error('Get templates error:', error);
@@ -131,8 +94,9 @@ class PrinterService {
    */
   async isPrinterOnline(printerName: string): Promise<boolean> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/labels/printers/${printerName}/status`);
-      const result = await response.json();
+      const result = await this.apiClient.get<{ online: boolean }>(
+        `api/labels/printers/${printerName}/status`
+      );
       return result.online || false;
     } catch (error) {
       console.error('Printer status error:', error);
@@ -143,10 +107,9 @@ class PrinterService {
   /**
    * Health check
    */
-  async checkHealth(): Promise<{ status: string; adapter: string } | null> {
+  async checkHealth(): Promise<PrintServerHealth | null> {
     try {
-      const response = await fetch(`${this.baseUrl}/health`);
-      return await response.json();
+      return await this.apiClient.get<PrintServerHealth>('health');
     } catch (error) {
       console.error('Health check error:', error);
       return null;

@@ -90,7 +90,9 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
     // If print checkbox is checked, print the label
     if (printLabel) {
       try {
-        const labelData = formatChemicalLabelData(newChemical);
+        const labelData = formatChemicalLabelData(
+          newChemical as Parameters<typeof formatChemicalLabelData>[0]
+        );
         await print({
           template: 'ChemicalQRCodes.lbx',
           data: labelData,
@@ -105,7 +107,7 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
     if (onSave) {
       onSave();
     }
-    
+
     // Reset form and close
     setFormData(INITIAL_FORM_DATA);
     setPrintLabel(true);

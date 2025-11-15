@@ -5,7 +5,8 @@ export class ApiClient {
   private baseUrl: string;
 
   constructor(baseUrl: string = API_BASE_URL) {
-    this.baseUrl = baseUrl;
+    // Ensure baseUrl has trailing slash for proper URL construction
+    this.baseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
   }
 
   private async handleResponse<T>(response: Response): Promise<T> {
