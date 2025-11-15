@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::PrintOptionConstants</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="661">
+  <tr>
+   <td valign="top" width="908">
+      <font face="Arial" size="5"><b>enum bpac::PrintOptionConstants</b></font></td>
+  </tr>
+  <tr>
+   <td valign="top" width="713">
+  </td>
+  </tr>
+  <tr>
+   <td valign="top" width="713">
+<font face="Arial" size="3">
+<a class="anchor" name="d6f3fa205256f5c89428de1056942577"></a></font><!-- doxytag: member="bpac::PrintOptionConstants" ref="d6f3fa205256f5c89428de1056942577" args="" -->
+<div class="memitem">
+<div class="memdoc" style="width: 554; height: 1097">
+
+<p>
+<font face="Arial" size="3">Print options</font><p>
+<font face="Arial" size="3">If the driver's print option settings are not to be adopted and the printing options are to be set, specify the settings by combining the following flags.<br>
+If the settings are to be adopted, specify "0".<br>
+ (With Visual Basic&reg;, when the flag is specified with a direct numeral, not an enumerating value that begins with bpo, the half cut flag 0x200, for example, is specified as &H200.)</font><p>
+<font face="Arial" size="3">For details on combining cut options, refer to <b>"<a href="appendix002.html">Printout samples and cut option combinations for each major device type</a>"</b>.<br>
+</font>
+<p>
+  <font face="Arial" size="3"><b>Value of enumerator:</b></font>
+<table border="1" cellspacing="0" cellpadding="5" width="677">
+<tr>
+<td width="104" align="center"><b>
+<span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">Driver</font></span></b></td>
+<td width="149" align="center"><b>
+<span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">Flag</font></span></b></td>
+<td width="386" align="center">
+<b>
+<span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">Description</font></span></b></td></tr>
+<tr>
+<td rowspan="17" width="104"><font size="3" face="Arial">&nbsp;</font><p align="center">
+<b><span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">Label printer</font></span></b><font size="3" face="Arial"><br>
+</font><b><span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">(P-touch)</font></span></b></p>
+<p align="center">
+<font size="3" face="Arial">&nbsp;</font></p>
+<p align="center"><font size="3" face="Arial">&nbsp;</font></td>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoDefault</em><br>
+(0x0)</font></td>
+<td width="386">
+<font face="Arial" size="3">The current drive settings are adopted.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoAutoCut</em><br>
+(0x1)</font></td>
+<td width="386">
+<font face="Arial" size="3">Autocut is applied.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoCutPause</em><br>
+(0x1)</font></td>
+<td width="386">
+<font face="Arial" size="3">Pause to cut is applied.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">Valid only with models not supporting the auto cut function.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoCutMark</em><br>
+(0x2)</font></td>
+<td width="386">
+<font face="Arial" size="3">Cut mark is inserted.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">Valid only with models not supporting the auto cut function.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoHalfCut</em><br>
+(0x200)</font></td>
+<td width="386">
+<font face="Arial" size="3">Executes half cut.</font></td></tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoChainPrint</em><br>
+(0x400)</font></td>
+<td width="386">
+<font face="Arial" size="3">Continuous printing is performed.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">The final label is not cut, but when the next labels are output, the preceding blank is cut in line with the cut option setting.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoTailCut</em><br>
+(0x800)</font></td>
+<td width="386">
+<font face="Arial" size="3">Whenever a label is output, the trailing end of the 
+form is forcibly cut to leave a leading blank for the next label output.</font><font face="Arial" size="3"> 
+</font> 
+</td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoSpecialTape</em><br>
+(0x00080000)</font></td>
+<td width="386">
+<font face="Arial" size="3">No cutting is performed when printing on special 
+tape.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">Valid only with PT-2430PC.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoCutAtEnd<br>
+</em>(0x04000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">&quot;Cut at end&quot; is performed.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoNoCut<br>
+</em>(0x10000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">No cutting is performed.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">Valid only with models supporting cut functions.</font></td></tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoMirroring<br>
+</em>(0x4)</font></td>
+<td width="386">
+<font face="Arial" size="3">Executes mirror printing.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoQuality<br>
+</em>(0x00010000)</font></td>
+<td width="386">
+<font face="Arial" size="3">Fine-quality printing is performed.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoHighSpeed<br>
+</em>(</font><span lang="EN-US" style="font-family: Arial"><font size="3">0x01000000</font></span><font face="Arial" size="3">)</font></td>
+<td width="386">
+<font face="Arial" size="3">High-speed printing is performed.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoHighResolution<br>
+</em>(0x02000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">High-resolution printing is performed.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoColor<br>
+</em>(0x8)</font></td>
+<td width="386">
+<font face="Arial" size="3">Color printing is performed.</font></td></tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoMono<br>
+</em>(0x10000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">Monochrome printing is performed.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">Valid only with models supporting the color printing function.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoContinue<br>
+</em>(0x40000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">Combines with printing for the following DoPrint( ) so that it is a single print job.</font><font face="Arial" size="3"><br>
+</font> 
+<font face="Arial" size="3">As a result, when the next DoPrints are called up, the front margins are not output.
+</font> 
+</td></tr>
+<td rowspan="2" width="104">
+<p align="center"><font size="3" face="Arial">&nbsp;</font><b><span lang="EN-US" style="font-family: Arial; layout-grid-mode: line"><font size="3">Mobile 
+Printer</font></span></b><font size="3" face="Arial"><br>
+</font><b><span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">(MW Series)</font></span></b></td>
+</tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoContinue<br>
+</em>(0x40000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">Combines with printing for the following DoPrint( ) so that it is a single print job.</font><font face="Arial" size="3"><br>
+</font> 
+<span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">As a result, multiple labels can be printed together on a single 
+sheet for precut labels.</font></span></td></tr>
+<td rowspan="3" width="104">
+<p align="center"><font size="3" face="Arial">&nbsp;</font><b><span lang="EN-US" style="font-family: Arial; layout-grid-mode: line"><font size="3">Stamp</font></span></b><font size="3" face="Arial"><br>
+</font><b><span lang="EN-US" style="font-family: Arial; layout-grid-mode: line">
+<font size="3">(Stampcreator)</font></span></b></td>
+</tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoStamp<br>
+</em>(0x80)</font></td>
+<td width="386">
+<font face="Arial" size="3">Stamp printing is performed.</font></td></tr>
+<tr>
+<td width="149" align="center"><font face="Arial" size="3"><em>bpoIdLabel<br>
+</em>(0x10000000)</font></td>
+<td width="386">
+<font face="Arial" size="3">Prints an ID label.</font></td></tr>
+</table>
+<p>
+<font face="Arial" size="3">
+<em>Note</em><b>: </b><em>Flags are valid only with those models that support each function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The setting is invalid with models that do not support a function, 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; even if a flag is set.</em> </font> 
+<dl compact><dt>
+    </dt><dd>
+</body>
+</html>

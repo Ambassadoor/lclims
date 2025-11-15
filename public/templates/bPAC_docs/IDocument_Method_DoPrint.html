@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IDocument::DoPrint</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="814">
+  <tr>
+   <td valign="top" width="878">
+      <b><font face="Arial" size="4">VARIANT_BOOL bpac::IDocument::DoPrint 
+      (LONG <em>dwOption</em>, BSTR <em>szOption</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="686">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="686">
+<font face="Arial" size="3">
+<a class="anchor" name="c0be771cda1035a5a019e9b076346531"></a></font><!-- doxytag: member="bpac::IDocument::DoPrint" ref="c0be771cda1035a5a019e9b076346531" args="(LONG dwOption, BSTR szOption)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 689; height: 529">
+
+<p>
+<font face="Arial" size="3">Prints the document</font> <br>
+(<font face="Arial" size="3">This function has been retained to maintain 
+compatibility)</font><p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="562">
+    <tr><td valign="top" width="8"></td><td valign="top" width="67"><font face="Arial" size="3"><em>dwOption</em>&nbsp;</font></td>
+      <td width="531">
+      <font face="Arial" size="3">Print option.<br>
+      Refer to <b><a href="param_printoption.html">bpac::PrintOptionConstants</a></b>.</font></td></tr>
+    <tr><td valign="top" width="8"></td><td valign="top" width="67"><font face="Arial" size="3"><em>szOption</em>&nbsp;</font></td>
+      <td width="531">
+      <font face="Arial" size="3">Print parameters.<br>
+      Specify the parameters for during printing, using a ',' (comma)-separated character string.<br>
+      </font>
+ <table class="arglist" cellspacing="0>" border="1" cellpadding="3" width="538">
+<tr class="argkey">
+<td class="argvalue" width="69"><font face="Arial" size="3">Index</font></td>
+<td class="argvalue" width="69">
+<font face="Arial" size="3">Name</font></td><td class="argvalue" width="378">
+<font face="Arial" size="3">Description</font> </td></tr>
+<tr>
+<td class="argvalue" width="69"><font face="Arial" size="3">0</font></td>
+<td class="argvalue" width="69">
+<font face="Arial" size="3">Name of document to be printed</font></td>
+<td class="argvalue" width="378">
+<font face="Arial" size="3">Specify the document name to be displayed in the 
+corresponding print queue.<br>
+If not specified or '0' is specified, the template name is displayed in the 
+print queue. </font> </td></tr>
+<tr>
+<td class="argvalue" width="69"><font face="Arial" size="3">1</font></td>
+<td class="argvalue" width="69">
+<font face="Arial" size="3">Number of copies</font></td>
+<td class="argvalue" width="378">
+<font face="Arial" size="3">Specify the number of copies.<br>
+If not specified, the number of copies is normally 1.<br>
+For stamps, the setting for the number of copies is invalid.</font> </td></tr>
+</table>
+      <font face="Arial" size="3">
+<em>ex.</em>"MyDoc, 2" : Besides displaying "MyDoc" in the print queue, 2 copies are printed.</font> </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Success or Failure</font></dd></dl>
+<dl class="see" compact><dt><font face="Arial" size="3"><b>Reference:</b></font></dt><dd>
+  <font face="Arial" size="3"><b><a href="IDocument_Method_StartPrint.html">StartPrint()</a></b>,
+  <b><a href="IDocument_Method_PrintOut.html">PrintOut()</a></b>, <b>
+  <a href="IDocument_Method_EndPrint.html">EndPrint()</a></b></font><p>
+</dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

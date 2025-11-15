@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IObject::SetSelection</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="720">
+  <tr>
+   <td valign="top" width="720">
+      <b>
+      <font face="Arial" size="4">VARIANT_BOOL bpac::IObject::SetSelection 
+      (LONG <em>start</em>, LONG <em>end</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="528">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="528">
+<font face="Arial" size="3">
+<a class="anchor" name="0edfd4d5ade48ad1d31c070d874445ea"></a></font><!-- doxytag: member="bpac::IObject::SetSelection" ref="0edfd4d5ade48ad1d31c070d874445ea" args="(LONG start, LONG end)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 607; height: 376">
+
+<p>
+<font face="Arial" size="3">Selects a character substring</font> 
+<p>
+<font face="Arial" size="3">
+Selects the character substring specified by <em>start</em> and <em>end</em>.<br>
+In the initial state, the whole character string is selected.<br>
+This method is applicable to text objects only.</font><p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="520" height="125">
+    <tr><td valign="top" width="8" height="49"></td>
+      <td valign="top" width="79" height="49"><font face="Arial" size="3"><em>start</em>&nbsp;</font></td>
+      <td width="425" height="49" valign="top">
+      <font face="Arial" size="3">Start position of selection.<br>
+      If a value lower than 0 is specified, it becomes 0.</font> </td></tr>
+    <tr><td valign="top" width="8" height="72"></td>
+      <td valign="top" width="79" height="72"><font face="Arial" size="3"><em>end</em>&nbsp;</font></td>
+      <td width="425" height="72">
+      <font face="Arial" size="3">End position of selection.<br>
+      If a value higher than the maintained character count is specified, the selection is until the tail end of the character string.
+      </font> </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Success or Failure</font></dd></dl>
+<dl class="see" compact><dt><font face="Arial" size="3"><b>Reference:</b></font></dt><dd>
+  <font face="Arial" size="3">
+  <b><a href="IObject_Property_SelectionStart.html">
+  <u>SelectionStart</u></a></b>, <b>
+  <a href="IObject_Property_SelectionEnd.html">
+  <u>SelectionEnd</u></a></b></font><p>
+</dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

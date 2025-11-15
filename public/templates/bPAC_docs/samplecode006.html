@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Handling printing completion event & callback</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Handling printing completion event & callback</font><a class="anchor" name="samplecode"> </a></h1>
+<p><font face="Arial" size="3">
+    Event handling is not compatible with VB Script and JScript.<br>Set callback for these languages.<br>JavaScript is not compatible with the event handling and callback settings.
+</font></p>
+
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Sample</span>
+<span class="comment">'</span>
+<span class="keyword">Public</span> <span class="keywordflow">WithEvents</span> doc <span class="keywordflow">As</span> bpac.Document
+
+<span class="keyword">Private Sub</span> doc_Printed(<span class="keywordflow">ByVal</span> status <span class="keywordflow">As</span> <span class="keywordtype">Integer</span>, <span class="keywordflow">ByVal</span> value <span class="keywordflow">As</span> <span class="keywordtype">Object</span>) <span class="keyword">Handles</span> doc.Printed
+    MsgBox (<span class="stringliteral">"Printed event called"</span>)
+<span class="keyword">End Sub</span>
+
+<span class="keyword">Private Sub</span> Print()
+    <span class="keywordflow">Dim</span> path <span class="keywordflow">As</span> String
+    path = <span class="stringliteral">&quot;C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx&quot;</span>
+    
+    doc = CreateObject(<span class="stringliteral">&quot;bpac.Document&quot;</span>)
+    
+    <span class="comment">' Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">&quot;&quot;</span>, bpac.PrintOptionConstants.bpoHalfCut)
+    
+    <span class="comment">' Open template</span>
+    doc.Open(path)
+    
+    <span class="comment">' Adds a print job</span>
+    doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault)
+    
+    <span class="comment">' Print setting end (=Print start)</span>
+    doc.EndPrint()
+    
+    <span class="comment">' Close template</span>
+    doc.Close()    
+<span class="keyword">End Sub</span>
+</font></pre></div>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">Å[VB Script]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Script Sample</span>
+<span class="comment">'</span>
+<span class="keyword">Const</span> path = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+Set doc = CreateObject(<span class="stringliteral">"bpac.Document"</span>)
+
+<span class="keyword">Function</span> Printed(status, value)
+    <span class="keywordflow">If</span> (status = 0) <span class="keywordflow">Then</span>
+        MsgBox (<span class="stringliteral">"Printed!"</span>)
+    <span class="keywordflow">Else</span>
+        MsgBox (<span class="stringliteral">"Error!"</span>)
+    <span class="keywordflow">End If</span>
+<span class="keyword">End Function</span>
+
+<span class="keyword">Sub</span> Print()  
+    <span class="comment">' Open template</span>
+    doc.Open(path)
+    
+    <span class="comment">' Sets callback</span>
+    doc.SetPrintedCallback GetRef(<span class="stringliteral">"Printed"</span>)
+
+    <span class="comment">' Print setting start</span>
+    doc.StartPrint <span class="stringliteral">&quot;&quot;</span>, &amp;h0
+  
+    <span class="comment">' Adds a print job</span>
+    doc.PrintOut 1, &amp;h0
+
+    <span class="comment">' Print setting end (=Print start)</span>
+    doc.EndPrint()
+    
+    <span class="comment">' Close template</span>
+    doc.Close()
+<span class="keyword">End Sub</span>
+</font></pre></div>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[JScript]
+</font></b><font face="Arial" size="3">
+<span class="comment">//</span>
+<span class="comment">// JScript Sample</span>
+<span class="comment">//</span>
+<span class="keywordflow">var</span> path = <span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx"</span>;
+<span class="keywordflow">var</span> doc = <span class="keyword">new</span> ActiveXObject(<span class="stringliteral">"bpac.Document"</span>);
+
+<span class="keyword">function</span> Printed(status, value)
+{
+    <span class="keywordflow">var</span> sh = <span class="keyword">new</span> ActiveXObject(<span class="stringliteral">"WScript.Shell"</span>);
+    <span class="keywordflow">if</span> (status == 0)
+        sh.Popup(<span class="stringliteral">"Printed!"</span>);
+    <span class="keywordflow">else</span>
+        sh.Popup(<span class="stringliteral">"Error!"</span>);
+    sh = null;
+}
+
+<span class="keyword">function</span> Print()
+{  
+    <span class="comment">// Open template</span>
+    doc.Open(path);
+    
+    <span class="comment">// Sets callback</span>
+    doc.SetPrintedCallback(Printed);
+
+    <span class="comment">// Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">&quot;&quot;</span>, 0);
+  
+    <span class="comment">// Adds a print job</span>
+    doc.PrintOut(1, 0);
+
+    <span class="comment">// Print setting end (=Print start)</span>
+    doc.EndPrint();
+    
+    <span class="comment">// Close template</span>
+    doc.Close();
+}
+</font></pre></div>
+</font></pre><pre class="fragment"><b><font face="Arial" size="4"><font color="#008000">[Visual C#]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+<span class="keywordtype">void</span> HandlePrinted(<span class="keywordtype">int</span> status, <span class="keywordtype">object</span> value)
+{
+    Console.WriteLine(<span class="stringliteral">"Printed event called"</span>);
+}
+
+<span class="keywordtype">void</span> Print()
+{
+    string strFilePath = <span class="stringliteral">&quot;C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx&quot;</span>;
+    
+    bpac.DocumentClass doc = <span class="keyword">new</span> bpac.DocumentClass();
+    
+    doc.Printed += <span class="keyword">new</span> bpac.IPrintEvents_PrintedEventHandler(HandlePrinted);
+    
+    <span class="comment">// Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">&quot;&quot;</span>, bpac.PrintOptionConstants.bpoHalfCut);
+    
+    <span class="comment">// Open template</span>
+    doc.Open(strFilePath);
+    
+    <span class="comment">// Adds a print job</span>
+    doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
+    
+    <span class="comment">// Print setting end (=Print start)</span>
+    doc.EndPrint();
+    
+    <span class="comment">// Close template</span>
+    doc.Close();
+}
+</font></pre></div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+<span class="preprocessor">#import "C:\\Program Files\\Common Files\\Brother\\b-PAC\\bpac.dll"</span>
+<span class="preprocessor">using namespace bpac;</span>
+
+IDocumentPtr doc;
+HRESULT hr;
+
+<span class="preprocessor">#define IDC_PRINT_EVENTS_HANDLER (0)</span>
+<span class="preprocessor">#define DISPID_PRINTED           (1)</span>
+
+<span class="comment">// Event sync.</span>
+<span class="keyword">class </span>ATL_NO_VTABLE PrintEvents :
+    <span class="keyword">public</span> CComObjectRootEx&lt;CComSingleThreadModel&gt;,
+    <span class="keyword">public</span> IDispEventImpl&lt;IDC_PRINT_EVENTS_HANDLER, PrintEvents, 
+    &amp;<span class="keyword">__uuidof</span>(bpac::IPrintEvents), &amp;<span class="keyword">__uuidof</span>(bpac::__bpac), 1, 0&gt;
+{
+<span class="keyword">public</span>:
+    PrintEvents() {}
+
+BEGIN_COM_MAP(PrintEvents)
+    COM_INTERFACE_ENTRY_IID(<span class="keyword">__uuidof</span>(bpac::IPrintEvents), PrintEvents)
+END_COM_MAP()
+
+BEGIN_SINK_MAP(PrintEvents)
+    SINK_ENTRY_EX(IDC_PRINT_EVENTS_HANDLER, <span class="keyword">__uuidof</span>(bpac::IPrintEvents), DISPID_PRINTED, OnPrinted)
+END_SINK_MAP()
+
+    <span class="comment">// Printed event handler</span>
+    HRESULT <span class="keyword">_stdcall</span> OnPrinted(LONG status, VARIANT value)
+    {
+        HandlePrinted(status, value);
+        <span class="keywordflow">return</span> S_OK;
+    }
+
+    <span class="comment">// User definition</span>
+    <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandlePrinted(LONG status, VARIANT value) = 0;
+};
+
+<span class="comment">// Event handler implementation</span>
+<span class="keyword">class </span>PrintEventsImpl : <span class="keyword">public</span> PrintEvents
+{
+<span class="keyword">public</span>:
+    <span class="comment">// Implementation</span>
+    <span class="keywordtype">void</span> HandlePrinted(LONG status, VARIANT value)
+    {
+        AfxMessageBox(_T(<span class="stringliteral">"Printed event called."</span>));
+    }
+};
+
+CComObject&lt;PrintEventsImpl&gt;* sink = NULL;
+
+<span class="comment">// Initialization process function</span>
+<span class="keywordtype">void</span> Initialize()
+{
+    <span class="comment">// Declaration required with Visual Studio 2005</span>
+    GUID guid;
+    _pAtlModule = <span class="keyword">new</span> CComModule;
+    ((CComModule*)_pAtlModule)->Init(NULL, theApp.m_hInstance, &guid);
+
+    <span class="comment">// COM initialization</span>
+    CoInitialize(NULL);
+
+    <span class="comment">// Event sync. Creation</span>
+    hr = CComObject&lt;PrintEventsImpl&gt;::CreateInstance(&sink);
+    sink->AddRef();
+    
+    doc = IDocumentPtr(<span class="keyword">__uuidof</span>(bpac::Document));
+    
+    <span class="comment">// Event source and establishment of connection</span>
+    hr = sink->DispEventAdvise(doc);
+}
+
+<span class="keywordtype">void</span> Print()
+{
+    CString path;
+    path = _T(<span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx"</span>);
+    
+    <span class="comment">// Print setting start</span>
+    doc->StartPrint(_bstr_t(_T("")), bpac::bpoDefault);
+
+    <span class="comment">// Open template</span>
+    doc->Open(path.AllocSysString());
+
+    <span class="comment">// Adds a print job</span>
+    doc->PrintOut(1, bpac::bpoDefault);
+
+    <span class="comment">// Print setting end (=Print start)</span>
+    doc->EndPrint();
+    
+    <span class="comment">// Close template</span>
+    doc->Close();
+}    
+
+<span class="comment">// Finishing process</span>
+<span class="keywordtype">void</span> close()
+{
+    <span class="comment">// COM cancellation</span>
+    CoUninitialize();
+    <span class="comment">// Event sync cancellation</span>
+    hr = sink->DispEventUnadvise(doc);
+    sink->Release();
+}
+</font></pre></div> 
+</body>
+</html>

@@ -1,0 +1,1023 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Understanding error codes that appear while debugging</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Understanding error 
+codes that appear while debugging</font></h1>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="84%" height="2547">
+  <tr>
+    <td width="15%" colspan="2" height="16" align="center" bgcolor="#008000"><b>
+    <font color="#FFFFFF" face="Arial" size="3">Error code</font></b></td>
+    <td width="12%" rowspan="2" height="33" align="center" bgcolor="#008000"><b>
+    <font color="#FFFFFF" face="Arial" size="3">Interface</font></b></td>
+    <td width="22%" rowspan="2" height="33" align="center" bgcolor="#008000"><b>
+    <font color="#FFFFFF" face="Arial" size="3">Method</font></b></td>
+    <td width="36%" rowspan="2" height="33" align="center" bgcolor="#008000"><b>
+    <font color="#FFFFFF" face="Arial" size="3">Description</font></b></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center" bgcolor="#008000"><b>
+    <font color="#FFFFFF" face="Arial" size="3">decimal</font></b></td>
+    <td width="8%" height="16" align="center" bgcolor="#008000"><b>
+    <font color="#FFFFFF" face="Arial" size="3">hexadecimal</font></b></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">0</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000000</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;(No Errors)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">1</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000001</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    file is not found</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">2</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000002</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    file cannot be saved</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">3</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000003</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The path of the 
+    specified file is invalid</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">4</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000004</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    file cannot be opened</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">5</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000005</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    value is out of range</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">6</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000006</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    index is incorrect<br>
+    &nbsp;(Starting index is incorrect)<br>
+    &nbsp;(Incorrect object insertion position)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">7</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000007</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    object does not exist<br>
+    &nbsp;(The object with the specified object name does not exist)<br>
+    &nbsp;(Invalid object name was specified)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">8</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000008</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The sheet with 
+    the specified sheet name does not exist</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">9</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000009</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to print</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">10</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000000A</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Any object 
+    doesn't exist</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">11</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000000B</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The currently 
+    specified printer is not supported</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">12</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000000C</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Not supported</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">13</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000000D</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to create 
+    printer DC</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">14</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000000E</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Template file is 
+    not open</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">15</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000000F</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;File type is 
+    incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">16</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000010</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid object 
+    is specified<br>
+    &nbsp;(Invalid object name is specified)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000011</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid type is 
+    specified</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">18</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000012</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid data is 
+    specified</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">19</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000013</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid data 
+    type is specified</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">20</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000014</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Not linked to 
+    the document</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">22</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000016</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Insufficient 
+    memory<br>
+    &nbsp;(Referenced memory is NULL)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">23</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000017</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Non-editable 
+    object</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">24</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000018</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Insufficient 
+    buffer</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">25</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000019</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Referenced 
+    memory is NULL</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">101</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000065</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;No media</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">102</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000066</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;End of media</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">103</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000067</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Tape cutter jam</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">104</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000068</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Weak batteries</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">105</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000069</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Printer is busy
+    <br>
+&nbsp;(while printing or being cleaned)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">106</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000006A</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Turned off</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">107</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000006B</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;High-voltage 
+    adapter</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">108</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000006C</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Replace the 
+    media</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">109</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000006D</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Expansion buffer 
+    full</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">110</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000006E</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Communication 
+    error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">111</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000006F</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Communication 
+    buffer full</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">112</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000070</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Cover open</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">113</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000071</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Cancel key</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">114</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000072</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Media end 
+    detection error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">197</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x000000C5</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Offline</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">198</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x000000C6</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;General error value</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">199</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x000000C7</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid error 
+    value</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">301</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000012D</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The values for 
+    the print parameter and width of tape in the cassette are different</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000012E</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The BMP file for 
+    the print image data is in an unsupported BMP file format.<br>
+&nbsp;(Not two-color data, not Windows bitmap, pixel values arranged from top to 
+    bottom, compressed, image with portrait orientation, etc.)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">303</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000012F</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The print image 
+    data file cannot be opened</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">304</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000130</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Received other 
+    data while waiting to receive the print status notifying that printing is 
+    finished</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">305</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000131</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid 
+    hexadecimal string was entered</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">306</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000132</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Invalid tape 
+    width is specified</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">307</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000133</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The 
+    setup-completed block range was specified</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">308</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000134</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The UID 
+    parameter's value is incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">309</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000135</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The argument's 
+    value is incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">310</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000136</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    value is too large</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">311</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000137</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    initialize the USB driver</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">312</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000138</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;USB connection 
+    error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">313</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000139</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;USB data 
+    transmission error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">314</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000013A</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;USB reception 
+    timeout</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">315</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000013B</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;USB data 
+    reception error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">321</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000141</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The received 
+    data cannot be interpreted</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">322</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000142</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The tag write 
+    range is incorrect<br>
+&nbsp;(The range with the write data size from the initial write block exceeds 
+    the user data range of the tag memory)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">323</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000143</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Open() is not 
+    executed</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">324</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000144</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Incorrect flag 
+    value</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">325</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000145</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Incorrect write 
+    data</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">326</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000146</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Incorrect retry 
+    count</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">327</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000147</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;SZ tape has 
+    not been set</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">328</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000148</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Open() was 
+    called with invalid argument</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">329</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000149</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Specified 
+    printer is not available</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">330</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000014A</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to create 
+    the b-PAC object</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">333</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000014D</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC Method 
+    Save() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">334</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000014E</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC Method 
+    Export() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">335</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000014F</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC 
+    Method GetText() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">336</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000150</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC 
+    Method GetFontInfo() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">337</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000151</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC 
+    Method SetText() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">338</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000152</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC 
+    Method SetFontInfo() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">339</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000153</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC 
+    Method SetBarcodeData() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">340</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000154</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;b-PAC 
+    Method ReplaceImageFile() error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">341</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000155</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The b-PAC object 
+    is not created<br>
+&nbsp;(Open() is not called)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">360</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000168</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    initialize the port</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">361</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000169</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Cannot access 
+    because the port is open</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">362</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000016A</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    communicate with the port</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">363</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000016B</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    deliver data to the port</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">364</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000016C</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failure due to 
+    communication timeout</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">365</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000016D</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed in 
+    receiving data from the port</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">366</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x0000016E</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to close 
+    the port</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">390</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x00000186</font></td>
+    <td width="12%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="22%" height="16" align="center"><font face="Arial" size="3">-</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Internal error</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17039361</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01040001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;Export</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    resolution is incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17170433</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01060001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetImageData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    width is incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17170434</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01060002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetImageData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The specified 
+    height is incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17170435</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01060003</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetImageData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to create 
+    image data</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17170436</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01060004</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetImageData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    convert image data</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17235969</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01070001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetPrinter</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The printer with 
+    the specified printer name does not exist</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17235970</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01070002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetPrinter</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to change 
+    to the printer with the specified printer name</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17367041</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01090001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetMediaById</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The media with 
+    the specified media ID is not supported</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17498113</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x010B0001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;PrintOut</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The number of 
+    copies is incorrect</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17498114</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x010B0002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;PrintOut</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;ImageObject 
+    rendering failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17498115</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x010B0003</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;PrintOut</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to rotate 
+    image</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17498117</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x010B0005</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;PrintOut</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to covert 
+    sheet's resolution</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17760257</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x010F0001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetText</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed in 
+    acquiring text</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17825793</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01100001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetText</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to set 
+    text</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">17956865</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x01120001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Document</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetTextIndex</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    acquire index</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">33619969</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x02010001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Objects</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;Insert</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to create 
+    object to be inserted</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="14" align="center"><font face="Arial" size="3">33619970</font></td>
+    <td width="8%" height="14" align="center"><font face="Arial" size="3">0x02010002</font></td>
+    <td width="12%" height="14"><font face="Arial" size="3">&nbsp;Objects</font></td>
+    <td width="22%" height="14"><font face="Arial" size="3">&nbsp;Insert</font></td>
+    <td width="36%" height="14"><font face="Arial" size="3">&nbsp;Position that 
+    cannot be inserted</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50593793</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03040001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetMediaId</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed in 
+    acquiring tape code</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50593794</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03040002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetMediaId</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to create 
+    a temporary printer object</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50593795</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03040003</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetMediaId</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;The printer is 
+    offline</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50790401</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03070001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;IsMediaIdSupported</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;None of the 
+    currently supported media is present</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50790402</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03070002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;IsMediaIdSupported</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to access 
+    the array</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50790403</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03070003</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;IsMediaIdSupported</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed in 
+    acquiring array's LowerBound</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50790404</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03070004</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;IsMediaIdSupported</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed in 
+    acquiring array's UpperBound</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50790405</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x03070005</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;IsMediaIdSupported</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    release the array</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">50987009</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x030A0001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Printer</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;IsPrinterOnline</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed in 
+    acquiring printer handler</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">285671425</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x11070001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontStrikeout</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to set 
+    Strikeout</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">285802497</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x11090001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontUnderline</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to set 
+    Underline</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302120961</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x12020001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontName</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Incorrect font 
+    name</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302120962</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x12020002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontName</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Font update 
+    failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302252033</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x12040001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontBold</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Font update 
+    failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302383105</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x12060001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontEffect</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Font update 
+    failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302514177</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x12080001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontItalics</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Font update 
+    failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">302645249</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x120A0001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetFontMaxPoint</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Font update 
+    failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">318832641</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x13010001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetAttribute</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">
+    &nbsp;Addition/subtraction is invalid</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial" size="3">318898177</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x13020001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetAttibute</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">
+    &nbsp;Addition/subtraction is invalid</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial">369164289</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x16010001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Image data array 
+    creation failure</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial">369164290</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x16010002</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to access 
+    image data</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial">369164291</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x16010003</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;GetData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failed to 
+    release image data memory</font></td>
+  </tr>
+  <tr>
+    <td width="7%" height="16" align="center"><font face="Arial">369229825</font></td>
+    <td width="8%" height="16" align="center"><font face="Arial" size="3">0x16020001</font></td>
+    <td width="12%" height="16"><font face="Arial" size="3">&nbsp;Object</font></td>
+    <td width="22%" height="16"><font face="Arial" size="3">&nbsp;SetData</font></td>
+    <td width="36%" height="16"><font face="Arial" size="3">&nbsp;Failure in image 
+    switching</font></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+<title>bpac::IDocument::SheetNames</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="477">
+  <tr>
+   <td valign="top" width="743">
+      <b><font face="Arial" size="5">VARIANT bpac::IDocument::SheetNames 
+      [get]</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="525">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="525">
+<font face="Arial" size="3">
+<a class="anchor" name="5af90c2fc77e93e70b6557637d6aa71a"></a></font><!-- doxytag: member="bpac::IDocument::SheetNames" ref="5af90c2fc77e93e70b6557637d6aa71a" args="" -->
+<div class="memitem">
+<div class="memdoc" style="width: 499; height: 292">
+
+<p>
+<font size="3" face="Arial">Sheet name enumerator</font><font size="3"> <code>
+<font face="Arial">(VT_VARIANT | VT_ARRAY)</font></code></font><font size="3" face="Arial">
+</font> 
+<p>
+<font face="Arial" size="3">Acquires the sheet names of all sheets in the template through character string array.</font><p>
+<div class="fragment" style="width: 622; height: 178"><pre class="fragment"><font face="Arial" size="3">       <span class="comment">//</span>
+       <span class="comment">// C# sample</span>
+       <span class="comment">//</span>
+       <span class="keywordtype">object</span>[] sheetNames = doc.SheetNames as <span class="keywordtype">object</span>[];
+       <span class="keywordflow">foreach</span> (<span class="keywordtype">object</span> sheetName <span class="keywordflow">in</span> sheetNames)
+       {
+           doc.CurrentSheet = strSheetName as string;
+       }
+</font></pre></div> <p>
+<font face="Arial" size="3"><b><a href="samplecode002.html">- Sample for other languages</a></b>
+</font> <dl class="see" compact><dt><font face="Arial" size="3"><b>Reference:</b></font></dt><dd>
+  <b><font face="Arial" size="3">
+  <a href="IDocument_Property_CurrentSheet.html">CurrentSheet</a></font></b><p>
+</dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

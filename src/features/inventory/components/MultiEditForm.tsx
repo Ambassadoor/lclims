@@ -11,11 +11,16 @@ import {
   MenuItem,
   LinearProgress,
   IconButton,
+  Alert,
+  Snackbar,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import PrintIcon from '@mui/icons-material/Print';
 import { apiClient } from '@/lib/api/client';
+import { usePrintLabel } from '@/features/hardware/hooks/usePrintLabel';
+import { formatChemicalLabelData, getDefaultChemicalTemplate } from '@/features/hardware/utils/labelFormatter';
 
 interface Chemical {
   ID: string;
@@ -51,6 +56,13 @@ export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) 
   const [chemicals, setChemicals] = useState<Chemical[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [printSuccess, setPrintSuccess] = useState(false);
+  
+  const { printLabel, isPrinting, error: printError } = usePrintLabel({
+    onSuccess: () => {
+      setPrintSuccess(true);
+    },
+  });
 
   useEffect(() => {
     const fetchChemicals = async () => {
@@ -93,6 +105,17 @@ export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) 
   const handleSave = () => {
     console.log('Saving chemical:', currentChemical);
     // TODO: PUT request to update chemical
+  };
+
+  const handlePrintLabel = async () => {
+    if (!currentChemical) return;
+
+    const labelData = formatChemicalLabelData(currentChemical);
+    await printLabel({
+      template: getDefaultChemicalTemplate(),
+      data: labelData,
+      copies: 1,
+    });
   };
 
   const handleSaveAndNext = () => {
@@ -473,6 +496,20 @@ export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) 
           />
         </Box>
 
+        {/* Print Button (for readOnly/view mode) */}
+        {readOnly && (
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+            <Button
+              variant="contained"
+              startIcon={<PrintIcon />}
+              onClick={handlePrintLabel}
+              disabled={isPrinting}
+            >
+              {isPrinting ? 'Printing...' : 'Print Label'}
+            </Button>
+          </Box>
+        )}
+
         {/* Navigation Buttons */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
           <Button
@@ -503,6 +540,29 @@ export default function MultiEditForm({ readOnly = false }: MultiEditFormProps) 
           </Button>
         </Box>
       </Paper>
+
+      {/* Success/Error Snackbars */}
+      <Snackbar
+        open={printSuccess}
+        autoHideDuration={3000}
+        onClose={() => setPrintSuccess(false)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert severity="success" onClose={() => setPrintSuccess(false)}>
+          Label printed successfully!
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={!!printError}
+        autoHideDuration={5000}
+        onClose={() => {}}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert severity="error">
+          Print failed: {printError}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

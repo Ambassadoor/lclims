@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IDocument::Export</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="797">
+  <tr>
+   <td valign="top" width="843">
+      <b><font face="Arial" size="4">VARIANT_BOOL bpac::IDocument::Export (<a href="param_exporttype.html">ExportType</a>
+      <em>type</em>, BSTR <em>filePath</em>, LONG <em>dpi</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="666">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="666">
+<font face="Arial" size="3">
+<a class="anchor" name="27a3d11f6378c5455846bd39ce86e1ac"></a></font><!-- doxytag: member="bpac::IDocument::Export" ref="27a3d11f6378c5455846bd39ce86e1ac" args="(ExportType type, BSTR filePath, LONG dpi)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 690; height: 305">
+
+<p>
+<font face="Arial" size="3">Outputs the file in the specified format</font> 
+<p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="584" height="205">
+    <tr><td valign="top" width="8" height="74"></td>
+      <td valign="top" width="82" height="74"><font face="Arial" size="3"><em>type</em>&nbsp;</font></td>
+      <td width="486" height="74" valign="top">
+      <font face="Arial" size="3"><a href="param_exporttype.html">The format of the file to be exported.</a><br>
+      It is possible to specify <b>bexOpened</b>, <b>bexLbx</b>, <b>bexLbl</b>, <b>bexLbi</b>, <b>bexBmp</b>, and <b>bexPAF</b>. 
+      </font> </td></tr>
+    <tr><td valign="top" width="8" height="34"></td>
+      <td valign="top" width="82" height="34"><font face="Arial" size="3"><em>filePath</em>&nbsp;</font></td>
+      <td width="486" height="34" valign="top">
+      <font face="Arial" size="3">Path (UNC) of the exported file.<br>
+      Can be specified as<br>
+      \\your_server\your_folder\your_file<br>
+      for a file on a file-sharing server<br>
+&nbsp;</font></td></tr>
+    <tr><td valign="top" width="8" height="91"></td>
+      <td valign="top" width="82" height="91"><font face="Arial" size="3"><em>dpi</em>&nbsp;</font></td>
+      <td width="486" height="91">
+      <font face="Arial" size="3">Resolution used for the conversion into bitmap format.<br>
+      Specifies the resolution of the output device. <br>
+      (Screen: 72 or 96; output to SC-2000: 600)<br>
+      If a value of 0 is specified, the printer resolution is used.<em><br>
+      fileType</em> is only valid for LBI format and BMP format.  
+      </font> </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Success or Failure</font></dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>API compatibility chart for b-PAC 2.0 and b-PAC 3.4</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font size="5" face="Arial">API 
+compatibility chart for b-PAC 2.0 and b-PAC 3.4</font></h1>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="81%" height="604">
+  <tr>
+    <td width="20%" bgcolor="#008000" height="16"><b>
+    <font color="#FFFFFF" face="Arial" size="3">&nbsp;b-PAC2.0</font></b></td>
+    <td width="80%" bgcolor="#008000" height="16"><b>
+    <font color="#FFFFFF" face="Arial" size="3">&nbsp;b-PAC3.4</font></b></td>
+  </tr>
+  <tr>
+    <td width="20%" height="16"><font face="Arial" size="3">&nbsp;Open()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_Open.html">IDocument::Open()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="16"><font face="Arial" size="3">&nbsp;Close()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_Close.html">IDocument::Close()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" rowspan="2" height="33"><font face="Arial" size="3">&nbsp;Save()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_Save.html">IDocument::Save()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_SaveAs.html">IDocument::SaveAs()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="16"><font face="Arial" size="3">&nbsp;Export()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_Export.html">IDocument::Export()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" rowspan="3" height="50"><font face="Arial" size="3">&nbsp;GetSheetSize()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Property_Length.html">IDocument::Length
+    </a></font> </td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Property_Width.html">IDocument::Width</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetMediaName.html">IDocument::GetMediaName()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="16"><font face="Arial" size="3">&nbsp;GetTextCount()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetTextCount.html">IDocument::GetTextCount()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="16"><font face="Arial" size="3">&nbsp;GetTextIndex ()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetTextIndex.html">IDocument::GetTextIndex ()</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="32" rowspan="2"><font face="Arial" size="3">&nbsp;GetText()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetText.html">IDocument::GetText()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetObject.html">IDocument::GetObject(objName)</a>.<a href="IObject_Property_Text.html">Text</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="121" rowspan="8"><font face="Arial" size="3">&nbsp;GetFontInfo()</font></td>
+    <td width="80%" height="9"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontName.html">IObject::GetFontName()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontBold.html">IObject::GetFontBold()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontItalics.html">IObject::GetFontItalics()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontUnderline.html">IObject::GetFontUnderline()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontStrikeout.html">IObject::GetFontStrikeout()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontMaxPoint.html">IObject::GetFontMaxPoint()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_GetFontEffect.html">IObject::GetFontEffect()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Property_Orientation.html">IObject::Orientation</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="32" rowspan="2"><font face="Arial" size="3">&nbsp;SetText()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_SetText.html">IDocument::SetText()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetObject.html">IDocument::GetObject(objName)</a>.<a href="IObject_Property_Text.html">Text</a> = strText</font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="128" rowspan="8"><font face="Arial" size="3">&nbsp;SetFontInfo()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontName.html">IObject::SetFontName()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontBold.html">IObject::SetFontBold()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontItalics.html">IObject::SetFontItalics()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontUnderline.html">IObject::SetFontUnderline()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontStrikeout.html">IObject::SetFontStrikeout()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontMaxPoint.html">IObject::SetFontMaxPoint()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetFontEffect.html">IObject::SetFontEffect()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Property_Orientation.html">IObject::Orientation</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="32" rowspan="2"><font face="Arial" size="3">&nbsp;SetBarcodeData()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_SetBarcodeData.html">IDocument::SetBarcodeData()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IDocument_Method_GetObject.html">IDocument::GetObject(objName)</a>.<a href="IObject_Method_SetData.html">SetData(ObjectType::bobBarcode, 
+    strBarcode)</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="16"><font face="Arial" size="3">&nbsp;ReplaceImageFile()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;<a href="IObject_Method_SetData.html">IObject::SetData</a></font></td>
+  </tr>
+  <tr>
+    <td width="20%" height="32" rowspan="2"><font face="Arial" size="3">&nbsp;DoPrint()</font></td>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;1) <a href="IDocument_Method_SetPrinter.html">IDocument::SetPrinter</a><br>
+    &nbsp;2) <a href="IDocument_Method_SetMediaByName.html">IDocument::SetMediaByName()</a> or
+    <a href="IDocument_Method_SetMediaById.html">IDocument::SetMediaById</a><br>
+    &nbsp;3) <a href="IDocument_Method_StartPrint.html">IDocument::StartPrint()</a><br>
+    &nbsp;4) <a href="IDocument_Method_PrintOut.html">IDocument::PrintOut()</a><br>
+    &nbsp;5) <a href="IDocument_Method_EndPrint.html">IDocument::EndPrint()</a></font></td>
+  </tr>
+  <tr>
+    <td width="80%" height="16"><font face="Arial" size="3">&nbsp;1) <a href="IDocument_Method_DoPrint.html">IDocument::DoPrint()</a></font></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

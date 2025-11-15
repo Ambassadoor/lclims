@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>GetFontInfo() Sample (Visual Basic)</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">GetFontInfo() Sample 
+(Visual Basic)</font></h1>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' b-PAC 2.0 Sample</span>
+<span class="comment">'</span>
+...
+    Dim fontInfo As String
+    Dim token() As String
+    Dim fontName As String
+    Dim orientation As String
+    Dim fontBold As String
+    Dim fontItalic As String
+    Dim fontUnderline As String
+    Dim fontStrikeout As String
+    Dim fontMaxPoint As String
+    Dim fontEffect As String
+    
+    objDoc.GetFontInfo 0, fontInfo
+    token = Split(fontInfo, ",")
+    fontName = token(0)
+    orientation = token(1)
+    fontBold = token(2)
+    fontItalic = token(3)
+    fontUnderline = token(4)
+    fontStrikeout = token(5)
+    fontMaxPoint = token(6)
+    fontEffect = token(7)
+...
+</font></pre></div><p>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">'</span>
+<span class="comment">' b-PAC 3.4 Sample</span>
+<span class="comment">'</span>
+...
+    Dim obj As bpac.Object
+    Dim fontName As String
+    Dim orientation As Integer
+    Dim fontBold As Boolean
+    Dim fontItalic As Boolean
+    Dim fontUnderline As Boolean
+    Dim fontStrikeout As Boolean
+    Dim fontMaxPoint As Integer
+    Dim fontEffect As bpac.fontEffect
+        
+    Set obj = objDoc.GetObject("Text01")
+    fontName = obj.GetFontName()
+    orientation = obj.orientation
+    fontBold = obj.GetFontBold
+    fontItalic = obj.GetFontItalics
+    fontUnderline = obj.GetFontUnderline
+    fontStrikeout = obj.GetFontStrikeout
+    fontMaxPoint = obj.GetFontMaxPoint
+    fontEffect = obj.GetFontEffect
+...
+</font></pre></div>
+</body>
+</html>

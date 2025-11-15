@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Program Redistribution</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Program 
+Redistribution</font></h1><font face="Arial" size="3">&nbsp;When redistributing 
+programs created using the Brother b-PAC 3.4 SDK, the following components and files 
+must be installed on the client computer where the redistributed program is 
+installed.<br>
+ &nbsp;The Brother b-PAC SDK itself, cannot be redistributed.<br>
+</font>
+<p>
+<ol>
+<li>
+<font face="Arial" size="3">
+<b>b-PAC component</b></font><p>
+<font face="Arial" size="3">
+<b>a.&nbsp;To install only the component onto a client PC</b><br>
+&nbsp;&nbsp;Use the b-PAC3.4 client 
+component downloaded from the b-PAC3.4 download site.<br>
+&nbsp;&nbsp;For detailed operating instructions on the client component, refer to the 
+b-PAC3.4 download site.</font></p>
+<p>
+<font face="Arial" size="3"><b>b. If an installer development environment such as Visual Studio and InstallShield is being used to create an installer for the created application</b><br>
+&nbsp;&nbsp;Add the following files to the installer project.<br>
+<br>
+&nbsp;&nbsp;For the 32-bit version of b-PAC) <br>
+&nbsp;&nbsp;Åï Microsoft_VC142_MFC_x86.msm, Microsoft_VC142_CRT_x86.msm<br>
+<br>
+&nbsp;&nbsp;For the 64-bit version of b-PAC) <br>
+&nbsp;&nbsp;Åï Microsoft_VC142_MFC_x64.msm, Microsoft_VC142_CRT_x64.msm, Microsoft_VC110_CRT_x64.msm<br>
+<br>
+&nbsp;&nbsp;Åï &quot;bPAC3.msm/bPAC3_64.msm&quot; from the Redist folder of the application folder<br>
+&nbsp;&nbsp;With &quot;bPAC3.msm/bPAC3_64.msm&quot;, the component can be used with multiple projects, and the 
+registry and type library of the component are also registered. <br>
+&nbsp;&nbsp;For details on the procedure to add it, refer to the following page.<br>
+ &nbsp;&nbsp;&nbsp; <b><a href="http://msdn2.microsoft.com/en-us/library/8x727h8b(VS.80).aspx" target="blank">http://msdn2.microsoft.com/en-us/library/8x727h8b(VS.80).aspx</a></b>
+<br>
+<br>
+<font face="Arial" size="3"><b>c.&nbsp;If a merge module is not supported in the development environment being used to 
+create an installer for your application</b><br>
+&nbsp;&nbsp;Use &quot;bPAC3CCISetup.msi/bPAC3_64CCISetup.msi&quot; from the Redist folder in the application folder.<br>
+Å</font></li>
+<li>
+<font face="Arial" size="3">
+<b>Printer driver of target printer </b> <br>
+ To set up a target printer, run the driver installer from the P-touch Editor CD-ROM, or download the correct driver from the Brother support website (<b><a href="https://support.brother.com/">https://support.brother.com/</a></b>).<br>
+ If you have already installed the printer driver, you do not need to install it again.</font><p>
+</li>
+<li>
+<font face="Arial" size="3">
+<b>Template files </b>&nbsp;<br>
+ Since b-PAC refers to the templates, the templates created using P-touch Editor 
+are needed. <br>
+The templates can even be stored on a file sharing server.<br>
+ In addition, if the target driver is installed and the template files are 
+available, P-touch Editor is not needed to run b-PAC.<br>
+For details, refer to <b><a href="template001.html">&quot;What are template files?&quot;</a></b>.</font></li>
+</ol>
+</body>
+</html>

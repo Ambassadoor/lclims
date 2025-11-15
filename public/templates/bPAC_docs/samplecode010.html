@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Printer online check</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Printer online check</font><a class="anchor" name="samplecode"><font color="#FF0000">
+</font> </a></h1>
+
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Sample</span>
+<span class="comment">'</span>
+    <span class="keywordflow">Dim</span> doc <span class="keywordflow">As</span> bpac.DocumentClass = <span class="keyword">New</span> bpac.DocumentClass
+
+    <span class="comment">' Acquire the printer list</span>
+    <span class="keywordflow">Dim</span> printers() <span class="keywordflow">As</span> Object = doc.Printer.GetInstalledPrinters()
+    
+    <span class="comment">' Acquire the printer name</span>
+    <span class="keywordflow">Dim</span> InstalledPrinterName <span class="keywordflow">As</span> String = printer(0).ToString
+    <span class="comment">' Dim InstalledPrinterName As String = doc.GetPrinterName</span>
+    PrinterName.Text = InstalledPrinterName
+    
+    <span class="comment">' Check that the printer is online</span>
+    <span class="keywordflow">If</span> doc.Printer.IsPrinterOnline(InstalledPrinterName) <span class="keywordflow">Then</span>
+       Status.Text = <span class="stringliteral">&quot;Online&quot;</span>
+    <span class="keywordflow">Else</span>
+       Status.Text = <span class="stringliteral">&quot;Offline&quot;</span>
+    <span class="keywordflow">End If</span>
+    </font></pre>
+  <div dir="ltr">
+    <pre class="fragment"><b><font face="Arial" size="4"><font color="#008000">[Visual C#]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+    bpac.DocumentClass doc = <span class="keyword">new</span> DocumentClass();
+    
+    <span class="comment">// Acquire the printer list</span>
+    object[] printers = (object[])doc.Printer.GetInstalledPrinters();
+    
+    <span class="comment">// Acquire the printer name
+</span>    <span class="comment">// string printerName = doc.GetPrinterName();
+</span>    string printerName = printers[0]. ToString();
+    name.Text = printerName;
+    
+    <span class="comment">// Check that the printer is online</span>
+    <span class="keywordflow">if</span> (doc.Printer.IsPrinterOnline(printerName)) {
+       status.Text = <span class="stringliteral">&quot;Online&quot;</span>;
+    }
+    <span class="keywordflow">else</span> {
+       status.Text = <span class="stringliteral">&quot;Offline&quot;</span>;
+    }
+</font></pre>
+  </div>
+</div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+    IDocumentPtr pObjDoc(__uuidof(Document));
+    
+    <span class="comment">// Acquire the printer list</span>
+    _variant_t var = pObjDoc-&gt;GetPrinter()-&gt;GetInstalledPrinters();
+    
+    <span class="comment">// Acquire the printer name
+</span>    _bstr_t bsPrinterName;
+    <span class="keywordflow">if</span> (var.vt == (VT_VARIANT | VT_ARRAY)) {
+       VARIANT *pData = NULL;
+       HRESULT hr = ::SafeArrayAccessData(var.parray, reinterpret_cast&lt;void**&gt;(&amp;pData));
+       <span class="keywordflow">if</span> (SUCCEEDED(hr)) {
+           LONG lBound;
+           LONG uBound;
+
+           SafeArrayGetLBound(var.parray, 1, &amp;lBound);
+           SafeArrayGetUBound(var.parray, 1, &amp;uBound);
+           <span class="comment">/* for (int i = lBound; i&lt;= uBound; ++i) {
+           } */
+</span>       <span class="comment">// Acquire the name of the printer at the beginning of the list
+</span>       bsPrinterName = bData[0].bstrVal;
+
+       ::SafeArrayUnacceddData(var.parray);
+       }
+       GetDlgItem(IDC_STA_NAME)-&gt;SetWindowText(bsPrinterName);
+    
+    <span class="comment">   // Check that the printer is online</span>
+    <span class="keywordflow">   if</span> (pObjDoc-&gt;GetPrinter()-&gt;IsPrinterOnline(bsPrinterName)) {
+          GetDlgItem(IDC_STA_STATUS)-&gt;SetWindowText(_T(<span class="stringliteral">&quot;Online&quot;</span>));
+       }
+    <span class="keywordflow">   else</span> {
+          GetDlgItem(IDC_STA_STATUS)-&gt;SetWindowText(_T(<span class="stringliteral">&quot;Offline&quot;</span>));
+       }
+    }
+</font></pre></div> 
+</body>
+</html>

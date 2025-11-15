@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IDocument::SetBarcodeData</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="813">
+  <tr>
+   <td valign="top" width="813">
+      <b><font face="Arial" size="4">VARIANT_BOOL 
+      bpac::IDocument::SetBarcodeData (LONG <em>index</em>, BSTR <em>barcodeData</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="636">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="636">
+<font face="Arial" size="3">
+<a class="anchor" name="b74fb31108b7c02e1a58d9e53c17e254"></a></font><!-- doxytag: member="bpac::IDocument::SetBarcodeData" ref="b74fb31108b7c02e1a58d9e53c17e254" args="(LONG index, BSTR barcodeData)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 618; height: 867">
+
+<p>
+<font face="Arial" size="3">Sets the barcode data</font><p>
+<font face="Arial" size="3">Sets/updates the barcode data for the specified barcode.</font><p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="486">
+    <tr><td valign="top" width="8"></td><td valign="top" width="124"><font face="Arial" size="3"><em>index</em>&nbsp;</font></td>
+      <td width="346">
+      <font face="Arial" size="3">Barcode data index</font></td></tr>
+    <tr><td valign="top" width="8"></td><td valign="top" width="124"><font face="Arial" size="3"><em>barcodeData</em>&nbsp;</font></td>
+      <td width="346">
+      <font face="Arial" size="3">Character string representing the barcode</font></td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Success or Failure</font></dd></dl>
+<font face="Arial" size="3">
+<em>index:</em></font> <div style="margin-left:1em"> 
+  <font face="Arial" size="3">For the rules on the indexing of barcode objects, refer to <b><a href="template004.html#barcode"><u>Barcode Object</u></a></b>. 
+  </font> </div> <font face="Arial" size="3"> <br>
+ <em>barcodeData:</em></font> <div style="margin-left:1em"> 
+  <font face="Arial" size="3"><b>only when the barcode is CODE128/EAN128<br>
+  </b>Specify "\a" if FNC1 is to be inserted into the data.<br>
+  For example, for setting "1234"+FNC1+"567"+FNC1, express it as shown below.</font> <div class="fragment"><pre class="fragment"><font face="Arial" size="3">ObjDoc.SetBarcodeData 0, <span class="stringliteral">"1234\a567\a"</span> (For VBS)
+</font></pre></div> <font face="Arial" size="3">For VC, it becomes "\\a".</font><p> <font face="Arial" size="3">The substitution rules for the control codes are as shown below.</font></p>
+ <div style="margin-top:0.5em;margin-left:2em;margin-bottom:0.5em"> <table border="0" cellspacing="0" cellpadding="2">
+<tr>
+<td width="50"></td><td width="100"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="100"></td></tr>
+<tr>
+<td><font face="Arial" size="3">FNC1</font></td><td>
+<font face="Arial" size="3">"\a"</font></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><font face="Arial" size="3">FNC2</font></td><td>
+<font face="Arial" size="3">"\b"</font></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><font face="Arial" size="3">FNC3</font></td><td>
+<font face="Arial" size="3">"\c"</font></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><font face="Arial" size="3">FNC4</font></td><td>
+<font face="Arial" size="3">"\d"</font></td><td></td><td></td><td></td><td></td></tr>
+</table>
+   <font face="Arial" size="3">
+<br>
+   </font>
+ <table border="0" cellspacing="0" cellpadding="2">
+<tr>
+<td width="50"></td><td width="100"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="100"></td></tr>
+<tr>
+<td><font face="Arial" size="3">NUL</font></td><td>
+<font face="Arial" size="3">"\0"</font></td><td>
+<font face="Arial" size="3">VT</font></td><td><font face="Arial" size="3">"\B"</font></td><td>
+<font face="Arial" size="3">SYN</font></td><td>
+<font face="Arial" size="3">"\M" </font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">SOH</font></td><td>
+<font face="Arial" size="3">"\1"</font></td><td>
+<font face="Arial" size="3">FF</font></td><td><font face="Arial" size="3">"\C"</font></td><td>
+<font face="Arial" size="3">ETB</font></td><td>
+<font face="Arial" size="3">"\N" </font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">STX</font></td><td>
+<font face="Arial" size="3">"\2"</font></td><td>
+<font face="Arial" size="3">CR</font></td><td><font face="Arial" size="3">"\D"</font></td><td>
+<font face="Arial" size="3">CAN</font></td><td>
+<font face="Arial" size="3">"\O" </font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">ETX</font></td><td>
+<font face="Arial" size="3">"\3"</font></td><td>
+<font face="Arial" size="3">SO</font></td><td><font face="Arial" size="3">"\E"</font></td><td>
+<font face="Arial" size="3">EM</font></td><td><font face="Arial" size="3">"\P"
+</font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">EOT</font></td><td>
+<font face="Arial" size="3">"\4"</font></td><td>
+<font face="Arial" size="3">SI</font></td><td><font face="Arial" size="3">"\F"</font></td><td>
+<font face="Arial" size="3">SUB</font></td><td>
+<font face="Arial" size="3">"\Q" </font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">ENQ</font></td><td>
+<font face="Arial" size="3">"\5"</font></td><td>
+<font face="Arial" size="3">DLE</font></td><td>
+<font face="Arial" size="3">"\G"</font></td><td>
+<font face="Arial" size="3">ESC</font></td><td>
+<font face="Arial" size="3">"\R" </font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">ACK</font></td><td>
+<font face="Arial" size="3">"\6"</font></td><td>
+<font face="Arial" size="3">DC1</font></td><td>
+<font face="Arial" size="3">"\H"</font></td><td>
+<font face="Arial" size="3">FS</font></td><td><font face="Arial" size="3">"\S"
+</font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">BEL</font></td><td>
+<font face="Arial" size="3">"\7"</font></td><td>
+<font face="Arial" size="3">DC2</font></td><td>
+<font face="Arial" size="3">"\I"</font></td><td>
+<font face="Arial" size="3">GS</font></td><td><font face="Arial" size="3">"\T"
+</font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">BS</font></td><td>
+<font face="Arial" size="3">"\8"</font></td><td>
+<font face="Arial" size="3">DC3</font></td><td>
+<font face="Arial" size="3">"\J"</font></td><td>
+<font face="Arial" size="3">RS</font></td><td><font face="Arial" size="3">"\U"
+</font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">HT</font></td><td>
+<font face="Arial" size="3">"\9"</font></td><td>
+<font face="Arial" size="3">DC4</font></td><td>
+<font face="Arial" size="3">"\K"</font></td><td>
+<font face="Arial" size="3">US</font></td><td><font face="Arial" size="3">"\V"
+</font> </td></tr>
+<tr>
+<td><font face="Arial" size="3">LF</font></td><td>
+<font face="Arial" size="3">"\A"</font></td><td>
+<font face="Arial" size="3">NAC</font></td><td>
+<font face="Arial" size="3">"\L"</font></td><td>
+<font face="Arial" size="3">DEL</font></td><td>
+<font face="Arial" size="3">"\W" </font> </td></tr>
+</table>
+</div> <font face="Arial" size="3"></font> </div> 
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

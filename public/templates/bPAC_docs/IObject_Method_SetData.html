@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IObject::SetData</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="764">
+  <tr>
+   <td valign="top" width="764">
+      <b><font face="Arial" size="4">VARIANT_BOOL bpac::IObject::SetData 
+      (LONG <em>kind</em>, VARIANT <em>data</em>, VARIANT <em>param</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="601">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="601">
+<font face="Arial" size="3">
+<a class="anchor" name="f4b0b942c8d87a8467bae83a8d72dad7"></a></font><!-- doxytag: member="bpac::IObject::SetData" ref="f4b0b942c8d87a8467bae83a8d72dad7" args="(LONG kind, VARIANT data, VARIANT param)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 722; height: 608">
+
+<p>
+<font face="Arial" size="3">Sets the object-specific data</font> 
+<p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="608" height="249">
+    <tr><td valign="top" width="8" height="94"></td>
+      <td valign="top" width="56" height="94"><font face="Arial" size="3"><em>kind</em>&nbsp;</font></td>
+      <td width="536" height="94">
+      <font face="Arial" size="3">Data kind.<br>
+      <b>1.
+ Image object</b><br>
+ 0:Replace the image of image object.<br>
+      <b>2.
+ Date and time object</b><br>
+ 0:Set the date and time.</font></td></tr>
+    <tr><td valign="top" width="8" height="130"></td>
+      <td valign="top" width="56" height="130"><font face="Arial" size="3"><em>data</em>&nbsp;</font></td>
+      <td width="536" height="130">
+      <font face="Arial" size="3">Object-specific data to be set.<br>
+ <b>1. Image object</b><br>
+      When <em>kind</em> is 0, it shows the path of the image data to be replaced.<br>
+      The supported file formats are BMP, non-compressed TIFF, WMF, EMF, ICO, JPEG, DIB, GIF, and PNG.<br>
+ <b>2. Date and time object</b><br>
+ When <em>kind</em> is 0, sets the date or time.</font> </td></tr>
+    <tr><td valign="top" width="8" height="19"></td>
+      <td valign="top" width="56" height="19"><font face="Arial" size="3"><em>param</em>&nbsp;</font></td>
+      <td width="536" height="19">
+      <font face="Arial" size="3">Object-specific data parameter to be set.</font> </td></tr>
+  </table>
+</dl>
+<p>
+<table class="arglist" cellspacing="0>" border="1" cellpadding="3" height="174" style="border-collapse: collapse" bordercolor="#111111" bordercolordark="#C0C0C0" width="577">
+<tr class="argkey">
+<td class="argkey" height="32" width="80"><font face="Arial" size="3">Object type</font> </td>
+<td class="argkey" colspan="2>" height="32" width="79">
+<font face="Arial" size="3"><em>kind</em> </font>  </td>
+<td class="argkey" height="32" width="113">
+<font face="Arial" size="3">data </font> </td>
+<td class="argkey" colspan="2>" height="32" width="276">
+<font face="Arial" size="3">param </font>  </td></tr>
+<tr class="argvalue">
+<td class="argvalue" rowspan="2>" height="81" width="80"><font face="Arial" size="3">Image</font> </td>
+<td class="argvalue" rowspan="2>" height="81" width="8">
+<font face="Arial" size="3">0 </font> </td>
+<td class="argvalue" rowspan="2>" height="81" width="64">
+<font face="Arial" size="3">TEXT </font> </td>
+<td class="argvalue" rowspan="2>" height="81" width="113">
+<font face="Arial" size="3">Image file name</font> </td>
+<td class="argvalue" height="32" width="39">
+<font face="Arial" size="3">0 </font> </td>
+<td class="argvalue" height="32" width="230">
+<font face="Arial" size="3">Adjustable to original image size.</font>  </td></tr>
+<tr>
+<td height="42" width="39" bordercolordark="#C0C0C0" bordercolorlight="#C0C0C0"><font face="Arial" size="3">4 </font> </td>
+<td height="42" width="230" bordercolordark="#C0C0C0" bordercolorlight="#C0C0C0">
+<font face="Arial" size="3">Maintains the vertical-horizontal aspect ratio of the image to be replaced.</font>  </td></tr>
+<tr class="argvalue">
+<td class="argvalue" rowspan="1>" height="41" width="80"><font face="Arial" size="3">Date and time</font> </td>
+<td class="argvalue" rowspan="1>" height="41" width="8">
+<font face="Arial" size="3">0 </font> </td>
+<td class="argvalue" rowspan="1>" height="41" width="64">
+<font face="Arial" size="3">DateTime </font> </td>
+<td class="argvalue" rowspan="1>" height="41" width="113">
+<font face="Arial" size="3">DateTime object</font> </td>
+<td class="argvalue" rowspan="1>" height="41" width="39">
+<font face="Arial" size="3">NULL </font> </td>
+<td class="argvalue" rowspan="1>" height="41" width="230">
+<font face="Arial" size="3">No argument</font>  </td></tr>
+</table>
+<p>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Success or Failure</font></dd></dl>
+<dl class="see" compact><dt><font face="Arial" size="3"><b>Reference:</b></font></dt><dd>
+  <b>
+  <font face="Arial" size="3"><a href="IObject_Method_GetData.html">GetData()</a></font></b><p>
+</dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

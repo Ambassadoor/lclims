@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Acquire the media loaded in the printer</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Acquire the media loaded in the printer</font><a class="anchor" name="samplecode"><font color="#FF0000">
+</font> </a></h1>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Sample</span>
+<span class="comment">'</span>
+...
+    doc.Open (filename)  
+    MediaName1 = doc.GetMediaName
+    MediaName2 = doc.Printer.GetMediaName
+    message = <span class="stringliteral">"media at LBX: " </span>&amp; MediaName1 &amp; vbcr &amp; <span class="stringliteral">"media in Printer: "</span> & MediaName2
+...
+</font></pre></div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4"><font color="#008000">[Visual C#]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+...
+    doc.Open (filename);  
+    string MediaName1 = doc.GetMediaName();
+    string MediaName2 = doc.Printer.GetMediaName();
+    string message = <span class="stringliteral">"media at LBX: " </span>+ MediaName1 + <span class="stringliteral">"\nmedia in Printer: "</span> + MediaName2
+...
+</font></pre></div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+...
+    pObjDoc-&gt;Open (filename.AllocSysString());  
+    cstring MediaName1 = pObjDoc-&gt;GetMediaName();
+    cstring MediaName2 = pObjDoc-&gt;Printer-&gt;GetMediaName();
+    CString message = <span class="stringliteral">"media at LBX: " </span>+ MediaName1 + <span class="stringliteral">"\nmedia in Printer: "</span> + MediaName2
+...
+</font></pre></div>
+</body>
+</html>

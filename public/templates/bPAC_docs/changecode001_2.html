@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Print Sample (Visual C#)</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left">Print Sample (Visual C#)</h1>
+<div class="fragment"><pre class="fragment"><font face="Geneva, Arial, Helvetica, sans-serif" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 2.0 Sample</span>
+<span class="comment">//</span>
+...
+    <span class="comment">//</span>
+    <span class="comment">// Printer      :   Brother PT-9500PC</span>
+    <span class="comment">// TemplateFile :   C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx</span>
+    <span class="comment">//</span>
+    <span class="keywordtype">string</span> templateFile = <span class="stringliteral">@"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>;
+    BrssCom.Document objDoc = <span class="keyword">new</span> BrssCom.Document();
+    <span class="keywordtype">string</span> strPath = templateFile;
+    <span class="keywordflow">if</span> (objDoc.Open(strPath) != <span class="keyword">false</span>)
+    {
+        objDoc.SetText(0, <span class="stringliteral">"Company"</span>);
+        objDoc.SetText(1, <span class="stringliteral">"Name"</span>);
+        objDoc.DoPrint(BrssCom.PrintOptionConstants.bpoDefault, <span class="stringliteral">"0"</span>);
+        objDoc.Close();
+    }
+...
+</font></pre></div> <div class="fragment"><pre class="fragment"><font face="Geneva, Arial, Helvetica, sans-serif" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 3.4 Sample</span>
+<span class="comment">//</span>
+...
+    <span class="comment">//</span>
+    <span class="comment">// Printer      :   Brother PT-9500PC</span>
+    <span class="comment">// TemplateFile :   C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx</span>
+    <span class="comment">//</span>
+    <span class="keywordtype">string</span> templateFile = <span class="stringliteral">@"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>;
+    bpac.DocumentClass doc = <span class="keyword">new</span> bpac.DocumentClass();
+    <span class="keywordflow">if</span> (doc.Open(templateFile) != <span class="keyword">false</span>)
+    {
+        doc.GetObject(<span class="stringliteral">"objCompany"</span>).Text = <span class="stringliteral">"Company"</span>;
+        doc.GetObject(<span class="stringliteral">"objName"</span>).Text = <span class="stringliteral">"Name"</span>;
+        
+        doc.StartPrint(<span class="stringliteral">""</span>, bpac.PrintOptionConstants.bpoDefault);
+        doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
+        doc.EndPrint();
+        doc.Close();
+    }
+...
+</font></pre></div>
+</body>
+</html>

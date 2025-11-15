@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IDocument</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">bpac::IDocument</font></h1><!-- doxytag: class="bpac::IDocument" -->
+<font face="Arial" size="3">Document interface</font> 
+<p>
+<font face="Arial" size="3">This turns the P-touch Editor's document file (*.lbl, *.lbx) into a template, and performs the document's printing, layout editing, and others. </font><p>
+<p>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3">        <span class="comment">// Document sample</span>
+        bpac.IDocument doc = <span class="keyword">new</span> bpac.Document;
+       doc.Open(<span class="stringliteral">"File Path"</span>);
+        
+        <span class="comment">// Printer interface acquisition</span>
+        bpac.IPrinter printer = doc.Printer;
+        ... 
+        <span class="comment">// Object collection acquisition</span>
+        bpac.IObjects objs = doc.Objects;
+        ...
+        <span class="comment">// Object acquisition</span>
+        bpac.IObject obj = doc.GetObject(<span class="stringliteral">"Object1"</span>);
+       obj.Text = <span class="stringliteral">"Test"</span>;
+        
+        
+       doc.Close();</font>
+</pre></div> 
+</body>
+</html>

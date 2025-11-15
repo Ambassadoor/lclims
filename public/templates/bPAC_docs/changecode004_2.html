@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>GetFontInfo() Sample (Visual C#)</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">GetFontInfo() Sample 
+(Visual C#)</font></h1>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 2.0 Sample</span>
+<span class="comment">//</span>
+...
+    <span class="keywordtype">string</span> fontInfo = <span class="keywordtype">null</span>;
+    doc.GetFontInfo(0, ref fontInfo);
+
+    string[] token = fontInfo.Split(',');
+    string fontName = token[0];
+    string orientation = token[1];
+    string fontBold = token[2];
+    string fontItalic = token[3];
+    string fontUnderline = token[4];
+    string fontStrikeout = token[5];
+    string fontMaxPoint = token[6];
+    string fontEffect = token[7];
+...
+</font></pre></div><p>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 3.4 Sample</span>
+<span class="comment">//</span>
+...
+    <span class="comment">//</span>
+    <span class="comment">// This assumes that &quot;Object Name&quot; has been specified for the object in P-touch Editor.</span>
+    <span class="comment">//</span>
+    bpac.Object obj = doc.GetObject(<span class="stringliteral">"Text01"</span>);
+    <span class="keywordtype">string</span> fontName = obj.GetFontName();
+    <span class="keywordtype">int</span> orientation = obj.Orientation;
+    <span class="keywordtype">bool</span> fontBold = obj.GetFontBold();
+    <span class="keywordtype">bool</span> fontItalic = obj.GetFontItalics();
+    <span class="keywordtype">bool</span> fontUnderline = obj.GetFontUnderline();
+    <span class="keywordtype">bool</span> fontStrikeout = obj.GetFontStrikeout();
+    <span class="keywordtype">int</span> fontMaxPoint = obj.GetFontMaxPoint();
+    <span class="keywordtype">FontEffect</span> fontEffect = obj.GetFontEffect();
+...
+</font></pre></div>
+</body>
+</html>

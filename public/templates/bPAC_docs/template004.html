@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Creating a template </title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Creating a template</font></h1><h2>
+<font face="Arial" size="3">
+[Procedure]</font></h2>
+<p><font face="Arial" size="3">Use P-touch Editor Version 4 or later to create a 
+template.</font></p>
+<ol>
+<li>
+<font face="Arial" size="3">Start up P-touch Editor. Select [File] &#8211; [Printer 
+Setup], and check that the currently selected driver is the one that you wish to 
+create a template file for. <br>
+If a different driver is selected, select the desired driver, click the [Set as 
+Default] button, and then click the [OK] button.<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Specify the label size using the settings in the 
+Page Properties.  <br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Enter the desired label data.<br>
+For precautions when entering data, refer to &quot;Precautions on creating templates&quot; 
+below.<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">After you finish creating the layout, save the layout file.
+</font>  </li>
+</ol>
+<font face="Arial" size="3">
+<br>
+ <br>
+ <b>[Precautions on creating templates]</b></font><p><b><font face="Arial" size="3">Text objects</font></b></p>
+<ul>
+<li>
+<font face="Arial" size="3">Single text objects should consist of complete 
+meaningful units.<br>
+ For example, a long address that would extend over two lines should be entered 
+at a single multi-line object, instead of two separate objects.  <br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">The font, and character size and style within 
+each text object should be kept to only one type.<br>
+Each character can be formatted differently; however, during output, all 
+characters will be changed to the formatting specified for the first character.<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Text option settings</font><ul>
+<li><font face="Arial" size="3">With Text Properties, settings such as the 
+alignment/arrangement of text within text objects can be specified.<br>
+<br>
+<img border="0" src="image/text_property.png" width="252" height="86"><br>
+The screen image shown above appears in Professional mode of version 5.<br>
+&nbsp; If version 4 or a different mode in version 5 is being used, refer to the 
+corresponding information.<br>
+<br>
+The operation performed when the text amount changes while replacing text in a 
+created template follows the setting specified in Text Properties.<br>
+ </font></li>
+<li><font face="Arial" size="3">If the Auto or Clip option is selected, the 
+normal font size will have the standard height-to-width ratio (ratio immediately 
+after changing the font size).<br>
+ <br>
+ </font></li>
+</ul>
+</li>
+<li>
+<font face="Arial" size="3">
+If a text object is positioned so that the text fits within a graphics object, 
+replacing the text may result in it extending from the graphics object.<br>
+It is recommended not to use excessive precision, but rather to provide extra 
+space when positioning objects. <br>
+&nbsp;</font></li>
+</ul>
+<font face="Arial" size="3">
+<br>
+ <b>Indexing text</b></font><ul>
+<li>
+<font face="Arial" size="3">When indexed text, objects of the same type are 
+arranged in the Z order, starting from the front.<br>
+When indexed, the front object becomes 0, and the remaining become 1, 2, etc.<br>
+ &nbsp;</font><div align="center">
+<font face="Arial">
+<img border="0" src="image/text_index01.png" width="300" height="200"></font><font face="Arial" size="3">
+</font>
+</div>
+ <div align="left">
+<font face="Arial" size="3">After finishing entering all text, correctly specify the Z 
+order.</font></div>
+ <div align="left">
+<font face="Arial" size="3">Starting with the last text (or Arrange Text) object 
+entered, select [Layout] &#8211; [Order] &#8211; [Bring to Front] (Ctrl+F) for each object 
+in order.<br>
+This operation brings the first entered text to the front.<br>
+<br>
+ To check the Z order with P-touch Editor, perform either of the following 
+operations.</font></div>
+ <div align="left">
+<ul>
+  <li><font face="Arial" size="3">[Text Box] command<br>
+  With the [Text Box] command, objects containing text are arranged in order, 
+  starting with the object at the front.</font></li>
+  <li><font face="Arial" size="3">Show Order tab of the side bar (Professional 
+  mode in P-touch Editor Version 5)<br>
+  In the Show Order tab, objects are listed, in order, with the front object at 
+  the top.<br>
+&nbsp;</font></li>
+</ul>
+</div>
+ </li>
+<li>
+ <font face="Arial" size="3">
+ If a text object contains multiple lines of text, the lines are numbered 
+ starting from the top.<br>
+ The order within an object cannot be changed.<br>
+ (Each single line of text is indexed.)<br>
+ If &quot;Text Options&quot; for text is set to &quot;Text Length&quot;, there is one index for the 
+ entire object.<br>
+&nbsp;</font></li>
+<li>
+ <font face="Arial" size="3">
+ Text in table objects are also indexed.<br>
+ Text objects in tables are indexed starting from the upper-left cell and ending 
+ with the lower-right cell.<br>
+ </font>
+ </li>
+</ul>
+ <table border="1" cellspacing="0" cellpadding="0" style="margin-left:40.95pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0mm 4.95pt 0mm 4.95pt">
+<tr style="height:8.5pt">
+<td width="88" valign="top" style="width:66.0pt;border:solid windowtext .5pt;
+  padding:0mm 4.95pt 0mm 4.95pt;height:8.5pt"><p>
+<font face="Arial" size="3">
+<span lang="EN-US>">0</span> </font>  </td><td width="88" valign="top" style="width:66.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0mm 4.95pt 0mm 4.95pt;
+  height:8.5pt"><p>
+<font face="Arial" size="3">
+<span lang="EN-US>">1</span> </font>  </td><td width="88" valign="top" style="width:66.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0mm 4.95pt 0mm 4.95pt;
+  height:8.5pt"><p>
+<font face="Arial" size="3">
+<span lang="EN-US>">2</span> </font>   </td></tr>
+<tr style="height:8.5pt">
+<td width="88" valign="top" style="width:66.0pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0mm 4.95pt 0mm 4.95pt;
+  height:8.5pt"><p>
+<font face="Arial" size="3">
+<span lang="EN-US>">3</span> </font>  </td><td width="88" valign="top" style="width:66.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0mm 4.95pt 0mm 4.95pt;height:8.5pt"><p>
+<font face="Arial" size="3">
+<span lang="EN-US>">4</span> </font>  </td><td width="88" valign="top" style="width:66.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0mm 4.95pt 0mm 4.95pt;height:8.5pt"><p>
+<font face="Arial" size="3">
+<span lang="EN-US>">5</span> </font>   </td></tr>
+</table>
+<ul>
+  <li>
+<font face="Arial" size="3">
+  If independent text objects are combined with tables containing text objects 
+in cells, the table objects and text objects are indexed first in the Z order.<br>
+  Then, the table text is indexed in the cell order of the table object.<br>
+&nbsp;</font></li>
+</ul>
+<h2><font face="Arial" size="3">Graphics objects (illustration)</font></h2>
+<ul>
+<li>
+<font face="Arial" size="3">If graphics objects (illustrations) contained in 
+the template are to be replaced, templates containing smaller images with fewer 
+colors can be loaded more quickly.<br>
+b-PAC can import Jpeg files; however, when creating templates, it is recommended 
+that images be replaced with the smaller Bmp files.<br>
+&nbsp;</font></li>
+</ul>
+<b><font face="Arial" size="3"><a name="barcode"></a>Barcode objects</font></b><ul>
+<li>
+<font face="Arial" size="3">Like text objects, it is recommended that they be 
+positioned with extra space around them.<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Barcode objects are indexed in the reverse of the Z 
+order that starts from the front.<br>
+When indexed, the backmost object becomes 0, and the remaining become 1, 2, etc.<br>
+Only barcode objects are numbered.<br>
+Be careful since the ascending order is the opposite of that for text indexing.<br>
+ </font>
+ <div align="center">
+<font face="Arial" size="3">
+<img border="0" src="image/text_index02.png" width="300" height="200"><br>
+&nbsp;</font></div>
+  </li>
+</ul>
+<b><font face="Arial" size="3">Other objects</font></b><ul>
+<li>
+<font face="Arial" size="3">If text is positioned in a frame, the frame is sent behind the text.
+</font>  </li>
+</ul>
+<font face="Arial" size="3">
+<br>
+ <b>Naming objects</b></font><ul>
+  <li>
+<font face="Arial" size="3">From an object's Properties dialog box, a name can 
+be specified for the object.<br>
+  Right-click a selected object, and then select [Properties...].<br>
+  In the &quot;Object Name&quot; box on the Expanded tab, type the name of the object.<br>
+  The object can be retrieved using the object name that has been specified.</font></li>
+</ul>
+</body>
+</html>

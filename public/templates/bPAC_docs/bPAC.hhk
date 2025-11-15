@@ -1,0 +1,966 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bpac::IDocument">
+		<param name="Local" value="IDocument_Method_Close.html">
+		<param name="Local" value="IDocument_Method_DoPrint.html">
+		<param name="Local" value="IDocument_Method_EndPrint.html">
+		<param name="Local" value="IDocument_Method_Export.html">
+		<param name="Local" value="IDocument_Method_GetBarcodeIndex.html">
+		<param name="Local" value="IDocument_Method_GetImageData.html">
+		<param name="Local" value="IDocument_Method_GetMediaId.html">
+		<param name="Local" value="IDocument_Method_GetMediaName.html">
+		<param name="Local" value="IDocument_Method_GetObject.html">
+		<param name="Local" value="IDocument_Method_GetPrinterName.html">
+		<param name="Local" value="IDocument_Method_GetText.html">
+		<param name="Local" value="IDocument_Method_GetTextCount.html">
+		<param name="Local" value="IDocument_Method_GetTextIndex.html">
+		<param name="Local" value="IDocument_Method_Open.html">
+		<param name="Local" value="IDocument_Method_PrintOut.html">
+		<param name="Local" value="IDocument_Method_Save.html">
+		<param name="Local" value="IDocument_Method_SaveAs.html">
+		<param name="Local" value="IDocument_Method_SetBarcodeData.html">
+		<param name="Local" value="IDocument_Method_SetMarginLeftRight.html">
+		<param name="Local" value="IDocument_Method_SetMediaById.html">
+		<param name="Local" value="IDocument_Method_SetMediaByName.html">
+        <param name="Local" value="IDocument_Method_SetPrintedCallback.html">
+		<param name="Local" value="IDocument_Method_SetPrinter.html">
+		<param name="Local" value="IDocument_Method_SetText.html">
+		<param name="Local" value="IDocument_Method_StartPrint.html">
+		<param name="Local" value="IDocument_Event_Printed.html">
+		<param name="Local" value="IDocument_Property_CurrentSheet.html">
+		<param name="Local" value="IDocument_Property_CutLineCount.html">
+		<param name="Local" value="IDocument_Property_CutLines.html">
+		<param name="Local" value="IDocument_Property_ErrorCode.html">
+		<param name="Local" value="IDocument_Property_Length.html">
+		<param name="Local" value="IDocument_Property_MarginBottom.html">
+		<param name="Local" value="IDocument_Property_MarginLeft.html">
+		<param name="Local" value="IDocument_Property_MarginRight.html">
+		<param name="Local" value="IDocument_Property_MarginTop.html">
+		<param name="Local" value="IDocument_Property_Objects.html">
+		<param name="Local" value="IDocument_Property_Orientation.html">
+		<param name="Local" value="IDocument_Property_Printer.html">
+		<param name="Local" value="IDocument_Property_SheetNames.html">
+		<param name="Local" value="IDocument_Property_Width.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Close">
+			<param name="Local" value="IDocument_Method_Close.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CurrentSheet">
+			<param name="Local" value="IDocument_Property_CurrentSheet.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CutLineCount">
+			<param name="Local" value="IDocument_Property_CutLineCount.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CutLines">
+			<param name="Local" value="IDocument_Property_CutLines.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DoPrint">
+			<param name="Local" value="IDocument_Method_DoPrint.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="EndPrint">
+			<param name="Local" value="IDocument_Method_EndPrint.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ErrorCode">
+			<param name="Local" value="IDocument_Property_ErrorCode.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Export">
+			<param name="Local" value="IDocument_Method_Export.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetBarcodeIndex">
+			<param name="Local" value="IDocument_Method_GetBarcodeIndex.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetImageData">
+			<param name="Local" value="IDocument_Method_GetImageData.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetMediaId">
+			<param name="Local" value="IDocument_Method_GetMediaId.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetMediaName">
+			<param name="Local" value="IDocument_Method_GetMediaName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetObject">
+			<param name="Local" value="IDocument_Method_GetObject.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetPrinterName">
+			<param name="Local" value="IDocument_Method_GetPrinterName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetText">
+			<param name="Local" value="IDocument_Method_GetText.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetTextCount">
+			<param name="Local" value="IDocument_Method_GetTextCount.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetTextIndex">
+			<param name="Local" value="IDocument_Method_GetTextIndex.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Length">
+			<param name="Local" value="IDocument_Property_Length.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MarginBottom">
+			<param name="Local" value="IDocument_Property_MarginBottom.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MarginLeft">
+			<param name="Local" value="IDocument_Property_MarginLeft.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MarginRight">
+			<param name="Local" value="IDocument_Property_MarginRight.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MarginTop">
+			<param name="Local" value="IDocument_Property_MarginTop.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Objects">
+			<param name="Local" value="IDocument_Property_Objects.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Open">
+			<param name="Local" value="IDocument_Method_Open.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Orientation">
+			<param name="Local" value="IDocument_Property_Orientation.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Printed">
+			<param name="Local" value="IDocument_Event_Printed.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Printer">
+			<param name="Local" value="IDocument_Property_Printer.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="PrintOut">
+			<param name="Local" value="IDocument_Method_PrintOut.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Save">
+			<param name="Local" value="IDocument_Method_Save.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SaveAs">
+			<param name="Local" value="IDocument_Method_SaveAs.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetBarcodeData">
+			<param name="Local" value="IDocument_Method_SetBarcodeData.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetMarginLeftRight">
+			<param name="Local" value="IDocument_Method_SetMarginLeftRight.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetMediaById">
+			<param name="Local" value="IDocument_Method_SetMediaById.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetMediaByName">
+			<param name="Local" value="IDocument_Method_SetMediaByName.html">
+			</OBJECT>
+        <LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetPrintedCallback">
+			<param name="Local" value="IDocument_Method_SetPrintedCallback.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetPrinter">
+			<param name="Local" value="IDocument_Method_SetPrinter.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetText">
+			<param name="Local" value="IDocument_Method_SetText.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SheetNames">
+			<param name="Local" value="IDocument_Property_SheetNames.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="StartPrint">
+			<param name="Local" value="IDocument_Method_StartPrint.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Width">
+			<param name="Local" value="IDocument_Property_Width.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bpac::IObject">
+		<param name="Local" value="IObject_Method_GetAttribute.html">
+		<param name="Local" value="IObject_Method_GetData.html">
+		<param name="Local" value="IObject_Method_GetFontBold.html">
+		<param name="Local" value="IObject_Method_GetFontEffect.html">
+		<param name="Local" value="IObject_Method_GetFontItalics.html">
+		<param name="Local" value="IObject_Method_GetFontMaxPoint.html">
+		<param name="Local" value="IObject_Method_GetFontName.html">
+		<param name="Local" value="IObject_Method_GetFontStrikeout.html">
+		<param name="Local" value="IObject_Method_GetFontUnderline.html">
+		<param name="Local" value="IObject_Method_SetAlign.html">
+		<param name="Local" value="IObject_Method_SetAttribute.html">
+		<param name="Local" value="IObject_Method_SetData.html">
+		<param name="Local" value="IObject_Method_SetFontBold.html">
+		<param name="Local" value="IObject_Method_SetFontEffect.html">
+		<param name="Local" value="IObject_Method_SetFontItalics.html">
+		<param name="Local" value="IObject_Method_SetFontMaxPoint.html">
+		<param name="Local" value="IObject_Method_SetFontName.html">
+		<param name="Local" value="IObject_Method_SetFontStrikeout.html">
+		<param name="Local" value="IObject_Method_SetFontUnderline.html">
+		<param name="Local" value="IObject_Method_SetPosition.html">
+		<param name="Local" value="IObject_Method_SetSelection.html">
+		<param name="Local" value="IObject_Property_Height.html">
+		<param name="Local" value="IObject_Property_HorizontalAlign.html">
+		<param name="Local" value="IObject_Property_Name.html">
+		<param name="Local" value="IObject_Property_Orientation.html">
+		<param name="Local" value="IObject_Property_SelectionEnd.html">
+		<param name="Local" value="IObject_Property_SelectionStart.html">
+		<param name="Local" value="IObject_Property_Text.html">
+		<param name="Local" value="IObject_Property_Type.html">
+		<param name="Local" value="IObject_Property_VerticalAlign.html">
+		<param name="Local" value="IObject_Property_Width.html">
+		<param name="Local" value="IObject_Property_X.html">
+		<param name="Local" value="IObject_Property_Y.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetAttribute">
+			<param name="Local" value="IObject_Method_GetAttribute.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetData">
+			<param name="Local" value="IObject_Method_GetData.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontBold">
+			<param name="Local" value="IObject_Method_GetFontBold.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontEffect">
+			<param name="Local" value="IObject_Method_GetFontEffect.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontItalics">
+			<param name="Local" value="IObject_Method_GetFontItalics.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontMaxPoint">
+			<param name="Local" value="IObject_Method_GetFontMaxPoint.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontName">
+			<param name="Local" value="IObject_Method_GetFontName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontStrikeout">
+			<param name="Local" value="IObject_Method_GetFontStrikeout.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontUnderline">
+			<param name="Local" value="IObject_Method_GetFontUnderline.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Height">
+			<param name="Local" value="IObject_Property_Height.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="HorizontalAlign">
+			<param name="Local" value="IObject_Property_HorizontalAlign.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Name">
+			<param name="Local" value="IObject_Property_Name.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Orientation">
+			<param name="Local" value="IObject_Property_Orientation.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SelectionEnd">
+			<param name="Local" value="IObject_Property_SelectionEnd.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SelectionStart">
+			<param name="Local" value="IObject_Property_SelectionStart.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetAlign">
+			<param name="Local" value="IObject_Method_SetAlign.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetAttribute">
+			<param name="Local" value="IObject_Method_SetAttribute.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetData">
+			<param name="Local" value="IObject_Method_SetData.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontBold">
+			<param name="Local" value="IObject_Method_SetFontBold.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontEffect">
+			<param name="Local" value="IObject_Method_SetFontEffect.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontItalics">
+			<param name="Local" value="IObject_Method_SetFontItalics.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontMaxPoint">
+			<param name="Local" value="IObject_Method_SetFontMaxPoint.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontName">
+			<param name="Local" value="IObject_Method_SetFontName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontStrikeout">
+			<param name="Local" value="IObject_Method_SetFontStrikeout.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontUnderline">
+			<param name="Local" value="IObject_Method_SetFontUnderline.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetPosition">
+			<param name="Local" value="IObject_Method_SetPosition.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetSelection">
+			<param name="Local" value="IObject_Method_SetSelection.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Text">
+			<param name="Local" value="IObject_Property_Text.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Type">
+			<param name="Local" value="IObject_Property_Type.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="VerticalAlign">
+			<param name="Local" value="IObject_Property_VerticalAlign.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Width">
+			<param name="Local" value="IObject_Property_Width.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="X">
+			<param name="Local" value="IObject_Property_X.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Y">
+			<param name="Local" value="IObject_Property_Y.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bpac::IObjects">
+		<param name="Local" value="IObjects_Method_GetEnumerator.html">
+		<param name="Local" value="IObjects_Method_GetIndex.html">
+		<param name="Local" value="IObjects_Method_GetIndexByName.html">
+		<param name="Local" value="IObjects_Method_Insert.html">
+		<param name="Local" value="IObjects_Method_Remove.html">
+		<param name="Local" value="IObjects_Property_Count.html">
+		<param name="Local" value="IObjects_Property_this.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Count">
+			<param name="Local" value="IObjects_Property_Count.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetEnumerator">
+			<param name="Local" value="IObjects_Method_GetEnumerator.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetIndex">
+			<param name="Local" value="IObjects_Method_GetIndex.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetIndexByName">
+			<param name="Local" value="IObjects_Method_GetIndexByName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Insert">
+			<param name="Local" value="IObjects_Method_Insert.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Remove">
+			<param name="Local" value="IObjects_Method_Remove.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="this">
+			<param name="Local" value="IObjects_Property_this.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bpac::IPrinter">
+		<param name="Local" value="IPrinter_Method_GetInstalledPrinters.html">
+		<param name="Local" value="IPrinter_Method_GetMediaId.html">
+		<param name="Local" value="IPrinter_Method_GetMediaName.html">
+		<param name="Local" value="IPrinter_Method_GetPrintedTapeLength.html">
+		<param name="Local" value="IPrinter_Method_GetSupportedMediaIds.html">
+		<param name="Local" value="IPrinter_Method_GetSupportedMediaNames.html">
+		<param name="Local" value="IPrinter_Method_IsMediaIdSupported.html">
+		<param name="Local" value="IPrinter_Method_IsMediaNameSupported.html">
+		<param name="Local" value="IPrinter_Method_IsPrinterOnline.html">
+		<param name="Local" value="IPrinter_Method_IsPrinterSupported.html">
+		<param name="Local" value="IPrinter_Property_ErrorCode.html">
+		<param name="Local" value="IPrinter_Property_ErrorString.html">
+		<param name="Local" value="IPrinter_Property_Name.html">
+		<param name="Local" value="IPrinter_Property_PortName.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ErrorCode">
+			<param name="Local" value="IPrinter_Property_ErrorCode.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ErrorString">
+			<param name="Local" value="IPrinter_Property_ErrorString.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetInstalledPrinters">
+			<param name="Local" value="IPrinter_Method_GetInstalledPrinters.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetMediaId">
+			<param name="Local" value="IPrinter_Method_GetMediaId.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetMediaName">
+			<param name="Local" value="IPrinter_Method_GetMediaName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetPrintedTapeLength">
+			<param name="Local" value="IPrinter_Method_GetPrintedTapeLength.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetSupportedMediaIds">
+			<param name="Local" value="IPrinter_Method_GetSupportedMediaIds.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetSupportedMediaNames">
+			<param name="Local" value="IPrinter_Method_GetSupportedMediaNames.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="IsMediaIdSupported">
+			<param name="Local" value="IPrinter_Method_IsMediaIdSupported.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="IsMediaNameSupported">
+			<param name="Local" value="IPrinter_Method_IsMediaNameSupported.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="IsPrinterOnline">
+			<param name="Local" value="IPrinter_Method_IsPrinterOnline.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="IsPrinterSupported">
+			<param name="Local" value="IPrinter_Method_IsPrinterSupported.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Name">
+			<param name="Local" value="IPrinter_Property_Name.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="PortName">
+			<param name="Local" value="IPrinter_Property_PortName.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Count">
+		<param name="Local" value="IObjects_Property_Count.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CurrentSheet">
+		<param name="Local" value="IDocument_Property_CurrentSheet.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CutLineCount">
+		<param name="Local" value="IDocument_Property_CutLineCount.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CutLines">
+		<param name="Local" value="IDocument_Property_CutLines.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DoPrint">
+		<param name="Local" value="IDocument_Method_DoPrint.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EndPrint">
+		<param name="Local" value="IDocument_Method_EndPrint.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ErrorCode">
+		<param name="Local" value="IDocument_Property_ErrorCode.html">
+		<param name="Local" value="IPrinter_Property_ErrorCode.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="IDocument_Property_ErrorCode.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IPrinter">
+			<param name="Local" value="IPrinter_Property_ErrorCode.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ErrorString">
+		<param name="Local" value="IPrinter_Property_ErrorString.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Export">
+		<param name="Local" value="IDocument_Method_Export.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ExportType">
+		<param name="Local" value="param_exporttype.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FontEffect">
+		<param name="Local" value="param_fonteffect.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetBarcodeIndex">
+		<param name="Local" value="IDocument_Method_GetBarcodeIndex.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetData">
+		<param name="Local" value="IObject_Method_GetData.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetEnumerator">
+		<param name="Local" value="IObjects_Method_GetEnumerator.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontBold">
+		<param name="Local" value="IObject_Method_GetFontBold.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontEffect">
+		<param name="Local" value="IObject_Method_GetFontEffect.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontItalics">
+		<param name="Local" value="IObject_Method_GetFontItalics.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontMaxPoint">
+		<param name="Local" value="IObject_Method_GetFontMaxPoint.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontName">
+		<param name="Local" value="IObject_Method_GetFontName.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontStrikeout">
+		<param name="Local" value="IObject_Method_GetFontStrikeout.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFontUnderline">
+		<param name="Local" value="IObject_Method_GetFontUnderline.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetImageData">
+		<param name="Local" value="IDocument_Method_GetImageData.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetIndex">
+		<param name="Local" value="IObjects_Method_GetIndex.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetIndexByName">
+		<param name="Local" value="IObjects_Method_GetIndexByName.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetInstalledPrinters">
+		<param name="Local" value="IPrinter_Method_GetInstalledPrinters.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetMediaId">
+		<param name="Local" value="IDocument_Method_GetMediaId.html">
+		<param name="Local" value="IPrinter_Method_GetMediaId.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="IDocument_Method_GetMediaId.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IPrinter">
+			<param name="Local" value="IPrinter_Method_GetMediaId.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetMediaName">
+		<param name="Local" value="IDocument_Method_GetMediaName.html">
+		<param name="Local" value="IPrinter_Method_GetMediaName.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="IDocument_Method_GetMediaName.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IPrinter">
+			<param name="Local" value="IPrinter_Method_GetMediaName.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetObject">
+		<param name="Local" value="IDocument_Method_GetObject.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetPrintedTapeLength">
+		<param name="Local" value="IPrinter_Method_GetPrintedTapeLength.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetPrinterName">
+		<param name="Local" value="IDocument_Method_GetPrinterName.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetSupportedMediaIds">
+		<param name="Local" value="IPrinter_Method_GetSupportedMediaIds.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetSupportedMediaNames">
+		<param name="Local" value="IPrinter_Method_GetSupportedMediaNames.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetText">
+		<param name="Local" value="IDocument_Method_GetText.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetTextCount">
+		<param name="Local" value="IDocument_Method_GetTextCount.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetTextIndex">
+		<param name="Local" value="IDocument_Method_GetTextIndex.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Height">
+		<param name="Local" value="IObject_Property_Height.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="HorizontalAlign">
+		<param name="Local" value="IObject_Property_HorizontalAlign.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Insert">
+		<param name="Local" value="IObjects_Method_Insert.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsMediaIdSupported">
+		<param name="Local" value="IPrinter_Method_IsMediaIdSupported.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsMediaNameSupported">
+		<param name="Local" value="IPrinter_Method_IsMediaNameSupported.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsPrinterOnline">
+		<param name="Local" value="IPrinter_Method_IsPrinterOnline.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsPrinterSupported">
+		<param name="Local" value="IPrinter_Method_IsPrinterSupported.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Length">
+		<param name="Local" value="IDocument_Property_Length.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MarginBottom">
+		<param name="Local" value="IDocument_Property_MarginBottom.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MarginLeft">
+		<param name="Local" value="IDocument_Property_MarginLeft.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MarginRight">
+		<param name="Local" value="IDocument_Property_MarginRight.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MarginTop">
+		<param name="Local" value="IDocument_Property_MarginTop.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MemoryBank">
+		<param name="Local" value="param_memorybank.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Name">
+		<param name="Local" value="IObject_Property_Name.html">
+		<param name="Local" value="IPrinter_Property_Name.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IObject">
+			<param name="Local" value="IObject_Property_Name.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IPrinter">
+			<param name="Local" value="IPrinter_Property_Name.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ObjectAttribute">
+		<param name="Local" value="param_objectattribute.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Objects">
+		<param name="Local" value="IDocument_Property_Objects.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ObjectType">
+		<param name="Local" value="param_objecttype.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Open">
+		<param name="Local" value="IDocument_Method_Open.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="IDocument_Method_Open.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Orientation">
+		<param name="Local" value="IDocument_Property_Orientation.html">
+		<param name="Local" value="IObject_Property_Orientation.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="IDocument_Property_Orientation.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IObject">
+			<param name="Local" value="IObject_Property_Orientation.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PortName">
+		<param name="Local" value="IPrinter_Property_PortName.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Printed">
+		<param name="Local" value="IDocument_Event_Printed.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintedEvent">
+		<param name="Local" value="IEtc_Method_PrintedEvent.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Printer">
+		<param name="Local" value="IDocument_Property_Printer.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintEvent">
+		<param name="Local" value="param_printevent.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintOptionConstants">
+		<param name="Local" value="param_printoption.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PrintOut">
+		<param name="Local" value="IDocument_Method_PrintOut.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Remove">
+		<param name="Local" value="IObjects_Method_Remove.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Save">
+		<param name="Local" value="IDocument_Method_Save.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SaveAs">
+		<param name="Local" value="IDocument_Method_SaveAs.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SelectionEnd">
+		<param name="Local" value="IObject_Property_SelectionEnd.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SelectionStart">
+		<param name="Local" value="IObject_Property_SelectionStart.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetAlign">
+		<param name="Local" value="IObject_Method_SetAlign.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetAttribute">
+		<param name="Local" value="IObject_Method_SetAttribute.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetBarcodeData">
+		<param name="Local" value="IDocument_Method_SetBarcodeData.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetData">
+		<param name="Local" value="IObject_Method_SetData.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontBold">
+		<param name="Local" value="IObject_Method_SetFontBold.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontEffect">
+		<param name="Local" value="IObject_Method_SetFontEffect.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontItalics">
+		<param name="Local" value="IObject_Method_SetFontItalics.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontMaxPoint">
+		<param name="Local" value="IObject_Method_SetFontMaxPoint.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontName">
+		<param name="Local" value="IObject_Method_SetFontName.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontStrikeout">
+		<param name="Local" value="IObject_Method_SetFontStrikeout.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFontUnderline">
+		<param name="Local" value="IObject_Method_SetFontUnderline.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetMarginLeftRight">
+		<param name="Local" value="IDocument_Method_SetMarginLeftRight.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetMediaById">
+		<param name="Local" value="IDocument_Method_SetMediaById.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetMediaByName">
+		<param name="Local" value="IDocument_Method_SetMediaByName.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetPosition">
+		<param name="Local" value="IObject_Method_SetPosition.html">
+		</OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetPrintedCallback">
+		<param name="Local" value="IDocument_Method_SetPrintedCallback.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetPrinter">
+		<param name="Local" value="IDocument_Method_SetPrinter.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetSelection">
+		<param name="Local" value="IObject_Method_SetSelection.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetText">
+		<param name="Local" value="IDocument_Method_SetText.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SheetNames">
+		<param name="Local" value="IDocument_Property_SheetNames.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StartPrint">
+		<param name="Local" value="IDocument_Method_StartPrint.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TagDataMode">
+		<param name="Local" value="param_tagdatamode.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TagIdFormat">
+		<param name="Local" value="param_tagidformat.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Text">
+		<param name="Local" value="IObject_Property_Text.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="this">
+		<param name="Local" value="IObjects_Property_this.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TimeoutType">
+		<param name="Local" value="param_timeouttype.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Type">
+		<param name="Local" value="IObject_Property_Type.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="UserDataFormat">
+		<param name="Local" value="param_userdataformat.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="VerticalAlign">
+		<param name="Local" value="IObject_Property_VerticalAlign.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Width">
+		<param name="Local" value="IDocument_Property_Width.html">
+		<param name="Local" value="IObject_Property_Width.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="IDocument_Property_Width.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IObject">
+			<param name="Local" value="IObject_Property_Width.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="X">
+		<param name="Local" value="IObject_Property_X.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Y">
+		<param name="Local" value="IObject_Property_Y.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Cautions and restrictions when using the bpoContinue flag </title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Cautions and 
+restrictions when using the bpoContinue flag</font></h1>
+<font face="Arial" size="3"><b>Note:</b> This flag is retained in order to 
+maintain compatibility.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The use of <b><a href="IDocument_Method_StartPrint.html">StartPrint()</a></b>, <b>
+<a href="IDocument_Method_PrintOut.html">PrintOut()</a></b>, and<b>
+<a href="IDocument_Method_EndPrint.html">EndPrint()</a></b> is recommended 
+instead. 
+</font> <ul>
+<li>
+<font face="Arial" size="3">Each time the normal DoPrint method is called, a 
+print job is generated. <br>
+Specifying the bpoContinue flag keeps the completion of the print job open until 
+the next call.<br>
+If the same flag is also specified in the next DoPrint, the completion of the 
+print job continues to be kept open.<br>
+<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">If the bpoContinue flag is set, parameters excluding 
+the other flags of the print option (dwOption) and the copy counter of print 
+parameter (szOption) have their settings at the time the DoPrint method is first 
+called being the valid ones, and are ignored during the DoPrint method's second 
+and subsequent calls until the completion of the print job.<br>
+<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Once the bpoContinue flag is set in the DoPrint method, the 
+print job can be completed (=actual start of printing) in any of the following 
+ways. </font> <ol type="a">
+<li>
+<font face="Arial" size="3">The bpoContinue flag is not set during the DoPrint 
+method's subsequent calls.&nbsp; 
+</font> </li>
+<li>
+<font face="Arial" size="3">Calling the Close method. </font> </li>
+<li>
+<font face="Arial" size="3">A template with a different printer driver and paper size 
+(label width in the case of labels) is specified and called using the Open 
+method. </font> </li>
+<li>
+<font face="Arial" size="3">Releasing the b-PAC object. </font> </li>
+</ol>
+<font face="Arial" size="3">
+<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">After setting the bpoContinue flag and calling the 
+DoPrint method, it will not enter the process of waiting for the various types 
+of end-user events such as data input or selection, until the print job is 
+completed (=actual start of printing) in any of the ways described in a, b, c, 
+and d.<br>
+<br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">The maximum number of times (number of pages that can be 
+outputted in a single print job) that the DoPrint method with the bpoContinue 
+flag specified can be called up depends on each printer's maximum print pages or 
+the PC's resources. </font>  </li>
+</ul>
+<p>
+<font face="Arial" size="3">Sample effects when file open is executed multiple times 
+(such as during continuous printing of different labels) </font> <table border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<th class="normal"></th><th class="normal"><font face="Arial" size="3">If specified by 
+enumerator value beginning with bpo </font></th><th class="normal">
+<font face="Arial" size="3">If directly specified by numeric value </font></th><th class="normal">
+<font face="Arial" size="3">Print result </font> </th></tr>
+<tr>
+<td class="normal" width="120"><font face="Arial" size="3">Auto cut without bpoContinue
+</font> </td><td class="normal"><font face="Arial" size="3">ObjDoc.Open (***.lbl)<br>
+ObjDoc.DoPrint bpoAutoCut, "0"<br>
+ObjDoc.Open (****.lbl)<br>
+ObjDoc.DoPrint bpoAutoCut, "0" </font> </td><td class="normal">
+<font face="Arial" size="3">ObjDoc.Open (***.lbl)<br>
+ObjDoc.DoPrint &amp;H1, "0"<br>
+ObjDoc.Open (****.lbl)<br>
+ObjDoc.DoPrint &amp;H1, "0" </font> </td><td class="normal"><div align="center">
+<font face="Arial" size="3">
+<img border="0" src="image/AutoCut_NotContinue.png" width="126" height="37"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="normal" width="120"><font face="Arial" size="3">Auto cut with bpoContinue</font></td><td class="normal">
+<font face="Arial" size="3">ObjDoc.Open (***.lbl)<br>
+ObjDoc.DoPrint bpoAutoCut+bpoContinue, "0"<br>
+ObjDoc.Open (****.lbl)<br>
+ObjDoc.DoPrint bpoAutoCut, "0" </font> </td><td class="normal">
+<font face="Arial" size="3">ObjDoc.Open (***.lbl)<br>
+ObjDoc.DoPrint &amp;H40000001, "0"<br>
+ObjDoc.Open (****.lbl)<br>
+ObjDoc.DoPrint &amp;H1, "0" </font> </td><td class="normal"><div align="center">
+<font face="Arial" size="3">
+<img border="0" src="image/AutoCut_Continue.png" width="129" height="36"> </font>
+</div>
+  </td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IObjects::Insert</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="759">
+  <tr>
+   <td valign="top" width="762">
+      <b><font face="Arial" size="4">IObject bpac::IObjects::Insert (LONG 
+      <em>index</em>, <a href="param_objecttype.html">ObjectType</a> <em>type</em>, LONG <em>x</em>, LONG <em>y</em>, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      LONG <em>width</em>, LONG <em>height</em>, VARIANT <em>option</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="603">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="603">
+<font face="Arial" size="3">
+<a class="anchor" name="483441f21b7970d645501040ad0f5029"></a></font><!-- doxytag: member="bpac::IObjects::Insert" ref="483441f21b7970d645501040ad0f5029" args="(LONG index, ObjectType type, LONG x, LONG y, LONG width, LONG height, VARIANT option)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 694; height: 539">
+
+<p>
+<font face="Arial" size="3">Inserts a new object</font> 
+<p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="599" height="282">
+    <tr><td valign="top" width="8" height="72"></td>
+      <td valign="top" width="67" height="72"><font face="Arial" size="3"><em>index</em>&nbsp;</font></td>
+      <td width="516" height="72" valign="top">
+      <font face="Arial" size="3">Index of object to be inserted.<br>
+      If specified to be higher than the value acquired by <b><a href="IObjects_Property_Count.html">Count</a></b>, it is inserted at the tail end.
+      </font> </td></tr>
+    <tr><td valign="top" width="8" height="51"></td>
+      <td valign="top" width="67" height="51"><font face="Arial" size="3"><em>type</em>&nbsp;</font></td>
+      <td width="516" height="51" valign="top">
+      <font face="Arial" size="3">Object type.<br>
+      At present, only <b>bobText</b> is supported.</font></td></tr>
+    <tr><td valign="top" width="8" height="34"></td>
+      <td valign="top" width="67" height="34"><font face="Arial" size="3"><em>x</em>&nbsp;</font></td>
+      <td width="516" height="34" valign="top">
+      <font face="Arial" size="3">Object's upper-left horizontal position.</font></td></tr>
+    <tr><td valign="top" width="8" height="30"></td>
+      <td valign="top" width="67" height="30"><font face="Arial" size="3"><em>y</em>&nbsp;</font></td>
+      <td width="516" height="30" valign="top">
+      <font face="Arial" size="3">Object's upper-left vertical position.</font></td></tr>
+    <tr><td valign="top" width="8" height="31"></td>
+      <td valign="top" width="67" height="31"><font face="Arial" size="3"><em>width</em>&nbsp;</font></td>
+      <td width="516" height="31" valign="top">
+      <font face="Arial" size="3">Object's width.</font></td></tr>
+    <tr><td valign="top" width="8" height="31"></td>
+      <td valign="top" width="67" height="31"><font face="Arial" size="3"><em>height</em>&nbsp;</font></td>
+      <td width="516" height="31" valign="top">
+      <font face="Arial" size="3">Object's height.</font></td></tr>
+    <tr><td valign="top" width="8" height="19"></td>
+      <td valign="top" width="67" height="19"><font face="Arial" size="3"><em>option</em>&nbsp;</font></td>
+      <td width="516" height="19">
+      <font face="Arial" size="3">Text data (only when <em>type</em> is <b>bobText</b>).</font></td></tr>
+  </table>
+</dl>
+<p>
+<font size="3" face="Arial">Inserts a new object into the current sheet.<br>
+The object is inserted at the front of the index specified in <em>index</em>.<br>
+ If a value lower than 0 is specified in <em>x</em> or <em>y</em>, the insertion position is determined automatically.<br>
+If a value lower than 0 is specified in <em>height</em> or <em>width</em>, the object's size is determined automatically.<br>
+ Do perform the data settings for the </font><b><font size="3"><code><font face="Arial">IObject</font></code></font></b><font size="3" face="Arial"> object acquired as returned value.</font><p>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Inserted object</font></dd></dl>
+<dl class="see" compact><dt><font face="Arial" size="3"><b>Reference:</b></font></dt><dd>
+  <b>
+  <font face="Arial" size="3"><a href="IObjects_Method_Remove.html">Remove()</a></font></b><p>
+</dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

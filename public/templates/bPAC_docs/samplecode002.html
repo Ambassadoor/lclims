@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+<title>Sheet acquisition and setting</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Sheet acquisition and setting</font><a class="anchor" name="samplecode"> </a></h1>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+'
+' VB Sample
+'
+sheetNames = doc.SheetNames
+<span class="keywordflow">For</span> i = LBound(sheetNames) <span class="keywordflow">To</span> UBound(sheetNames)
+    doc.CurrentSheet = sheetNames(i)
+<span class="keywordflow">Next</span>
+</font></pre><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C#]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+<span class="keywordtype">object</span>[] sheetNames = doc.SheetNames as <span class="keywordtype">object</span>[];
+<span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> sheetName <span class="keywordflow">in</span> sheetNames)
+{
+    doc.CurrentSheet = sheetName
+}
+</font></pre></div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+_variant_t vaSheetNames = doc-&gt;SheetNames;
+LPVARIANT pData = NULL;
+::SafeArrayAccessData(vaSheetNames.parray, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>**<span class="keyword">&gt;</span>(&amp;pData));
+
+LONG LBound, UBound;
+::SafeArrayGetLBound(vaSheetNames.parray, 1, &amp;LBound);
+::SafeArrayGetUBound(vaSheetNames.parray, 1, &amp;UBound);
+
+<span class="keywordflow">for</span> (LONG i = LBound; i &lt;= UBound; ++i) {
+    doc-&gt;CurrentSheet = pData[i].bstrVal;
+}
+</font></pre></div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IDocument::GetImageData</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0" width="779">
+  <tr>
+   <td valign="top" width="831">
+      <b>
+      <font face="Arial" size="4">VARIANT bpac::IDocument::GetImageData 
+      (<a href="param_exporttype.html">ExportType</a> <em>type</em>, LONG <em>width</em>, LONG <em>height</em>)</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top" width="654">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top" width="654">
+<font face="Arial" size="3">
+<a class="anchor" name="b4743ba32003abb82f67d4ad4b0ff23b"></a></font><!-- doxytag: member="bpac::IDocument::GetImageData" ref="b4743ba32003abb82f67d4ad4b0ff23b" args="(ExportType type, LONG width, LONG height)" -->
+<div class="memitem">
+<div class="memdoc" style="width: 667; height: 323">
+
+<p>
+<font size="3" face="Arial">Acquires a preview sample image</font><font size="3"> <code>
+<font face="Arial">(VT_UI1 | VT_ARRAY)</font></code></font><font size="3" face="Arial">
+</font> 
+<p>
+<font face="Arial" size="3">Acquires image data of the specified size.<br>
+ This method cannot be used by VBScript and JScript.</font><p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="585" height="167">
+    <tr><td valign="top" width="8" height="52"></td>
+      <td valign="top" width="58" height="52"><font face="Arial" size="3"><em>type</em>&nbsp;</font></td>
+      <td width="511" height="52" valign="top">
+      <font face="Arial" size="3">Type of image to be acquired.<br>
+      Only <b>bexBmp</b> can be specified. 
+      </font> </td></tr>
+    <tr><td valign="top" width="8" height="72"></td>
+      <td valign="top" width="58" height="72"><font face="Arial" size="3"><em>width</em>&nbsp;</font></td>
+      <td width="511" height="72" valign="top">
+      <font face="Arial" size="3">Horizontal size (pixel) of the image to be acquired.<br>
+      If 0 is specified, it becomes a size that maintains the aspect ratio based on <em>height</em>. 
+      </font> </td></tr>
+    <tr><td valign="top" width="8" height="37"></td>
+      <td valign="top" width="58" height="37"><font face="Arial" size="3"><em>height</em>&nbsp;</font></td>
+      <td width="511" height="37">
+      <font face="Arial" size="3">If the vertical size (pixel) of the image to be acquired is specified as 0, it becomes a size that maintains the aspect ratio based on <em>width</em>. 
+      </font> </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font size="3" face="Arial">Sample image's binary data</font> <code>
+  <font size="3" face="Arial">(VT_UI1 | VT_ARRAY)</font></code></dd></dl>
+
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

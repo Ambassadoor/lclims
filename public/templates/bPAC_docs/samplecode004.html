@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Acquisition using object indexer</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Acquisition using object indexer</font><a class="anchor" name="samplecode"> </a></h1>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+'
+' VB Sample
+'
+Set objs = doc.Objects
+<span class="keywordflow">For</span> i = 0 <span class="keywordflow">To</span> objs.Count - 1
+    objs(i).Name
+<span class="keywordflow">Next</span>
+</font></pre><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C#]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+bpac.IObjects objs = doc.Objects;
+<span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; objs.Count; ++i)
+{
+    objs[i].Name;
+}
+</font></pre></div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+bpac::IObjectsPtr objs = doc-&gt;Objects;
+<span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; objs-&gt;Count; ++i)
+{
+    objs-&gt;Item[i]-&gt;Name;
+    <span class="comment">//objs-&gt;GetItem(i)-&gt;Name;</span>
+}
+</font></pre></div> 
+</body>
+</html>

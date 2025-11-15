@@ -1,0 +1,1261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Printout samples and cut option combinations for each major device type</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">
+Printout samples and cut option combinations for each major device type</font></h1>
+<font face="Arial" size="3">The cut method when printing can be specified.<br>
+Various cut options are available and can be specified as follows.<br>
+<br>
+</font><table border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" class="normal"><font face="Arial" size="3">Example</font></td><td align="center" class="normal">
+<font face="Arial" size="3">If specified by enumerator value beginning with bpo</font></td><td align="center" class="normal">
+<font face="Arial" size="3">If directly specified by numeric value</font></td></tr>
+<tr>
+<td class="normal" width="130"><font face="Arial" size="3">Print with only auto cut 
+specified</font></td><td class="normal"><font face="Arial" size="3">
+ObjDoc.Open("***.lbx")<br>
+ObjDoc.StartPrint "Print sample", bpoAutoCut<br>
+ObjDoc.PrintOut 1, bpoAutoCut<br>
+ObjDoc.EndPrint<br>
+ObjDoc.Close
+</font> </td><td class="normal">
+<font face="Arial" size="3">
+ObjDoc.Open("***.lbx")<br>
+ObjDoc.StartPrint "Print sample", &amp;H1<br>
+ObjDoc.PrintOut 1, &amp;H1<br>
+ObjDoc.EndPrint<br>
+ObjDoc.Close
+</font>  </td></tr>
+<tr>
+<td class="normal" width="130"><font face="Arial" size="3">Print with auto cut and half 
+cut specified</font></td><td class="normal"><font face="Arial" size="3">
+ObjDoc.Open("***.lbx")<br>
+ObjDoc.StartPrint "Print sample", (bpoAutoCut Or bpoHalfCut)<br>
+ObjDoc.PrintOut 1, (bpoAutoCut Or bpoHalfCut)<br>
+ObjDoc.EndPrint<br>
+ObjDoc.Close
+</font> </td><td class="normal">
+<font face="Arial" size="3">
+ObjDoc.Open("***.lbx")<br>
+ObjDoc.StartPrint "Print sample", &amp;H201<br>
+ObjDoc.PrintOut 1, &amp;H201<br>
+ObjDoc.EndPrint<br>
+ObjDoc.Close
+</table>
+<p></p>
+<p>
+<font face="Arial" size="3">The cut options that can be selected differ depending on the model.<br>
+This section provides information on the cut option combinations that can be selected with each model and print samples for each.</font></p>
+<ul>
+<li><b><font face="Arial" size="3"><a href="#pt9500pc">PT-9500PC / PT-9600 / PT-3600</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pt9700pc">PT-9700PC / PT-9800PCN / PT-P750W / PT-P910BT / PT-E550W / PT-E510 / PT-E560BT</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#ptd450">PT-D450</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pte800t">PT-E800T / PT-E800TK / PT-E850TKW</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#ptd800w">PT-D800W / PT-P900 / PT-P900W / PT-P950NW</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pt2100">PT-2100 / PT-2700 / PT-24 / PT-18R / PT-18NR</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pt1950">PT-1950 / PT-1960</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pt1230pc">PT-1230PC</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pt2600">PT-2600 / PT-2610</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#pt2430pc">PT-2430PC / PT-2730 / PT-P700 / PT-P710BT / PT-P715eBT / PT-H500 / PT-E500 / PT-D600 / PT-D610BT</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#ptD410">PT-D410 / PT-D460BT / PT-E310BT</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#ql500">QL-500 / MW-100e / MW-120 / MW-140BT / MW-145BT / MW-170 / MW-260 / MW-270 / PJ-623 / PJ-663 / PJ-722 / PJ-723 / PJ-762 / PJ-763 / PJ-763MFi / PJ-773 / RJ-2030 / RJ-2150 / RJ-2140 / RJ-2050 / RJ-3050 / RJ-3050Ai / RJ-3150 / RJ-3150Ai / RJ-3230B / RJ-3250WB / RJ-4030 / RJ-4030Ai / RJ-4040 / RJ-4230B / RJ-4250WB / PJ-822 / PJ-823 / PJ-862 / PJ-863 / PJ-883 / TD-2020 / TD-2120N / TD-2130N / TD-2030A / TD-2125N / TD-2125NWB / TD-2135N / TD-2135NWB / TD-2310D (203 dpi) / TD-2310D (300 dpi) / RJ-2035B / RJ-2055WB / RJ-3035B / RJ-3055WB</a></font></b><font face="Arial"><br><br></font></li>
+<li><b><font face="Arial" size="3"><a href="#ql550">QL-550</a></font></b><font face="Arial"><br><br></font></li>
+<li><font face="Arial" size="3"><b><a href="#ql560">QL-560 / QL-570 / QL-580N / QL-600 / QL-650TD / QL-700 / QL-710W / QL-720NW / QL-800 / QL-810W / QL-820NWB / QL-1050 / QL-1060N / QL-1100 / QL-1110NWB / QL-1115NWB / TD-4000 / TD-4100N / TD-4410D / TD-4420DN / TD-4510D / TD-4520DN / TD-4550DNWB / TD-4210D / TD-4420TN / TD-4520TN / TD-4650TNWB / TD-4750TNWB / TD-4650TNWBR / TD-4750TNWBR / TJ-4010TN / TJ-4005DN / TJ-4020TN / TJ-4021TN / TJ-4021TNR / TJ-4120TN / TJ-4121TN / TJ-4121TNR / TJ-4420TN / TJ-4422TN / TJ-4520TN / TJ-4522TN / TJ-4620TN /  TD-2320D (203 dpi) / TD-2320D (300 dpi) / TD-2320DSA (203 dpi) / TD-2320DSA (300 dpi) / TD-2350D (203 dpi) / TD-2350D (300 dpi) / TD-2350DSA (203 dpi) / TD-2350DSA (300 dpi)/ TJ-6421TN / TJ-6521TN</a></font></b><font face="Arial"><br><br></font></li>
+<li><font face="Arial" size="3"><b><a href="#td2320df">TD-2320DF (203 dpi) / TD-2320DF (300 dpi) / TD-2350DF (203 dpi) / TD-2350DF (300 dpi) / TD-2350DFSA (203 dpi) / TD-2350DFSA (300 dpi)</a></b>
+ <br>
+ </font>
+ </li></ul>
+<h1 id="pt9500pc" style="text-align: left"><font face="Arial" size="5">PT-9500PC / PT-9600 
+/ PT-3600</font><font face="Arial"><a class="anchor" name="pt9500pc"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark</font></td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image022.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image023.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image024.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image025.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image026.jpg" width="97" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image027.jpg" width="77" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image028.jpg" width="97" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image029.jpg" width="80" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="pt9700pc" style="text-align: left"><font face="Arial" size="5">PT-9700PC / PT-9800PCN / PT-P750W / PT-P910BT / PT-E550W / PT-E510 / PT-E560BT</font><font face="Arial"><a class="anchor" name="pt9500pc"> </a>
+</font></h1>
+<div align="center">
+  <center>
+  <table border="1" cellspacing="0" class="normal" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark</font></td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3">&nbsp;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3">&nbsp;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption">
+<font face="Arial" size="2">
+<img border="0" src="image/image022.jpg" width="87" height="35"></font></td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image023.jpg" width="67" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image024.jpg" width="87" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image025.jpg" width="67" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image026.jpg" width="97" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image027.jpg" width="77" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image028.jpg" width="97" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2"><font face="Arial" size="2">
+<p align="center"><font face="Arial">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image029.jpg" width="80" height="35"></font></div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+&nbsp;<img border="0" src="image/image050.jpg" width="72" height="35"></font></div>
+  </td></tr>
+</table>
+  </center>
+</div>
+  <h1 id="ptd450" style="text-align: left"><font face="Arial" size="5">PT-D450</font><a class="anchor" name="pt9500pc"></a></h1>
+  <div align="center">
+   <center>
+    <table border="1" cellspacing="0" class="normal" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+      <td colspan="7" class="cutOption">Cut option</td>
+      <td rowspan="4" class="cutOption">Print result</td>
+     </tr>
+     <tr>
+      <td class="cutOption">No cut</td>
+      <td class="cutOption">Auto cut</td>
+      <td class="cutOption">Half cut</td>
+      <td class="cutOption">Cut mark</td>
+      <td class="cutOption">Chain print</td>
+      <td class="cutOption">Cut at end</td>
+      <td class="cutOption">Special tape(No cut)</td>
+     </tr>
+     <tr>
+      <td class="cutOption">bpoNoCut</td>
+      <td class="cutOption">bpoAutoCut</td>
+      <td class="cutOption">bpoHalfCut</td>
+      <td class="cutOption">bpoCutMark</td>
+      <td class="cutOption">bpoChainPrint</td>
+      <td class="cutOption">bpoCutAtEnd</td>
+      <td class="cutOption">bpoSpecialTape</td>
+     </tr>
+     <tr>
+      <td class="cutOption">&amp;H10000000</td>
+      <td class="cutOption">&amp;H1</td>
+      <td class="cutOption">&amp;H200</td>
+      <td class="cutOption">&amp;H2</td>
+      <td class="cutOption">&amp;H400</td>
+      <td class="cutOption">&amp;H4000000</td>
+      <td class="cutOption">&amp;H80000</td>
+     </tr>
+     <tr>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image050.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image023.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image064.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image043.jpg"></td>
+     </tr>
+    </table>
+   </center>
+  </div>
+  <h1 id="pte800t" style="text-align: left"><font face="Arial" size="5">PT-E800T / PT-E800TK / PT-E850TKW</font><a class="anchor" name="pt9500pc"></a></h1>
+  <div align="center">
+   <center>
+    <table border="1" cellspacing="0" class="normal" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+      <td rowspan="4" class="cutOption">Media</td>
+      <td colspan="7" class="cutOption">Cut option</td>
+      <td rowspan="4" class="cutOption">Print result</td>
+     </tr>
+     <tr>
+      <td class="cutOption">No cut</td>
+      <td class="cutOption">Auto cut</td>
+      <td class="cutOption">Half cut</td>
+      <td class="cutOption">Cut mark</td>
+      <td class="cutOption">Chain print</td>
+      <td class="cutOption">Cut at end</td>
+      <td class="cutOption">Special tape(No cut)</td>
+     </tr>
+     <tr>
+      <td class="cutOption">bpoNoCut</td>
+      <td class="cutOption">bpoAutoCut</td>
+      <td class="cutOption">bpoHalfCut</td>
+      <td class="cutOption">bpoCutMark</td>
+      <td class="cutOption">bpoChainPrint</td>
+      <td class="cutOption">bpoCutAtEnd</td>
+      <td class="cutOption">bpoSpecialTape</td>
+     </tr>
+     <tr>
+      <td class="cutOption">&amp;H10000000</td>
+      <td class="cutOption">&amp;H1</td>
+      <td class="cutOption">&amp;H200</td>
+      <td class="cutOption">&amp;H2</td>
+      <td class="cutOption">&amp;H400</td>
+      <td class="cutOption">&amp;H4000000</td>
+      <td class="cutOption">&amp;H80000</td>
+     </tr>
+     <tr>
+      <td halign="left" valign="center" rowspan="9" class="cutOption">TZe</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image022.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image023.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image024.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image025.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image026.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image027.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image028.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image029.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption"><img border="0" src="image/image050.jpg"></td>
+     </tr>
+     <tr>
+      <td halign="left" valign="center" rowspan="2" class="cutOption">PVC Tube</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image002.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image006.jpg"></td>
+     </tr>
+     <tr>
+      <td halign="left" valign="center" rowspan="2" class="cutOption">FLe</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image061.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image062.jpg"></td>
+     </tr>
+    </table>
+   </center>
+  </div>
+  <h1 id="ptd800w" style="text-align: left"><font face="Arial" size="5">PT-D800W / PT-P900 / PT-P900W / PT-P950NW</font><a class="anchor" name="pt9500pc"></a></h1>
+  <div align="center">
+   <center>
+    <table border="1" cellspacing="0" class="normal" cellpadding="3" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+      <td rowspan="4" class="cutOption">Media</td>
+      <td colspan="7" class="cutOption">Cut option</td>
+      <td rowspan="4" class="cutOption">Print result</td>
+     </tr>
+     <tr>
+      <td class="cutOption">No cut</td>
+      <td class="cutOption">Auto cut</td>
+      <td class="cutOption">Half cut</td>
+      <td class="cutOption">Cut mark</td>
+      <td class="cutOption">Chain print</td>
+      <td class="cutOption">Cut at end</td>
+      <td class="cutOption">Special tape(No cut)</td>
+     </tr>
+     <tr>
+      <td class="cutOption">bpoNoCut</td>
+      <td class="cutOption">bpoAutoCut</td>
+      <td class="cutOption">bpoHalfCut</td>
+      <td class="cutOption">bpoCutMark</td>
+      <td class="cutOption">bpoChainPrint</td>
+      <td class="cutOption">bpoCutAtEnd</td>
+      <td class="cutOption">bpoSpecialTape</td>
+     </tr>
+     <tr>
+      <td class="cutOption">&amp;H10000000</td>
+      <td class="cutOption">&amp;H1</td>
+      <td class="cutOption">&amp;H200</td>
+      <td class="cutOption">&amp;H2</td>
+      <td class="cutOption">&amp;H400</td>
+      <td class="cutOption">&amp;H4000000</td>
+      <td class="cutOption">&amp;H80000</td>
+     </tr>
+     <tr>
+      <td halign="left" valign="center" rowspan="9" class="cutOption">TZe</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image022.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image023.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image024.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image025.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image026.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image027.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image028.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption"><img border="0" src="image/image029.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption"><img border="0" src="image/image050.jpg"></td>
+     </tr>
+     <tr>
+      <td halign="left" valign="center" rowspan="2" class="cutOption">FLe</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption2">-</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image061.jpg"></td>
+     </tr>
+     <tr>
+      <td class="cutOption2">-</td>
+      <td class="cutOption2">&#9679;</td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption3"></td>
+      <td class="cutOption"><img border="0" src="image/image062.jpg"></td>
+     </tr>
+    </table>
+   </center>
+  </div>
+<h1 id="pt2100" style="text-align: left"><font face="Arial" size="5">PT-2100 / PT-2700 / 
+PT-24 / PT-18R / PT-18NR</font><font face="Arial"><a class="anchor" name="pt2100"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial">Special tape(No cut)</font></td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark</font></td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image034.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image035.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image036.jpg" width="97" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image037.jpg" width="77" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="pt1950" style="text-align: left"><font face="Arial" size="5">PT-1950 / PT-1960</font><font face="Arial"><a class="anchor" name="pt1950"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" rowspan="4" class="cutOption"><font face="Arial" size="2">Model 
+</font> </td><td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option </font> </td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial">Special tape(No cut)</font></td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark</font></td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td halign="left" valign="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">PT-1950 / PT-1960</font><p>
+</td><td class="cutOption2">&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image038.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image039.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image041.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image043.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="pt1230pc" style="text-align: left"><font face="Arial" size="5">PT-1230PC</font><font face="Arial"><a class="anchor" name="pt1500pc"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option </font> </td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image044.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image045.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="pt2600" style="text-align: left"><font face="Arial" size="5">PT-2600 / PT-2610</font><font face="Arial"><a class="anchor" name="pt2600"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image046.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image047.jpg" width="97" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="pt2430pc" style="text-align: left"><font face="Arial" size="5">PT-2430PC / PT-2730 / PT-P700 / PT-P710BT / PT-P715eBT / PT-H500 / PT-E500 / PT-D600 / PT-D610BT</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial">Special tape(No cut)</font></td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image048.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image050.jpg" width="72" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image051.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image052.jpg" width="97" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image053.jpg" width="77" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+
+<h1 id="ptD410" style="text-align: left"><font face="Arial" size="5">PT-D410/PT-D460BT/PT-E310BT</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Pause to cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial">Special tape(No cut)</font></td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutPause </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image048.jpg" width="87" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image051.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image052.jpg" width="97" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image053.jpg" width="77" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image050.jpg" width="72" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+
+
+<h1 id="ql500" style="text-align: left"><font face="Arial" size="5">QL-500 / MW-100e / MW-120 / MW-140BT / MW-145BT / MW-170 / MW-260 / MW-270 / PJ-623 / PJ-663 / PJ-722 / PJ-723 / PJ-762 / PJ-763 / PJ-763MFi / PJ-773 / RJ-2030 / RJ-2150 / RJ-2140 / RJ-2050 / RJ-3050 / RJ-3050Ai / RJ-3150 / RJ-3150Ai / RJ-3230B / RJ-3250WB / RJ-4030 / RJ-4030Ai / RJ-4040 / RJ-4230B / RJ-4250WB / PJ-822 / PJ-823 / PJ-862 / PJ-863 / PJ-883 / TD-2020 / TD-2120N / TD-2130N / TD-2030A / TD-2125N / TD-2125NWB / TD-2135N / TD-2135NWB / TD-2310D (203 dpi) / TD-2310D (300 dpi) / RJ-2035B / RJ-2055WB / RJ-3035B / RJ-3055WB</font><font face="Arial"><a class="anchor" name="ql500"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option </font> </td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400&nbsp; </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image055.jpg" width="47" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="ql550" style="text-align: left"><font face="Arial" size="5">QL-550</font><font face="Arial"><a class="anchor" name="ql550"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option</font></td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial">Auto cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark</font></td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint&nbsp; </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400&nbsp; </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image056.jpg" width="47" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image058.jpg" width="72" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="ql560" style="text-align: left"><font face="Arial" size="5">QL-560 / QL-570 / QL-580N / QL-600 / QL-650TD / QL-700 / QL-710W / QL-720NW / QL-800 / QL-810W / QL-820NWB / QL-1050 / QL-1060N / QL-1100 / QL-1110NWB / QL-1115NWB / TD-4000 / TD-4100N / TD-4410D / TD-4420DN / TD-4510D / TD-4520DN / TD-4550DNWB / TD-4210D / TD-4420TN / TD-4520TN / TD-4650TNWB / TD-4750TNWB / TD-4650TNWBR / TD-4750TNWBR / TJ-4010TN / TJ-4005DN / TJ-4020TN / TJ-4021TN / TJ-4021TNR / TJ-4120TN / TJ-4121TN / TJ-4121TNR / TJ-4420TN / TJ-4422TN / TJ-4520TN / TJ-4522TN / TJ-4620TN /  TD-2320D (203 dpi) / TD-2320D (300 dpi) / TD-2320DSA (203 dpi) / TD-2320DSA (300 dpi) / TD-2350D (203 dpi) / TD-2350D (300 dpi) / TD-2350DSA (203 dpi) / TD-2350DSA (300 dpi)/ TJ-6421TN / TJ-6521TN</font><font face="Arial"><a class="anchor" name="ql560"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option </font> </td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial">Half cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image059.jpg" width="47" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image061.jpg" width="67" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+<font face="Arial" size="2">-</font></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image062.jpg" width="72" height="35"> </font>
+</div>
+  </td></tr>
+<tr>
+<td class="cutOption2"><font face="Arial" size="2">-</font></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption2">
+&#9679;</td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image063.gif" width="72" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+<h1 id="td2320df" style="text-align: left"><font face="Arial" size="5">TD-2320DF (203 dpi) / TD-2320DF (300 dpi) / TD-2350DF (203 dpi) / TD-2350DF (300 dpi) / TD-2350DFSA (203 dpi) / TD-2350DFSA (300 dpi)</font><font face="Arial"><a class="anchor" name="td2320df"> </a>
+</font></h1><table align="center" border="1" cellspacing="0" class="normal" cellpadding="3">
+<tr>
+<td align="center" colspan="7" class="cutOption">
+<font face="Arial" size="2">Cut option </font> </td><td align="center" rowspan="4" class="cutOption">
+<font face="Arial" size="2">Print result </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial">No cut</font></td><td class="cutOption">
+<font face="Arial" size="2">Auto cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Half cut </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut mark </font> </td><td class="cutOption">
+<font face="Arial" size="2">Chain print </font> </td><td class="cutOption">
+<font face="Arial" size="2">Cut at end </font> </td><td class="cutOption">
+<font face="Arial" size="2">Special tape(No cut) </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">bpoNoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoAutoCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoHalfCut </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutMark </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoChainPrint </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoCutAtEnd </font> </td><td class="cutOption">
+<font face="Arial" size="2">bpoSpecialTape </font>  </td></tr>
+<tr>
+<td class="cutOption"><font face="Arial" size="2">&amp;H10000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H1 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H200 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H2</font></td><td class="cutOption">
+<font face="Arial" size="2">&amp;H400&nbsp; </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H4000000 </font> </td><td class="cutOption">
+<font face="Arial" size="2">&amp;H80000 </font>  </td></tr>
+<tr>
+<td class="cutOption2">&#9679;</td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"></td><td class="cutOption3"><p>
+</td><td class="cutOption"><div align="center">
+<font face="Arial" size="2">
+<img border="0" src="image/image062.jpg" width="72" height="35"> </font>
+</div>
+  </td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Object correction</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Object correction</font><a class="anchor" name="samplecode"> </a></h1>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+'
+' VB Sample
+'
+For Each obj In doc.Objects
+    obj.Name
+Next
+</font></pre><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C#]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+<span class="keywordflow">foreach</span> (bpac.IObject obj in doc.Objects)
+{
+    obj.Name;
+}
+</font></pre></div> <div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+<span class="keyword">const</span> ULONG nCelt = 3;
+ULONG nReturned = 0;
+VARIANT arrVariant[nCelt] = {0};
+IEnumVARIANTPtr enumPtr = doc-&gt;Objects-&gt;Get_NewEnum();
+HRESULT hr = E_UNEXPECTED;
+<span class="keywordflow">do</span> {
+    <span class="keywordflow">if</span> (FAILED(hr = enumPtr-&gt;Next(nCelt, &amp;arrVariant[0], &amp;nReturned)))
+        <span class="keywordflow">break</span>;
+
+    <span class="keywordflow">for</span> (ULONG i = 0; i &lt; nReturned; ++i)
+    {
+        bpac::IObjectPtr obj(arrVariant[i]);
+        obj-&gt;Name;
+    }
+} <span class="keywordflow">while</span> (hr != S_FALSE);
+</font></pre></div>
+</body>
+</html>

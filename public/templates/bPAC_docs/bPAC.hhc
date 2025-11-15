@@ -1,0 +1,979 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="FrameName" value="right">
+	<param name="Window Styles" value="0x800425">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="b-PAC3.4 SDK">
+		<param name="Local" value="opening.html">
+		<param name="ImageNumber" value="11">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="During operation">
+		<param name="Local" value="start.html">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="b-PAC Summary">
+			<param name="Local" value="start002.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="User license agreement">
+			<param name="Local" value="start001.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Requirements for creating programs">
+			<param name="Local" value="start007.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="b-PAC 3.4 SDK Configuration">
+			<param name="Local" value="start005.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using b-PAC on .NET Framework ">
+			<param name="Local" value="start003.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using b-PAC on VBA">
+			<param name="Local" value="start008.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using b-PAC with Google Chrome or Microsoft Edge or Mozilla Firefox">
+			<param name="Local" value="start009.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Program Redistribution ">
+			<param name="Local" value="start004.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Uninstallation">
+			<param name="Local" value="start006.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Template files">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="What are template files?">
+			<param name="Local" value="template001.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Limitations on b-PAC templates">
+			<param name="Local" value="template002.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sample templates included with SDK">
+			<param name="Local" value="template003.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Creating a template">
+			<param name="Local" value="template004.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Checking a template">
+			<param name="Local" value="template005.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sample Application">
+		<param name="Local" value="sampleappli.html">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Visual C++ (R) (VC folder)">
+			<param name="Local" value="appli_vc.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Visual Basic(R) for Application (VBA folder)">
+			<param name="Local" value="appli_vba.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="VB Script (for Windows Scripting Host) (VBS folder)">
+			<param name="Local" value="appli_vbs.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="VB Script (for Internet Explorer) (VBS folder)">
+			<param name="Local" value="appli_vbsie.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JScript (for Internet Explorer) (jscript folder)">
+			<param name="Local" value="appli_jsie.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JavaScript (for Web Browser Extensions) (JavaScript folder)">
+			<param name="Local" value="appli_jswe.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Visual Basic(R) .NET (VBNET Folder)">
+			<param name="Local" value="appli_vbnet.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Visual C#(R) (VCS folder)">
+			<param name="Local" value="appli_vcs.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sample Code">
+		<param name="Local" value="samplecode.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Opening the code after acquiring the path from the environment variables">
+			<param name="Local" value="samplecode001.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sheet acquisition and setting">
+			<param name="Local" value="samplecode002.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Object correction">
+			<param name="Local" value="samplecode003.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Acquisition using object indexer">
+			<param name="Local" value="samplecode004.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sample printout">
+			<param name="Local" value="samplecode005.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Handling printing completion event & callback">
+			<param name="Local" value="samplecode006.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Continue to print different templates">
+			<param name="Local" value="samplecode007.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Print multiple copies">
+			<param name="Local" value="samplecode008.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Acquire the media loaded in the printer">
+			<param name="Local" value="samplecode009.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Printer online check">
+			<param name="Local" value="samplecode010.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="How to convert code from b-PAC2.0 to b-PAC3.4">
+		<param name="Local" value="changecode.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Print Sample">
+			<param name="Local" value="changecode001.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual Basic(R)">
+				<param name="Local" value="changecode001_1.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C#(R)">
+				<param name="Local" value="changecode001_2.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C++(R)">
+				<param name="Local" value="changecode001_3.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetSheetSize() Sample">
+			<param name="Local" value="changecode003.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual Basic(R)">
+				<param name="Local" value="changecode003_1.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C#(R)">
+				<param name="Local" value="changecode003_2.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C++(R)">
+				<param name="Local" value="changecode003_3.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetFontInfo() Sample">
+			<param name="Local" value="changecode004.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual Basic(R)">
+				<param name="Local" value="changecode004_1.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C#(R)">
+				<param name="Local" value="changecode004_2.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C++(R)">
+				<param name="Local" value="changecode004_3.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SetFontInfo() Sample">
+			<param name="Local" value="changecode005.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual Basic(R)">
+				<param name="Local" value="changecode005_1.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C#(R)">
+				<param name="Local" value="changecode005_2.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C++(R)">
+				<param name="Local" value="changecode005_3.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ReplaceImageFile() Sample">
+			<param name="Local" value="changecode006.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual Basic(R)">
+				<param name="Local" value="changecode006_1.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C#(R)">
+				<param name="Local" value="changecode006_2.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Visual C++(R)">
+				<param name="Local" value="changecode006_3.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="API compatibility chart for b-PAC 2.0 and b-PAC 3.4">
+			<param name="Local" value="changecode007.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="b-PAC 3.4 API Reference">
+		<param name="Local" value="reference.html">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IDocument">
+			<param name="Local" value="reference001.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Public methods">
+				<param name="Local" value="reference001_1.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Close">
+					<param name="Local" value="IDocument_Method_Close.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="DoPrint">
+					<param name="Local" value="IDocument_Method_DoPrint.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="EndPrint">
+					<param name="Local" value="IDocument_Method_EndPrint.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Export">
+					<param name="Local" value="IDocument_Method_Export.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetBarcodeIndex">
+					<param name="Local" value="IDocument_Method_GetBarcodeIndex.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetImageData">
+					<param name="Local" value="IDocument_Method_GetImageData.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetMediaId">
+					<param name="Local" value="IDocument_Method_GetMediaId.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetMediaName">
+					<param name="Local" value="IDocument_Method_GetMediaName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetObject">
+					<param name="Local" value="IDocument_Method_GetObject.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetPrinterName">
+					<param name="Local" value="IDocument_Method_GetPrinterName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetText">
+					<param name="Local" value="IDocument_Method_GetText.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetTextCount">
+					<param name="Local" value="IDocument_Method_GetTextCount.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetTextIndex">
+					<param name="Local" value="IDocument_Method_GetTextIndex.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Open">
+					<param name="Local" value="IDocument_Method_Open.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="PrintOut">
+					<param name="Local" value="IDocument_Method_PrintOut.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Save">
+					<param name="Local" value="IDocument_Method_Save.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SaveAs">
+					<param name="Local" value="IDocument_Method_SaveAs.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetBarcodeData">
+					<param name="Local" value="IDocument_Method_SetBarcodeData.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetMarginLeftRight">
+					<param name="Local" value="IDocument_Method_SetMarginLeftRight.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetMediaById">
+					<param name="Local" value="IDocument_Method_SetMediaById.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetMediaByName">
+					<param name="Local" value="IDocument_Method_SetMediaByName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+                <LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetPrintedCallback">
+					<param name="Local" value="IDocument_Method_SetPrintedCallback.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetPrinter">
+					<param name="Local" value="IDocument_Method_SetPrinter.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetText">
+					<param name="Local" value="IDocument_Method_SetText.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="StartPrint">
+					<param name="Local" value="IDocument_Method_StartPrint.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Event">
+				<param name="Local" value="reference001_2.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Printed">
+					<param name="Local" value="IDocument_Event_Printed.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Properties">
+				<param name="Local" value="reference001_3.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CurrentSheet">
+					<param name="Local" value="IDocument_Property_CurrentSheet.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CutLineCount">
+					<param name="Local" value="IDocument_Property_CutLineCount.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CutLines">
+					<param name="Local" value="IDocument_Property_CutLines.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ErrorCode">
+					<param name="Local" value="IDocument_Property_ErrorCode.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Length">
+					<param name="Local" value="IDocument_Property_Length.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MarginBottom">
+					<param name="Local" value="IDocument_Property_MarginBottom.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MarginLeft">
+					<param name="Local" value="IDocument_Property_MarginLeft.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MarginRight">
+					<param name="Local" value="IDocument_Property_MarginRight.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MarginTop">
+					<param name="Local" value="IDocument_Property_MarginTop.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Objects">
+					<param name="Local" value="IDocument_Property_Objects.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Orientation">
+					<param name="Local" value="IDocument_Property_Orientation.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Printer">
+					<param name="Local" value="IDocument_Property_Printer.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SheetNames">
+					<param name="Local" value="IDocument_Property_SheetNames.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Width">
+					<param name="Local" value="IDocument_Property_Width.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IObject">
+			<param name="Local" value="reference002.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Public methods">
+				<param name="Local" value="reference002_1.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetAttribute">
+					<param name="Local" value="IObject_Method_GetAttribute.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetData">
+					<param name="Local" value="IObject_Method_GetData.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontBold">
+					<param name="Local" value="IObject_Method_GetFontBold.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontEffect">
+					<param name="Local" value="IObject_Method_GetFontEffect.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontItalics">
+					<param name="Local" value="IObject_Method_GetFontItalics.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontMaxPoint">
+					<param name="Local" value="IObject_Method_GetFontMaxPoint.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontName">
+					<param name="Local" value="IObject_Method_GetFontName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontStrikeout">
+					<param name="Local" value="IObject_Method_GetFontStrikeout.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetFontUnderline">
+					<param name="Local" value="IObject_Method_GetFontUnderline.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetAlign">
+					<param name="Local" value="IObject_Method_SetAlign.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetAttribute">
+					<param name="Local" value="IObject_Method_SetAttribute.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetData">
+					<param name="Local" value="IObject_Method_SetData.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontBold">
+					<param name="Local" value="IObject_Method_SetFontBold.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontEffect">
+					<param name="Local" value="IObject_Method_SetFontEffect.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontItalics">
+					<param name="Local" value="IObject_Method_SetFontItalics.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontMaxPoint">
+					<param name="Local" value="IObject_Method_SetFontMaxPoint.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontName">
+					<param name="Local" value="IObject_Method_SetFontName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontStrikeout">
+					<param name="Local" value="IObject_Method_SetFontStrikeout.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetFontUnderline">
+					<param name="Local" value="IObject_Method_SetFontUnderline.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetPosition">
+					<param name="Local" value="IObject_Method_SetPosition.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SetSelection">
+					<param name="Local" value="IObject_Method_SetSelection.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Properties">
+				<param name="Local" value="reference002_2.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Height">
+					<param name="Local" value="IObject_Property_Height.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="HorizontalAlign">
+					<param name="Local" value="IObject_Property_HorizontalAlign.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Name">
+					<param name="Local" value="IObject_Property_Name.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Orientation">
+					<param name="Local" value="IObject_Property_Orientation.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SelectionEnd">
+					<param name="Local" value="IObject_Property_SelectionEnd.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SelectionStart">
+					<param name="Local" value="IObject_Property_SelectionStart.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Text">
+					<param name="Local" value="IObject_Property_Text.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Type">
+					<param name="Local" value="IObject_Property_Type.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="VerticalAlign">
+					<param name="Local" value="IObject_Property_VerticalAlign.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Width">
+					<param name="Local" value="IObject_Property_Width.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="X">
+					<param name="Local" value="IObject_Property_X.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Y">
+					<param name="Local" value="IObject_Property_Y.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IObjects">
+			<param name="Local" value="reference003.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Public methods">
+				<param name="Local" value="reference003_1.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetEnumerator">
+					<param name="Local" value="IObjects_Method_GetEnumerator.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetIndex">
+					<param name="Local" value="IObjects_Method_GetIndex.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetIndexByName">
+					<param name="Local" value="IObjects_Method_GetIndexByName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Insert">
+					<param name="Local" value="IObjects_Method_Insert.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Remove">
+					<param name="Local" value="IObjects_Method_Remove.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Properties">
+				<param name="Local" value="reference003_2.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Count">
+					<param name="Local" value="IObjects_Property_Count.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="this">
+					<param name="Local" value="IObjects_Property_this.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="bpac::IPrinter">
+			<param name="Local" value="reference004.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Public methods">
+				<param name="Local" value="reference004_1.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetInstalledPrinters">
+					<param name="Local" value="IPrinter_Method_GetInstalledPrinters.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetMediaId">
+					<param name="Local" value="IPrinter_Method_GetMediaId.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetMediaName">
+					<param name="Local" value="IPrinter_Method_GetMediaName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetPrintedTapeLength">
+					<param name="Local" value="IPrinter_Method_GetPrintedTapeLength.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetSupportedMediaIds">
+					<param name="Local" value="IPrinter_Method_GetSupportedMediaIds.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GetSupportedMediaNames">
+					<param name="Local" value="IPrinter_Method_GetSupportedMediaNames.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="IsMediaIdSupported">
+					<param name="Local" value="IPrinter_Method_IsMediaIdSupported.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="IsMediaNameSupported">
+					<param name="Local" value="IPrinter_Method_IsMediaNameSupported.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="IsPrinterOnline">
+					<param name="Local" value="IPrinter_Method_IsPrinterOnline.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="IsPrinterSupported">
+					<param name="Local" value="IPrinter_Method_IsPrinterSupported.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Properties">
+				<param name="Local" value="reference004_2.html">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ErrorCode">
+					<param name="Local" value="IPrinter_Property_ErrorCode.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ErrorString">
+					<param name="Local" value="IPrinter_Property_ErrorString.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Name">
+					<param name="Local" value="IPrinter_Property_Name.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="PortName">
+					<param name="Local" value="IPrinter_Property_PortName.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Other functions">
+			<param name="Local" value="reference006.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PrintedEvent">
+				<param name="Local" value="IEtc_Method_PrintedEvent.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Enumerator">
+			<param name="Local" value="reference007.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ExportType">
+				<param name="Local" value="param_exporttype.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FontEffect">
+				<param name="Local" value="param_fonteffect.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ObjectAttribute">
+				<param name="Local" value="param_objectattribute.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ObjectType">
+				<param name="Local" value="param_objecttype.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PrintEvent">
+				<param name="Local" value="param_printevent.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PrintOptionConstants">
+				<param name="Local" value="param_printoption.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Troubleshooting">
+		<param name="Local" value="trouble.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Understanding error codes that appear while debugging">
+			<param name="Local" value="trouble008.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Can new functions from b-PAC3 be added to an older system using b-PAC2?">
+			<param name="Local" value="trouble001.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="When running a sample included with the SDK, a media error occurs">
+			<param name="Local" value="trouble002.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Printing is not possible even when running a sample included with the SDK">
+			<param name="Local" value="trouble003.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="When multiple printer drivers have been installed, printing is not possible from any printer">
+			<param name="Local" value="trouble004.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="What should be done when changing from the currently used label printer to a different model?">
+			<param name="Local" value="trouble005.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="It is taking a long time to run Open()">
+			<param name="Local" value="trouble006.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Operations are not performed correctly when a Date and Time object is included in a text object">
+			<param name="Local" value="trouble007.htm">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="APPENDIX">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Layout units">
+			<param name="Local" value="appendix001.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Printout samples and cut option combinations for each major device type">
+			<param name="Local" value="appendix002.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Cautions and restrictions when using the bpoContinue flag">
+			<param name="Local" value="appendix003.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Detailed explanation of TailCut function">
+			<param name="Local" value="appendix004.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

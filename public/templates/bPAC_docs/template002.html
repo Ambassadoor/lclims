@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Limitations on b-PAC templates</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Limitations on b-PAC 
+templates</font></h1>
+<p><font face="Arial" size="3">Of the layout files (*.lbl, *.lbx) created with 
+P-touch Editor Version 4 or more, many can be used as templates with b-PAC. 
+However, the following limitations apply.<br>
+ <br>
+ </font></p>
+ <ul>
+<li>
+<font face="Arial" size="3">Layout files containing merged database fields 
+cannot be used as templates.<br>
+ <br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Data to be set as a customer barcode in the barcode 
+protocol must consist of a 7-digit value + alphabetic characters + a hyphen (-) 
+(up to a maximum of 20 characters).  <br>
+ <br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Clip art, Make Picture objects cannot be displayed 
+with the current version of b-PAC. <br>
+If you wish to use templates containing these 
+types of objects, contact us for more information.<br>
+ <br>
+ </font>
+ </li>
+<li>
+<font face="Arial" size="3">Printer for outputting the (template) data.<br>
+ <br>
+ The information for the printer driver used for outputting is saved with the 
+template; therefore, the computer will try to use the set printer driver 
+whenever outputting the template.<br>
+If the printer driver that was set when the template was created is not 
+installed on the PC that will output the b-PAC data, the following will occur.<br>
+<br>
+ </font>
+ <table border="1" cellspacing="0" cellpadding="5" class="normal" style="margin-left:1em;">
+<tr>
+<td width="300" colspan="2" valign="top" class="normal" style="background:#DFDFDF;">
+<font face="Arial" size="3">No printer driver has been installed:</font></td><td width="300" valign="top" class="normal">
+<font face="Arial" size="3">The b-PAC component cannot be used. </font>   </td></tr>
+<tr>
+<td width="300" colspan="2" valign="top" class="normal" style="background:#DFDFDF;">
+<font face="Arial" size="3">If a printer driver has been installed, but a P/M/S-series 
+printer driver has not:</font></td><td width="300" valign="top" class="normal">
+<font face="Arial" size="3">The template can be opened, but it cannot be printed. </font>   </td></tr>
+<tr>
+<td width="168" rowspan="2" valign="top" class="normal" style="background:#DFDFDF;">
+<font face="Arial" size="3">If a P/M/S-series printer driver has been installed, but it 
+is different than the one used when the template was created:</font></td><td width="132" valign="top" class="normal" style="background:#DFDFDF;">
+<font face="Arial" size="3">When only one P/M/S-series driver is installed:</font></td><td width="300" valign="top" class="normal">
+<font face="Arial" size="3">The data will be outputted from the printer for the installed 
+P/M/S-series driver. </font>   </td></tr>
+<tr>
+<td width="132" valign="top" class="normal" style="background:#DFDFDF;">
+<font face="Arial" size="3">When multiple P/M/S-series drivers have been installed:</font></td><td width="300" valign="top" class="normal">
+<font face="Arial" size="3">The data will be outputted from the P/M/S-series 
+printer with the driver name that is first alphabetically.<br>
+<br>
+ In this case, the template is adjusted to match the printer driver installed on 
+the PC. </font>   </td></tr>
+</table>
+</li>
+</ul>
+</body>
+</html>

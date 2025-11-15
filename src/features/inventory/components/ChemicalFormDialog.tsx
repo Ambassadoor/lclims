@@ -10,6 +10,8 @@ import {
   TextField,
   MenuItem,
   Box,
+  FormControlLabel,
+  Checkbox,
 } from '@mui/material';
 
 interface ChemicalFormDialogProps {
@@ -58,6 +60,7 @@ const INITIAL_FORM_DATA: ChemicalFormData = {
 
 export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFormDialogProps) {
   const [formData, setFormData] = useState<ChemicalFormData>(INITIAL_FORM_DATA);
+  const [printLabel, setPrintLabel] = useState(true); // Default to true
 
   const handleChange =
     (field: keyof ChemicalFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,11 +72,13 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
       onSave(formData);
     }
     setFormData(INITIAL_FORM_DATA);
+    setPrintLabel(true); // Reset to default
     onClose();
   };
 
   const handleCancel = () => {
     setFormData(INITIAL_FORM_DATA);
+    setPrintLabel(true); // Reset to default
     onClose();
   };
 
@@ -257,6 +262,18 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
             value={formData.synonyms}
             onChange={handleChange('synonyms')}
             helperText="Alternative names, comma separated"
+          />
+
+          {/* Print Label Checkbox */}
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={printLabel}
+                onChange={(e) => setPrintLabel(e.target.checked)}
+                color="primary"
+              />
+            }
+            label="Print label after saving"
           />
         </Box>
       </DialogContent>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Detailed explanation of TailCut function </title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Detailed explanation of 
+TailCut function</font></h1>
+<font face="Arial" size="3">bpoTailCut is a function specific to PT-9700PC, 
+PT-9800PCN and PT-9500PC.<br>
+ The skillful use of this print option allows for the effective use of the 
+label's front margin. </font><p>
+<font face="Arial" size="3">This is explained using the next label as an example. </font> <table border="0" cellspacing="3" cellpadding="3">
+<tr>
+<td><div align="center">
+<font face="Arial" size="3">
+<img border="0" src="image/TailCut1.png" width="239" height="68"> </font>
+</div>
+ </td></tr>
+</table>
+<p>
+<font face="Arial" size="3">Create the two label templates below.<br>
+ A 23 mm template that is the label's left side (SMALL.LBX)</font><table border="0" cellspacing="3" cellpadding="3">
+<tr>
+<td><div align="center">
+<font face="Arial" size="3">
+<img border="0" src="image/TailCut2.png" width="61" height="68"> </font>
+</div>
+ </td></tr>
+</table>
+<font face="Arial" size="3">A template for the remaining portion of the label (MAIN.LBX)
+</font> <table border="0" cellspacing="3" cellpadding="3">
+<tr>
+<td><div align="center">
+<font face="Arial" size="3">
+<img border="0" src="image/TailCut3.png" width="191" height="68"> </font>
+</div>
+ </td></tr>
+</table>
+<p>
+<font face="Arial" size="3">This is a VBScript example that creates a label by 
+chaining these two together.</font><div class="fragment"><pre class="fragment"><font face="Arial" size="3">ObjDoc.Open(<span class="stringliteral">&quot;MAIN.LBX&quot;</span>)
+ObjDoc.StartPrint <span class="stringliteral">&quot;b-PAC printing test&quot;</span>, &amp;h0400   'ChainPrint
+ObjDoc.PrintOut 1, 0
+ObjDoc.Open(<span class="stringliteral">&quot;SMALL.LBX&quot;</span>)
+ObjDoc.PrintOut 1, &amp;h0C00   'TailCut+ChainPrint
+ObjDoc.EndPrint
+</font></pre></div> <font face="Arial" size="3">Repeating the above script allows a 
+two-label chained label to be created without a front margin. </font><p>
+<font face="Arial" size="3">&lt;&lt;Explanation&gt;&gt;<br>
+ &quot;Chain-print&quot; MAIN.LBX(1) and SMALL.LBX(1), and cut between MAIN.LBX(1) and 
+SMALL.LBX(1). <br>
+After cutting, the label portion printed with SMALL.LBX(1) remains at the 
+printer unit.<br>
+This portion usually corresponds to the front margin of the next print job.<br>
+ In the next printing, MAIN.LBX(2) and SMALL.LBX(2) are &quot;chain-printed&quot; in 
+continuation of SMALL.LBX(1), and the cut is made between MAIN.LBX(2) and 
+SMALL.LBX(2).<br>
+ This repeats hereafter.</font><p>
+<font face="Arial" size="3">As a result, MAIN.LBX(1) with the front margin is printed on 
+the first piece only, and the label below is output from the second piece 
+onwards. </font> <table border="0" cellspacing="3" cellpadding="3">
+<tr>
+<td><div align="center">
+<font face="Arial">
+<img border="0" src="image/TailCut1.png" width="239" height="68"> </font>
+</div>
+ </td></tr>
+</table>
+</body>
+</html>

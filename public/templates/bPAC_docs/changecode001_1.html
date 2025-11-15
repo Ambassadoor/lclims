@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Print Sample</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<h1 style="text-align: left"><font face="Arial" size="5">Print Sample (Visual 
+Basic)</font></h1>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">'</span>
+<span class="comment">'b-PAC 2.0 Sample</span>
+<span class="comment">'</span>
+...
+    <span class="comment">'</span>
+    <span class="comment">' Printer      :   Brother PT-9500PC</span>
+    <span class="comment">' TemplateFile :   C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx</span>
+    <span class="comment">'</span>
+    Dim templateFile As String
+    templateFile = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+    
+    Dim objDoc As BrssCom.Document
+    Set objDoc = CreateObject(<span class="stringliteral">"BrssCom.Document"</span>)
+    
+    If (objDoc.Open(templateFile) &lt;&gt; False) Then
+        objDoc.SetText 0, "Company"
+        objDoc.SetText 1, "Name"
+        objDoc.DoPrint bpoDefault, "0"
+        objDoc.Close
+    End If
+    Set objDoc = Nothing
+...
+</font></pre></div> <div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 3.4 Sample</span>
+<span class="comment">//</span>
+...
+    <span class="comment">//</span>
+    <span class="comment">// Printer      :   Brother PT-9500PC</span>
+    <span class="comment">// TemplateFile :   C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx</span>
+    <span class="comment">//</span>
+    Dim templateFile As String
+    templateFile = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+    
+    Dim objDoc As bpac.Document
+    Set objDoc = CreateObject(<span class="stringliteral">"bpac.Document"</span>)
+    
+    If (objDoc.Open(templateFile) &lt;&gt; False) Then
+        objDoc.GetObject("objCompany").Text = "Company"
+        objDoc.GetObject("objName").Text = "Name"
+        objDoc.StartPrint "", bpoDefault
+        objDoc.PrintOut 1, bpoDefault
+        objDoc.EndPrint
+        objDoc.Close
+    End If
+    Set objDoc = Nothing
+...
+</font></pre></div>
+</body>
+</html>

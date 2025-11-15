@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>SetFontInfo() Sample (Visual C++)</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">SetFontInfo() Sample 
+(Visual C++)</font></h1>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 2.0 Sample</span>
+<span class="comment">//</span>
+...
+    _bstr_t fontInfo = _T("Arial,1,1,1,1,1,110,1");
+    pObjDoc->SetFontInfo(0, fontInfo);
+...
+</font></pre></div><p>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// b-PAC 3.4 Sample</span>
+<span class="comment">//</span>
+...
+    bpac::IObjectPtr pObj(__uuidof(bpac::Object));
+    pObj = pObjDoc->GetObject(_bstr_t(_T("Text01")));
+    
+    pObj->SetFontName(_bstr_t(_T("Arial")));
+    pObj->SetFontBold(VARIANT_TRUE);
+    pObj->SetFontUnderline(VARIANT_TRUE);
+    pObj->SetFontStrikeout(VARIANT_TRUE);
+    pObj->SetFontMaxPoint(110);
+    pObj->SetFontEffect(bpac::bfeNoEffects);
+...
+</font></pre></div>
+</body>
+</html>

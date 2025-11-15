@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Print multiple copies</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Print multiple copies</font><a class="anchor" name="samplecode"> </a></h1>
+<div class="fragment">
+  <div dir="ltr">
+    <pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Sample</span>
+<span class="comment">'</span>
+<span class="keyword">Private Sub</span> Print()
+    <span class="keywordflow">Dim</span> path <span class="keywordflow">As</span> <span class="keywordtype">String</span>
+    path = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+    
+    <span class="keywordflow">Dim</span> strCompany(1) <span class="keywordflow">As</span> String
+    strCompany(0) = <span class="stringliteral">"ABC company"</span>
+    strCompany(1) = <span class="stringliteral">"XYZ corp."</span>
+    
+    <span class="keywordflow">Dim</span> strName(1) <span class="keywordflow">As</span> String
+    strName(0) = <span class="stringliteral">"Mike Smith"</span>
+    strName(1) = <span class="stringliteral">"John Brown"</span>
+    
+    <span class="keywordflow">Dim</span> doc <span class="keywordflow">As</span> bpac.Document
+    doc = CreateObject(<span class="stringliteral">"bpac.Document"</span>)
+    
+    <span class="comment">' Open template</span>
+    doc.Open(path)
+    
+    <span class="comment">' Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">""</span>, bpac.PrintOptionConstants.bpoHalfCut)
+    
+    <span class="keywordflow">For</span> i As Integer = 0 <span class="keywordflow">To</span> 1
+    &nbsp;&nbsp;&nbsp;&nbsp; doc.GetObject(<span class="stringliteral">"objCompany"</span>).Text = strCompany(i)
+    &nbsp;&nbsp;&nbsp;&nbsp; doc.GetObject(<span class="stringliteral">"objName"</span>).Text = strName(i)
+        <span class="comment">' Adds a print job</span>
+    &nbsp;&nbsp;&nbsp;&nbsp; doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault)
+    <span class="keywordflow">Next</span> i
+    
+    <span class="comment">' Print setting end (=Print start)</span>
+    doc.EndPrint()
+    
+    <span class="comment">' Close template</span>
+    doc.Close()
+<span class="keyword">End Sub</span>
+</font></pre>
+  </div>
+<div class="fragment">
+  <div dir="ltr">
+    <pre class="fragment"><b><font face="Arial" size="4" color="#008000">[VB Script]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Script Sample</span>
+<span class="comment">'</span>
+<span class="keyword">Sub</span> Print()
+    <span class="keywordflow">Dim</span> path
+    path = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+    
+    <span class="keywordflow">Dim</span> strCompany(1)
+    strCompany(0) = <span class="stringliteral">"ABC company"</span>
+    strCompany(1) = <span class="stringliteral">"XYZ corp."</span>
+    
+    <span class="keywordflow">Dim</span> strName(1)
+    strName(0) = <span class="stringliteral">"Mike Smith"</span>
+    strName(1) = <span class="stringliteral">"John Brown"</span>
+    
+    Set doc = CreateObject(<span class="stringliteral">"bpac.Document"</span>)
+    
+    <span class="comment">' Open template</span>
+    doc.Open(path)
+    
+    <span class="comment">' Print setting start</span>
+    doc.StartPrint <span class="stringliteral">""</span>, &amp;h200
+    
+    <span class="keywordflow">For</span> i = 0 <span class="keywordflow">To</span> 1
+    &nbsp;&nbsp;&nbsp;&nbsp; doc.GetObject(<span class="stringliteral">"objCompany"</span>).Text = strCompany(i)
+    &nbsp;&nbsp;&nbsp;&nbsp; doc.GetObject(<span class="stringliteral">"objName"</span>).Text = strName(i)
+        <span class="comment">' Adds a print job</span>
+    &nbsp;&nbsp;&nbsp;&nbsp; doc.PrintOut 1, &amp;h0
+    <span class="keywordflow">Next</span>
+    
+    <span class="comment">' Print setting end (=Print start)</span>
+    doc.EndPrint()
+    
+    <span class="comment">' Close template</span>
+    doc.Close()
+<span class="keyword">End Sub</span>
+</font></pre>
+  </div>
+  <div dir="ltr">
+  <pre class="fragment"><b>
+<font face="Arial" size="4"><font color="#008000">[Visual C#]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+<span class="keywordtype">private void</span> Print()
+{
+    <span class="keywordtype">string</span> path = <span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx"</span>;
+    <span class="keywordtype">string</span>[] strCompany = {<span class="stringliteral">"ABC company"</span>, <span class="stringliteral">"XYZ corp."</span>};
+    <span class="keywordtype">string</span>[] strName = {<span class="stringliteral">"Mike Smith"</span>, <span class="stringliteral">"John Brown"</span>};
+
+    bpac.DocumentClass doc = <span class="keyword">new</span> bpac.DocumentClass();
+
+    <span class="comment">// Open template</span>
+    doc.Open(path);
+
+    <span class="comment">// Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">""</span>, bpac.PrintOptionConstants.bpoHalfCut);
+    
+    <span class="keywordflow">for</span> (int i = 0; i &lt; 2; i++) {
+        doc.GetObject(<span class="stringliteral">&quot;objCompany"</span>).Text = strCompany[i];
+        doc.GetObject(<span class="stringliteral">&quot;objName"</span>).Text = strName[i];
+        <span class="comment">// Adds a print job</span>
+        doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
+    }
+
+    <span class="comment">// Print setting end (=Print start)</span>
+    doc.EndPrint();
+
+    <span class="comment">// Close template</span>
+    doc.Close();
+}
+</font></pre>
+  </div>
+  <pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+<span class="keywordtype">void</span> Print() 
+{
+    CString path = _T(<span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx"</span>);
+    CString strCompany[] = { _T(<span class="stringliteral">"ABC company"</span>), _T(<span class="stringliteral">"XYZ corp."</span>);
+    CString strName[] = { _T(<span class="stringliteral">"Mike Smith"</span>), _T(<span class="stringliteral">"John Brown"</span>);
+
+    IDocumentPtr pObjDoc(<span class="keyword">__uuidof</span>(Document));
+
+    <span class="comment">// Open template</span>
+    pObjDoc->Open(path.AllocSysString());
+
+    <span class="comment">// Print setting start</span>
+    pObjDoc->StartPrint(_bstr_t(_T(<span class="stringliteral">""</span>)), bpac::bpoDefault);
+
+    <span class="keywordflow">for</span> (int i = 0; i &lt; 2; i++) {
+        pObjDoc-&gt;GetObject(_bstr_t(_T(<span class="stringliteral">&quot;objCompany"</span>)))-&gt;PutText(strCompany[i].AllocSysString());
+        pObjDoc-&gt;GetObject(_bstr_t(_T(<span class="stringliteral">&quot;objName"</span>)))-&gt;PutText(strName[i].AllocSysString());
+        <span class="comment">// Adds a print job</span>
+        pObjDoc-&gt;PrintOut(1, bpac::bpoDefault);
+    }
+    
+    <span class="comment">// Print setting end (=Print start)</span>
+    pObjDoc-&gt;EndPrint();
+
+    <span class="comment">// Close template</span>
+    pObjDoc-&gt;Close();
+}
+</font></pre></div> 
+</body>
+</html>

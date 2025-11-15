@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Continue to print different templates</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<h1 style="text-align: left"><font face="Arial" size="5">Continue to print different templates</font><a class="anchor" name="samplecode"> </a></h1>
+<div class="fragment"><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual Basic]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Sample</span>
+<span class="comment">'</span>
+<span class="keyword">Private Sub</span> Print()
+    <span class="keywordflow">Dim</span> path <span class="keywordflow">As</span> <span class="keywordtype">String</span>
+    path = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+    <span class="keywordflow">Dim</span> path2 <span class="keywordflow">As</span> <span class="keywordtype">String</span>
+    path2 = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate2.lbx"</span>
+    
+    <span class="keywordflow">Dim</span> doc <span class="keywordflow">As</span> bpac.Document
+    doc = CreateObject(<span class="stringliteral">"bpac.Document"</span>)
+    
+    <span class="comment">' Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">""</span>, bpac.PrintOptionConstants.bpoHalfCut)
+    
+    <span class="comment">' Open template</span>
+    doc.Open(path)
+    
+    <span class="comment">' Adds a print job</span>
+    doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault)
+    
+    <span class="comment">' Open template</span>
+    doc.Open(path2)
+    
+    <span class="comment">' Adds a print job</span>
+    doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault)
+    
+    <span class="comment">' Print setting end (=Print start)</span>
+    doc.EndPrint()
+    
+    <span class="comment">' Close template</span>
+    doc.Close()
+<span class="keyword">End Sub</span>
+</font></pre>
+<pre class="fragment"><b><font face="Arial" size="4" color="#008000">[VB Script]
+</font></b><font face="Arial" size="3">
+<span class="comment">'</span>
+<span class="comment">' VB Script Sample</span>
+<span class="comment">'</span>
+<span class="keyword">Sub</span> Print()
+    <span class="keywordflow">Dim</span> path
+    path = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate1.lbx"</span>
+     <span class="keywordflow">Dim</span> path2
+    path2 = <span class="stringliteral">"C:\Program Files\Brother bPAC3 SDK\Templates\NamePlate2.lbx"</span>
+   
+    Set doc = CreateObject(<span class="stringliteral">"bpac.Document"</span>)
+    
+    <span class="comment">' Print setting start</span>
+    doc.StartPrint <span class="stringliteral">&quot;&quot;</span>, &amp;h200
+  
+    <span class="comment">' Open template</span>
+    doc.Open(path)
+    
+    <span class="comment">' Adds a print job</span>
+  &nbsp; doc.PrintOut 1, &amp;h0
+
+    <span class="comment">' Open template</span>
+    doc.Open(path2)
+    
+    <span class="comment">' Adds a print job</span>
+  &nbsp; doc.PrintOut 1, &amp;h0
+
+    <span class="comment">' Print setting end (=Print start)</span>
+    doc.EndPrint()
+    
+    <span class="comment">' Close template</span>
+    doc.Close()
+<span class="keyword">End Sub</span>
+</font></pre><pre class="fragment"><b>
+<font face="Arial" size="4"><font color="#008000">[Visual C#]
+</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C# Sample</span>
+<span class="comment">//</span>
+<span class="keywordtype">void</span> Print()
+{
+    <span class="keywordtype">string</span> strFilePath = <span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx"</span>;
+    <span class="keywordtype">string</span> strFilePath2 = <span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate2.lbx"</span>;
+
+    bpac.DocumentClass doc = <span class="keyword">new</span> bpac.DocumentClass();
+
+    <span class="comment">// Print setting start</span>
+    doc.StartPrint(<span class="stringliteral">""</span>, bpac.PrintOptionConstants.bpoHalfCut);
+    
+    <span class="comment">// Open template</span>
+    doc.Open(strFilePath);
+
+    <span class="comment">// Adds a print job</span>
+    doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
+
+    <span class="comment">// Open template</span>
+    doc.Open(strFilePath2);
+
+    <span class="comment">// Adds a print job</span>
+    doc.PrintOut(1, bpac.PrintOptionConstants.bpoDefault);
+
+    <span class="comment">// Print setting end (=Print start)</span>
+    doc.EndPrint();
+
+    <span class="comment">// Close template</span>
+    doc.Close();
+}
+</font></pre><pre class="fragment"><b><font face="Arial" size="4" color="#008000">[Visual C++]</font>
+</font></b><font face="Arial" size="3"><span class="comment">//</span>
+<span class="comment">// C++ Sample</span>
+<span class="comment">//</span>
+<span class="keywordtype">void</span> Print() 
+{
+    CString strFilePath = _T(<span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate1.lbx"</span>);
+    CString strFilePath2 = _T(<span class="stringliteral">"C:\\Program Files\\Brother bPAC3 SDK\\Templates\\NamePlate2.lbx"</span>);
+
+    IDocumentPtr pDoc(<span class="keyword">__uuidof</span>(bpac::Document));
+
+    <span class="comment">// Print setting start</span>
+    pDoc->StartPrint(_bstr_t(_T(<span class="stringliteral">""</span>)), bpac::bpoHalfCut);
+
+    <span class="comment">// Open template</span>
+    pDoc->Open(strFilePath.AllocSysString());
+
+    <span class="comment">// Adds a print job</span>
+    pDoc->PrintOut(1, bpac::bpoDefault);
+    
+    <span class="comment">// Open template</span>
+    pDoc->Open(strFilePath2.AllocSysString());
+
+    <span class="comment">// Adds a print job</span>
+    pDoc->PrintOut(1, bpac::bpoDefault);
+    
+    <span class="comment">// Print setting end (=Print start)</span>
+    pDoc-&gt;EndPrint();
+
+    <span class="comment">// Close template</span>
+    pDoc-&gt;Close();
+}
+</font></pre></div> 
+</body>
+</html>

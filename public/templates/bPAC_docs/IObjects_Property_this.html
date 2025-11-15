@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>bpac::IObjects::this</title>
+<link href="bpac31.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+   <td valign="top">
+      <b><font face="Arial" size="5">IObject bpac::IObjects::this [LONG 
+      <em>index</em>] [get]</font></b></td>
+  </tr>
+  <tr>
+   <td valign="top">
+&nbsp;</td>
+  </tr>
+  <tr>
+   <td valign="top">
+<font face="Arial" size="3">
+<a class="anchor" name="433e20ad19abf0063878c7b066622d6f"></a></font><!-- doxytag: member="bpac::IObjects::this" ref="433e20ad19abf0063878c7b066622d6f" args="[LONG index]" -->
+<div class="memitem">
+<div class="memdoc" style="width: 579; height: 480">
+
+<p>
+<font face="Arial" size="3">Indexer(refer to the usage example for the usage method)</font> 
+<p>
+<font face="Arial" size="3">
+Acquires the object specified in  <em>index</em>.</font><p>
+<dl compact><dt><font face="Arial" size="3"><b>Arguments:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0" width="345">
+    <tr><td valign="top" width="8"></td><td valign="top" width="76"><font face="Arial" size="3"><em>index</em>&nbsp;</font></td>
+      <td width="253">
+      <font face="Arial" size="3">Object index to be acquired</font></td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><font face="Arial" size="3"><b>Returned value:</b></font></dt><dd>
+  <font face="Arial" size="3">Object specified in <em>index</em></font></dd></dl>
+<div class="fragment"><pre class="fragment"><font face="Arial" size="3">              <span class="comment">//</span>
+            <span class="comment">// C# sample</span>
+              <span class="comment">//</span>
+            bpac.IObjects objs = doc.Objects;
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; objs.Count; ++i)
+            {
+                objs[i].Name;
+            }
+</font></pre></div> <dl compact><dt><font face="Arial" size="3"><b>Exception:</b></font></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><font face="Arial" size="3">&nbsp;</font></td><td>
+      <font face="Arial" size="3">If an invalid index is specified in <em>index</em>, an exception is thrown.</font></td></tr>
+  </table>
+</dl>
+<p>
+<font face="Arial" size="3">
+<b><a href="samplecode004.html">- Sample for other languages</a></b>
+</font> 
+</div>
+</div><p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
