@@ -8,10 +8,24 @@ export class ApiClient {
     this.baseUrl = baseUrl;
   }
 
+  private async handleResponse<T>(response: Response): Promise<T> {
+    if (!response.ok) {
+      let errorMessage = `Request failed with status ${response.status}`;
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.message || errorData.error || errorMessage;
+      } catch {
+        // If we can't parse error JSON, use status text
+        errorMessage = response.statusText || errorMessage;
+      }
+      throw new Error(errorMessage);
+    }
+    return response.json();
+  }
+
   async get<T>(endpoint: string): Promise<T> {
     const response = await fetch(`${this.baseUrl}${endpoint}`);
-    if (!response.ok) throw new Error('Request failed');
-    return response.json();
+    return this.handleResponse<T>(response);
   }
 
   async post<T>(endpoint: string, data: unknown): Promise<T> {
@@ -20,8 +34,7 @@ export class ApiClient {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-    if (!response.ok) throw new Error('Request failed');
-    return response.json();
+    return this.handleResponse<T>(response);
   }
 
   async put<T>(endpoint: string, data: unknown): Promise<T> {
@@ -30,16 +43,23 @@ export class ApiClient {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-    if (!response.ok) throw new Error('Request failed');
-    return response.json();
+    return this.handleResponse<T>(response);
+  }
+
+  async patch<T>(endpoint: string, data: unknown): Promise<T> {
+    const response = await fetch(`${this.baseUrl}${endpoint}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return this.handleResponse<T>(response);
   }
 
   async delete<T>(endpoint: string): Promise<T> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
       method: 'DELETE',
     });
-    if (!response.ok) throw new Error('Request failed');
-    return response.json();
+    return this.handleResponse<T>(response);
   }
 }
 

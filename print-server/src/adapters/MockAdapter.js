@@ -6,7 +6,7 @@ import { config } from '../config/config.js';
 
 /**
  * MockAdapter
- * 
+ *
  * Mock printer adapter for development and testing.
  * Simulates printing operations without actual hardware.
  * Useful for development on non-Windows systems.
@@ -33,7 +33,7 @@ export class MockAdapter extends IPrinterAdapter {
     });
 
     // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     const jobId = ++this.jobCounter;
     const job = {
@@ -68,10 +68,11 @@ export class MockAdapter extends IPrinterAdapter {
     logger.info('Mock Preview', { template, width, height });
 
     // Simulate processing
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Generate mock base64 image (1x1 transparent PNG)
-    const mockImage = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
+    const mockImage =
+      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
 
     return {
       success: true,
@@ -87,7 +88,7 @@ export class MockAdapter extends IPrinterAdapter {
     logger.info('Mock Export', { template, format, outputPath });
 
     // Simulate processing
-    await new Promise(resolve => setTimeout(resolve, 400));
+    await new Promise((resolve) => setTimeout(resolve, 400));
 
     const mockFilePath = outputPath || `/mock/exports/${template}.${format.toLowerCase()}`;
 
@@ -132,22 +133,18 @@ export class MockAdapter extends IPrinterAdapter {
   async getTemplates() {
     try {
       const files = await readdir(config.templateDir);
-      const templates = files.filter(file => file.endsWith('.lbx') || file.endsWith('.lbl'));
-      
+      const templates = files.filter((file) => file.endsWith('.lbx') || file.endsWith('.lbl'));
+
       logger.debug('Mock getTemplates found', { count: templates.length });
-      
+
       return templates;
     } catch (error) {
-      logger.warn('Template directory not found, returning mock templates', { 
-        dir: config.templateDir 
+      logger.warn('Template directory not found, returning mock templates', {
+        dir: config.templateDir,
       });
-      
+
       // Return mock templates if directory doesn't exist
-      return [
-        'ChemicalLabel.lbx',
-        'LocationLabel.lbx',
-        'AssetTag.lbx',
-      ];
+      return ['ChemicalLabel.lbx', 'LocationLabel.lbx', 'AssetTag.lbx'];
     }
   }
 
@@ -156,7 +153,7 @@ export class MockAdapter extends IPrinterAdapter {
 
     // Mock validation - always passes
     const errors = [];
-    
+
     // Add some basic validation
     if (!data || Object.keys(data).length === 0) {
       errors.push('No data provided');
@@ -171,8 +168,8 @@ export class MockAdapter extends IPrinterAdapter {
   }
 
   async cleanup() {
-    logger.info('MockAdapter cleanup', { 
-      totalJobs: this.printJobs.length 
+    logger.info('MockAdapter cleanup', {
+      totalJobs: this.printJobs.length,
     });
     this.printJobs = [];
     this.jobCounter = 0;

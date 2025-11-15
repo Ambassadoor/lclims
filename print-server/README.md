@@ -5,9 +5,11 @@ Label printing server for Lipscomb Chemistry LIMS using Brother b-PAC SDK.
 ## Prerequisites
 
 ### For Development (Mock Adapter)
+
 - Node.js 18+ (any OS)
 
 ### For Production (b-PAC Adapter)
+
 - Windows OS (10/11 or Server)
 - Node.js 18+
 - Brother b-PAC 3.4 SDK installed
@@ -36,11 +38,13 @@ TEMPLATE_DIR=C:\\LabelTemplates
 ## Running
 
 ### Development (Mock Adapter)
+
 ```bash
 npm run dev
 ```
 
 ### Production (b-PAC Adapter on Windows)
+
 ```bash
 # Set adapter to 'bpac' in .env
 PRINTER_ADAPTER=bpac npm start
@@ -49,6 +53,7 @@ PRINTER_ADAPTER=bpac npm start
 ## API Endpoints
 
 ### Print Label
+
 ```http
 POST /api/labels/print
 Content-Type: application/json
@@ -67,6 +72,7 @@ Content-Type: application/json
 ```
 
 ### Get Label Preview
+
 ```http
 POST /api/labels/preview
 Content-Type: application/json
@@ -80,16 +86,19 @@ Content-Type: application/json
 ```
 
 ### List Printers
+
 ```http
 GET /api/printers
 ```
 
 ### List Templates
+
 ```http
 GET /api/templates
 ```
 
 ### Health Check
+
 ```http
 GET /health
 ```
@@ -173,14 +182,17 @@ print-server/
 ## Troubleshooting
 
 ### "Cannot find module 'edge-js'"
+
 - Normal when running MockAdapter (not needed for mock)
 - Only required for BPacAdapter on Windows
 
 ### "Template not found"
+
 - Check TEMPLATE_DIR path in .env
 - Ensure .lbx files exist in templates directory
 
 ### "Printer not responding"
+
 - Verify printer is on and connected
 - Check DEFAULT_PRINTER name matches installed printer
 - Ensure b-PAC SDK is installed (Windows)

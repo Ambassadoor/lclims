@@ -3,7 +3,7 @@ import { logger } from '../utils/logger.js';
 
 /**
  * Label Controller
- * 
+ *
  * Handles HTTP requests for label operations.
  */
 
@@ -33,9 +33,9 @@ export const printLabel = async (req, res) => {
       });
     }
 
-    logger.info('Print request received', { 
-      template, 
-      printer, 
+    logger.info('Print request received', {
+      template,
+      printer,
       copies,
       fieldCount: Object.keys(data).length,
     });

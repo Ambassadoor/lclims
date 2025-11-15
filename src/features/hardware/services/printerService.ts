@@ -1,6 +1,6 @@
 /**
  * Printer Service
- * 
+ *
  * Client for communicating with the print server.
  * Handles label printing, preview, and printer status.
  */

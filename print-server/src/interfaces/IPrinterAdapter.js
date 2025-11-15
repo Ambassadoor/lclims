@@ -1,6 +1,6 @@
 /**
  * IPrinterAdapter Interface
- * 
+ *
  * All printer adapters must implement this interface.
  * This allows the system to support multiple printer types
  * (Brother b-PAC, Zebra, Dymo, etc.) using the same API.

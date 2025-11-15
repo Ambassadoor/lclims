@@ -29,7 +29,7 @@ export const config = {
   logLevel: process.env.LOG_LEVEL || 'info',
 
   // CORS
-  corsOrigins: process.env.CORS_ORIGINS 
-    ? process.env.CORS_ORIGINS.split(',') 
+  corsOrigins: process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',')
     : ['http://localhost:3000', 'http://localhost:3001'],
 };

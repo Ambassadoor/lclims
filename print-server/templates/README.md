@@ -5,6 +5,7 @@ Place your Brother P-touch Editor template files (.lbx, .lbl) in this directory.
 ## Template Naming Convention
 
 Use descriptive names that match your use cases:
+
 - `ChemicalLabel.lbx` - Chemical inventory labels
 - `LocationLabel.lbx` - Storage location labels
 - `AssetTag.lbx` - Equipment/asset tags
@@ -43,6 +44,7 @@ ChemicalLabel.lbx
 ## Testing Templates
 
 Test your templates manually in P-touch Editor before using them programmatically:
+
 1. Open template
 2. Manually enter data in all fields
 3. Print a test label

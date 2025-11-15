@@ -5,7 +5,7 @@ import { BPacAdapter } from '../adapters/BPacAdapter.js';
 
 /**
  * PrinterService
- * 
+ *
  * Business logic layer for printer operations.
  * Manages adapter selection and provides unified interface.
  */
@@ -22,7 +22,7 @@ export class PrinterService {
     }
 
     const adapterType = config.printerAdapter.toLowerCase();
-    
+
     logger.info(`Initializing PrinterService with ${adapterType} adapter`);
 
     try {
@@ -38,12 +38,12 @@ export class PrinterService {
 
       await this.adapter.initialize();
       this.initialized = true;
-      
-      logger.info('PrinterService initialized successfully', { 
-        adapter: adapterType 
+
+      logger.info('PrinterService initialized successfully', {
+        adapter: adapterType,
       });
     } catch (error) {
-      logger.error('Failed to initialize PrinterService', { 
+      logger.error('Failed to initialize PrinterService', {
         error: error.message,
         adapter: adapterType,
       });
@@ -68,8 +68,8 @@ export class PrinterService {
     // Validate template exists
     const templates = await this.adapter.getTemplates();
     if (!templates.includes(template)) {
-      return { 
-        success: false, 
+      return {
+        success: false,
         message: `Template '${template}' not found`,
         availableTemplates: templates,
       };
@@ -78,8 +78,8 @@ export class PrinterService {
     // Validate data
     const validation = await this.adapter.validateData(template, data);
     if (!validation.valid) {
-      return { 
-        success: false, 
+      return {
+        success: false,
         message: 'Data validation failed',
         errors: validation.errors,
       };
@@ -124,9 +124,9 @@ export class PrinterService {
 
     const validFormats = ['PDF', 'PNG', 'BMP'];
     if (!validFormats.includes(format.toUpperCase())) {
-      return { 
-        success: false, 
-        message: `Invalid format. Must be one of: ${validFormats.join(', ')}` 
+      return {
+        success: false,
+        message: `Invalid format. Must be one of: ${validFormats.join(', ')}`,
       };
     }
 

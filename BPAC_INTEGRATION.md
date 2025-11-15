@@ -11,6 +11,7 @@ The Brother P-touch Applicable Component (b-PAC) is a Windows COM/ActiveX compon
 Extracted CHM documentation: `/home/ambassadoor/playground/lclims/public/templates/bPAC_docs/`
 
 Main pages:
+
 - `opening.html` - Documentation home
 - `reference.html` - Full API reference
 - `samplecode.html` - Code examples
@@ -36,28 +37,28 @@ Main pages:
 
 ```javascript
 // Example: JScript/ActiveX (Windows only)
-var doc = new ActiveXObject("bpac.Document");
+var doc = new ActiveXObject('bpac.Document');
 
 // 1. Open template
-doc.Open("C:\\Templates\\label.lbx");
+doc.Open('C:\\Templates\\label.lbx');
 
 // 2. Populate data (two methods)
 // Method A: By index
-doc.SetText(0, "Chemical Name");
-doc.SetText(1, "Lot Number");
-doc.SetBarcodeData(0, "123456789");
+doc.SetText(0, 'Chemical Name');
+doc.SetText(1, 'Lot Number');
+doc.SetBarcodeData(0, '123456789');
 
 // Method B: By object name (more reliable)
-var nameField = doc.GetObject("ChemicalName");
-nameField.Text = "Sodium Chloride";
+var nameField = doc.GetObject('ChemicalName');
+nameField.Text = 'Sodium Chloride';
 
-var barcodeObj = doc.GetObject("Barcode1");
-barcodeObj.SetData("LOT-2024-001");
+var barcodeObj = doc.GetObject('Barcode1');
+barcodeObj.SetData('LOT-2024-001');
 
 // 3. Execute print job
-doc.StartPrint("", 0);           // Initialize (empty string = default printer)
-doc.PrintOut(1, 0);              // Queue 1 copy
-doc.EndPrint();                  // Execute all queued jobs
+doc.StartPrint('', 0); // Initialize (empty string = default printer)
+doc.PrintOut(1, 0); // Queue 1 copy
+doc.EndPrint(); // Execute all queued jobs
 
 // 4. Cleanup
 doc.Close();
@@ -66,6 +67,7 @@ doc.Close();
 ## Key IDocument Methods
 
 ### File Operations
+
 - `Open(filePath)` - Opens template file
   - Supports local paths: `C:\Templates\label.lbx`
   - Supports UNC paths: `\\server\share\label.lbx`
@@ -75,6 +77,7 @@ doc.Close();
 - `SaveAs(type, filePath)` - Save as different format
 
 ### Data Manipulation
+
 - `SetText(index, text)` - Set text by line index (0-based)
 - `GetText(index, ref text)` - Get text by line index
 - `GetTextCount()` - Get total text line count
@@ -84,6 +87,7 @@ doc.Close();
 - `GetObject(name)` - Get object reference by name (preferred method)
 
 ### Printing
+
 - `StartPrint(printerName, options)` - Initialize print job
   - `printerName`: Empty string "" for default printer
   - `options`: Use `0` or `bpoDefault`
@@ -93,16 +97,19 @@ doc.Close();
 - `DoPrint(option, szOption)` - Direct print without queue
 
 ### Export/Preview
+
 - `Export(type, filePath, dpi)` - Export to file
   - Types: PDF, BMP, PNG
 - `GetImageData(type, width, height)` - Get preview as byte array
 
 ### Printer Management
+
 - `SetPrinter(printerName)` - Set target printer
 - `GetPrinterName()` - Get current printer name
 - `.Printer` property - Access IPrinter interface
 
 ### Properties
+
 - `ErrorCode` - Last error code
 - `Objects` - IObjects collection of all objects
 - `Width`, `Length` - Document dimensions
@@ -114,6 +121,7 @@ doc.Close();
 ## Key IObject Methods & Properties
 
 ### Properties
+
 - `Text` - Get/set text content
 - `Name` - Object name from template
 - `Type` - Object type (text, barcode, image, etc.)
@@ -122,6 +130,7 @@ doc.Close();
 - `HorizontalAlign`, `VerticalAlign` - Alignment
 
 ### Methods
+
 - `SetData(data)` - Set object data (text or barcode)
 - `GetData()` - Get object data
 - `SetFontName(fontName)` - Change font
@@ -149,6 +158,7 @@ doc.Close();
 - `GetPrintedTapeLength()` - Get printed length
 
 ### Properties
+
 - `Name` - Printer name
 - `PortName` - Port name (USB, COM, etc.)
 - `ErrorCode` - Last printer error code
@@ -162,10 +172,11 @@ For CODE128/EAN128 barcodes, use escape sequences:
 
 ```javascript
 // FNC1 insertion
-doc.SetBarcodeData(0, "1234\\a567\\a");  // 1234 + FNC1 + 567 + FNC1
+doc.SetBarcodeData(0, '1234\\a567\\a'); // 1234 + FNC1 + 567 + FNC1
 ```
 
 Control code mappings:
+
 - `\a` - FNC1
 - `\b` - FNC2
 - `\c` - FNC3
@@ -179,6 +190,7 @@ Control code mappings:
 ## Event Handling & Callbacks
 
 ### VB/C# Event Handling
+
 ```csharp
 // C# example
 doc.Printed += new bpac.IPrintEvents_PrintedEventHandler(HandlePrinted);
@@ -189,14 +201,15 @@ void HandlePrinted(int status, object value) {
 ```
 
 ### VBScript/JScript Callbacks
+
 ```javascript
 // JScript example
 function PrintedCallback(status, value) {
-    if (status == 0) {
-        alert("Print successful!");
-    } else {
-        alert("Print failed with status: " + status);
-    }
+  if (status == 0) {
+    alert('Print successful!');
+  } else {
+    alert('Print failed with status: ' + status);
+  }
 }
 
 doc.SetPrintedCallback(PrintedCallback);
@@ -207,20 +220,24 @@ doc.SetPrintedCallback(PrintedCallback);
 ## Template File Best Practices
 
 ### Object Naming
+
 - Name all objects you plan to manipulate programmatically
 - Use descriptive names: "ChemicalName", "LotNumber", "ExpiryDate"
 - Avoid spaces in object names (use camelCase or underscores)
 
 ### Text Objects vs Database Fields
+
 - Use database fields for simple text replacement
 - Use text objects for formatting control (font, size, alignment)
 
 ### Barcode Objects
+
 - Index is based on creation order (0, 1, 2...)
 - Name barcodes for easier reference: `doc.GetBarcodeIndex("SerialBarcode")`
 - Test barcode scanning after template creation
 
 ### Media/Label Size
+
 - Set correct media size in template
 - Verify printer has compatible media loaded
 - Use `IPrinter.GetSupportedMediaNames()` to check compatibility
@@ -232,6 +249,7 @@ Since b-PAC is Windows COM-only, web integration requires a bridge:
 ### Architecture Options
 
 #### Option 1: Windows Service + REST API (Recommended)
+
 ```
 React/Next.js App → HTTP Request → Windows Service (Node.js/Python/C#)
                                           ↓
@@ -241,18 +259,21 @@ React/Next.js App → HTTP Request → Windows Service (Node.js/Python/C#)
 ```
 
 **Pros:**
+
 - Clean separation of concerns
 - Multiple clients can use same service
 - Easy to scale and maintain
 - Works with any frontend framework
 
 **Components:**
+
 1. Windows service/app running on print server
 2. REST API endpoints (Express.js, FastAPI, ASP.NET, etc.)
 3. b-PAC COM wrapper in service
 4. Template files stored on server
 
 #### Option 2: Browser Extension + Native Messaging
+
 ```
 React/Next.js App → Browser Extension → Native Messaging Host
                                               ↓
@@ -260,38 +281,46 @@ React/Next.js App → Browser Extension → Native Messaging Host
 ```
 
 **Pros:**
+
 - Client-side printing (no server needed)
 - Works from any web browser with extension
 
 **Cons:**
+
 - Requires extension installation on each client
 - More complex deployment
 - Security considerations
 
 #### Option 3: Electron Desktop App
+
 ```
 Electron App (React/Next.js) → Node.js backend → edge-js → b-PAC COM
 ```
 
 **Pros:**
+
 - Full desktop app experience
 - Direct COM access via edge-js or ffi-napi
 
 **Cons:**
+
 - Not a web app anymore
 - Separate deployment/installation required
 
 ## Environment Setup
 
 ### Required Software (Windows)
+
 1. **Brother b-PAC 3.4 SDK** - Install from Brother website
 2. **P-touch Editor** - For creating/editing templates
 3. **Brother printer drivers** - For target printer models
 
 ### Environment Variables
+
 - `BPACINSTALLDIR` - Points to SDK installation (e.g., `C:\Program Files\Brother bPAC3 SDK\`)
 
 ### Template Storage
+
 - Development: Local file paths
 - Production: Network share (UNC) or HTTP server
 - Security: Ensure proper read permissions
@@ -299,15 +328,17 @@ Electron App (React/Next.js) → Node.js backend → edge-js → b-PAC COM
 ## Error Handling
 
 ### Checking Errors
+
 ```javascript
-doc.Open("template.lbx");
+doc.Open('template.lbx');
 if (doc.ErrorCode != 0) {
-    console.error("Failed to open template. Error: " + doc.ErrorCode);
-    // Handle error
+  console.error('Failed to open template. Error: ' + doc.ErrorCode);
+  // Handle error
 }
 ```
 
 ### Common Error Scenarios
+
 - Template file not found
 - Printer offline or disconnected
 - Invalid object name
@@ -318,49 +349,52 @@ if (doc.ErrorCode != 0) {
 ## Sample Use Cases for LIMS
 
 ### Chemical Inventory Label
+
 ```javascript
 // Print chemical storage label
-doc.Open("ChemicalLabel.lbx");
-doc.GetObject("ChemicalName").Text = "Sodium Chloride";
-doc.GetObject("CASNumber").Text = "7647-14-5";
-doc.GetObject("Concentration").Text = "99.9%";
-doc.GetObject("LotNumber").Text = "LOT-2024-001";
-doc.GetObject("ExpiryDate").Text = "2025-12-31";
-doc.SetBarcodeData(0, "CHEM-12345");
-doc.StartPrint("", 0);
+doc.Open('ChemicalLabel.lbx');
+doc.GetObject('ChemicalName').Text = 'Sodium Chloride';
+doc.GetObject('CASNumber').Text = '7647-14-5';
+doc.GetObject('Concentration').Text = '99.9%';
+doc.GetObject('LotNumber').Text = 'LOT-2024-001';
+doc.GetObject('ExpiryDate').Text = '2025-12-31';
+doc.SetBarcodeData(0, 'CHEM-12345');
+doc.StartPrint('', 0);
 doc.PrintOut(1, 0);
 doc.EndPrint();
 doc.Close();
 ```
 
 ### Location Label
+
 ```javascript
 // Print storage location label
-doc.Open("LocationLabel.lbx");
-doc.GetObject("Building").Text = "Science Hall";
-doc.GetObject("Room").Text = "Room 201";
-doc.GetObject("Cabinet").Text = "Cabinet A";
-doc.GetObject("Shelf").Text = "Shelf 3";
-doc.SetBarcodeData(0, "LOC-SH-201-A-3");
-doc.StartPrint("", 0);
+doc.Open('LocationLabel.lbx');
+doc.GetObject('Building').Text = 'Science Hall';
+doc.GetObject('Room').Text = 'Room 201';
+doc.GetObject('Cabinet').Text = 'Cabinet A';
+doc.GetObject('Shelf').Text = 'Shelf 3';
+doc.SetBarcodeData(0, 'LOC-SH-201-A-3');
+doc.StartPrint('', 0);
 doc.PrintOut(1, 0);
 doc.EndPrint();
 doc.Close();
 ```
 
 ### Batch Printing
+
 ```javascript
 // Print multiple labels
-doc.Open("BatchLabel.lbx");
-doc.StartPrint("", 0);
+doc.Open('BatchLabel.lbx');
+doc.StartPrint('', 0);
 
 for (var i = 0; i < chemicals.length; i++) {
-    doc.GetObject("Name").Text = chemicals[i].name;
-    doc.GetObject("ID").Text = chemicals[i].id;
-    doc.PrintOut(1, 0);  // Queue each label
+  doc.GetObject('Name').Text = chemicals[i].name;
+  doc.GetObject('ID').Text = chemicals[i].id;
+  doc.PrintOut(1, 0); // Queue each label
 }
 
-doc.EndPrint();  // Print all at once
+doc.EndPrint(); // Print all at once
 doc.Close();
 ```
 

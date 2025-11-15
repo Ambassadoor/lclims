@@ -28,7 +28,9 @@ import ChemicalFormDialog from './ChemicalFormDialog';
 import EditConfirmDialog from './EditConfirmDialog';
 
 // Helper to build full paths for locations
-const buildLocationPaths = (locations: { id: string; name: string; parent_id?: string | null }[]): string[] => {
+const buildLocationPaths = (
+  locations: { id: string; name: string; parent_id?: string | null }[]
+): string[] => {
   const locationMap = new Map();
   const paths: string[] = [];
 
@@ -39,7 +41,11 @@ const buildLocationPaths = (locations: { id: string; name: string; parent_id?: s
 
   // Second pass: build paths
   locations.forEach((loc) => {
-    const buildPath = (location: { id: string; name: string; parent_id?: string | null }): string => {
+    const buildPath = (location: {
+      id: string;
+      name: string;
+      parent_id?: string | null;
+    }): string => {
       if (!location.parent_id) {
         return location.name;
       }
@@ -211,9 +217,9 @@ export default function InventoryTable() {
       <ChemicalFormDialog
         open={addDialogOpen}
         onClose={() => setAddDialogOpen(false)}
-        onSave={(data) => {
-          console.log('New chemical data:', data);
-          // TODO: POST to API and refresh table
+        onSave={() => {
+          // Refresh the chemical list after successful save
+          dispatch(fetchChemicals());
         }}
       />
 

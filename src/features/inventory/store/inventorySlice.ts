@@ -24,7 +24,7 @@ export const fetchChemicals = createAsyncThunk(
   'inventory/fetchChemicals',
   async (_, { rejectWithValue }) => {
     try {
-      const data = await apiClient.get<Chemical[]>('inventory');
+      const data = await apiClient.get<Chemical[]>('inventory?_sort=ID&_order=desc');
       return data;
     } catch (err) {
       return rejectWithValue(err instanceof Error ? err.message : 'Failed to fetch chemicals');
@@ -75,7 +75,12 @@ const inventorySlice = createSlice({
       })
       .addCase(fetchChemicals.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.items = action.payload;
+        // Sort numerically by ID (CHEM-XXXX)
+        state.items = action.payload.sort((a, b) => {
+          const numA = parseInt(a.ID.replace('CHEM-', ''), 10) || 0;
+          const numB = parseInt(b.ID.replace('CHEM-', ''), 10) || 0;
+          return numB - numA; // Descending order
+        });
         state.error = null;
       })
       .addCase(fetchChemicals.rejected, (state, action) => {

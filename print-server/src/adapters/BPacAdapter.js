@@ -6,10 +6,10 @@ import { readdir } from 'fs/promises';
 
 /**
  * BPacAdapter
- * 
+ *
  * Brother b-PAC SDK adapter for Windows.
  * Requires edge-js to bridge Node.js to .NET/COM.
- * 
+ *
  * NOTE: This adapter only works on Windows with b-PAC SDK installed.
  */
 export class BPacAdapter extends IPrinterAdapter {
@@ -156,14 +156,14 @@ export class BPacAdapter extends IPrinterAdapter {
 
   async isPrinterOnline(printerName) {
     const printers = await this.getPrinters();
-    const printer = printers.find(p => p.name === printerName);
+    const printer = printers.find((p) => p.name === printerName);
     return printer ? printer.online : false;
   }
 
   async getTemplates() {
     try {
       const files = await readdir(config.templateDir);
-      const templates = files.filter(file => file.endsWith('.lbx') || file.endsWith('.lbl'));
+      const templates = files.filter((file) => file.endsWith('.lbx') || file.endsWith('.lbl'));
       logger.debug('Templates found', { count: templates.length });
       return templates;
     } catch (error) {

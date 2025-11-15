@@ -12,12 +12,17 @@ import {
   Box,
   FormControlLabel,
   Checkbox,
+  CircularProgress,
+  Alert,
 } from '@mui/material';
+import { useInventory } from '../hooks/useInventory';
+import { usePrintLabel } from '@/features/hardware/hooks/usePrintLabel';
+import { formatChemicalLabelData } from '@/features/hardware/utils/labelFormatter';
 
 interface ChemicalFormDialogProps {
   open: boolean;
   onClose: () => void;
-  onSave?: (data: ChemicalFormData) => void;
+  onSave?: () => void; // Callback after successful save (no data needed, will refresh from parent)
 }
 
 export interface ChemicalFormData {
@@ -61,31 +66,75 @@ const INITIAL_FORM_DATA: ChemicalFormData = {
 export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFormDialogProps) {
   const [formData, setFormData] = useState<ChemicalFormData>(INITIAL_FORM_DATA);
   const [printLabel, setPrintLabel] = useState(true); // Default to true
+  const [saveError, setSaveError] = useState<string | null>(null);
+
+  const { createItem, isLoading: isSaving, error: inventoryError } = useInventory();
+  const { printLabel: print, isPrinting, error: printError } = usePrintLabel();
 
   const handleChange =
     (field: keyof ChemicalFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
       setFormData((prev) => ({ ...prev, [field]: e.target.value }));
     };
 
-  const handleSubmit = () => {
-    if (onSave) {
-      onSave(formData);
+  const handleSubmit = async () => {
+    setSaveError(null);
+
+    // Create the chemical (pass printLabel flag to set Labeled field correctly)
+    const newChemical = await createItem(formData, printLabel);
+
+    if (!newChemical) {
+      setSaveError(inventoryError || 'Failed to create chemical');
+      return;
     }
+
+    // If print checkbox is checked, print the label
+    if (printLabel) {
+      try {
+        const labelData = formatChemicalLabelData(newChemical);
+        await print({
+          template: 'ChemicalQRCodes.lbx',
+          data: labelData,
+        });
+      } catch (err) {
+        console.error('Print error:', err);
+        // Don't block the dialog close on print error, user can reprint later
+      }
+    }
+
+    // Success! Notify parent first (to trigger refresh), then close
+    if (onSave) {
+      onSave();
+    }
+    
+    // Reset form and close
     setFormData(INITIAL_FORM_DATA);
-    setPrintLabel(true); // Reset to default
+    setPrintLabel(true);
     onClose();
   };
 
   const handleCancel = () => {
     setFormData(INITIAL_FORM_DATA);
-    setPrintLabel(true); // Reset to default
+    setPrintLabel(true);
+    setSaveError(null);
     onClose();
   };
 
+  const isProcessing = isSaving || isPrinting;
+
   return (
-    <Dialog open={open} onClose={handleCancel} maxWidth="md" fullWidth>
+    <Dialog open={open} onClose={isProcessing ? undefined : handleCancel} maxWidth="md" fullWidth>
       <DialogTitle>Add New Chemical</DialogTitle>
       <DialogContent>
+        {saveError && (
+          <Alert severity="error" sx={{ mb: 2 }}>
+            {saveError}
+          </Alert>
+        )}
+        {printError && (
+          <Alert severity="warning" sx={{ mb: 2 }}>
+            Label print failed: {printError}
+          </Alert>
+        )}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 1 }}>
           {/* Name and CAS */}
           <Box sx={{ display: 'flex', gap: 2 }}>
@@ -278,11 +327,17 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleCancel} color="inherit">
+        <Button onClick={handleCancel} color="inherit" disabled={isProcessing}>
           Cancel
         </Button>
-        <Button onClick={handleSubmit} variant="contained" color="primary">
-          Add Chemical
+        <Button
+          onClick={handleSubmit}
+          variant="contained"
+          color="primary"
+          disabled={isProcessing}
+          startIcon={isProcessing ? <CircularProgress size={20} /> : null}
+        >
+          {isSaving ? 'Saving...' : isPrinting ? 'Printing...' : 'Add Chemical'}
         </Button>
       </DialogActions>
     </Dialog>

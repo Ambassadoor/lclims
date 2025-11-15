@@ -1,6 +1,6 @@
 /**
  * Label Printer Utilities
- * 
+ *
  * Helper functions for formatting chemical data for label printing.
  */
 
@@ -22,9 +22,8 @@ export function formatChemicalLabelData(chemical: Chemical) {
   let formulaData;
   if (chemical.Formula) {
     try {
-      formulaData = typeof chemical.Formula === 'string' 
-        ? JSON.parse(chemical.Formula)
-        : chemical.Formula;
+      formulaData =
+        typeof chemical.Formula === 'string' ? JSON.parse(chemical.Formula) : chemical.Formula;
     } catch {
       // If parsing fails, create object from available data
       formulaData = {
@@ -42,7 +41,7 @@ export function formatChemicalLabelData(chemical: Chemical) {
 
   return {
     Barcode1: JSON.stringify(formulaData), // QR code data
-    Text1: chemical.ID,                     // Display ID
+    Text1: chemical.ID, // Display ID
   };
 }
 
