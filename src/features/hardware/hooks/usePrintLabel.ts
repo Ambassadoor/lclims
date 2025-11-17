@@ -2,6 +2,8 @@ import { useState, useCallback } from 'react';
 import { printerService } from '../services/printerService';
 import type { PrintOptions, PrintResult } from '../types';
 
+const STORAGE_KEY = 'selectedPrinter';
+
 interface UsePrintLabelOptions {
   onSuccess?: (result: PrintResult) => void;
   onError?: (error: string) => void;
@@ -17,7 +19,13 @@ export function usePrintLabel(options?: UsePrintLabelOptions) {
       setError(null);
 
       try {
-        const result = await printerService.print(printOptions);
+        // Get selected printer from localStorage if not explicitly provided
+        const printerToUse = printOptions.printer || localStorage.getItem(STORAGE_KEY) || undefined;
+        
+        const result = await printerService.print({
+          ...printOptions,
+          printer: printerToUse,
+        });
 
         if (result.success) {
           options?.onSuccess?.(result);
