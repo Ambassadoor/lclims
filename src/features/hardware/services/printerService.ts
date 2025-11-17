@@ -13,6 +13,8 @@ import type {
   PrintResult,
   PreviewResult,
   Printer,
+  PrintersResponse,
+  PrinterStatusResponse,
   PrintServerHealth,
 } from '../types';
 
@@ -23,6 +25,8 @@ export type {
   PrintResult,
   PreviewResult,
   Printer,
+  PrintersResponse,
+  PrinterStatusResponse,
   PrintServerHealth,
 };
 
@@ -68,8 +72,8 @@ class PrinterService {
    */
   async getPrinters(): Promise<Printer[]> {
     try {
-      const result = await this.apiClient.get<{ printers: Printer[] }>('api/labels/printers');
-      return result.printers || [];
+      const result = await this.apiClient.get<PrintersResponse>('api/labels/printers');
+      return result.success ? result.printers : [];
     } catch (error) {
       console.error('Get printers error:', error);
       return [];
@@ -94,13 +98,36 @@ class PrinterService {
    */
   async isPrinterOnline(printerName: string): Promise<boolean> {
     try {
-      const result = await this.apiClient.get<{ online: boolean }>(
-        `api/labels/printers/${printerName}/status`
+      const result = await this.apiClient.get<PrinterStatusResponse>(
+        `api/labels/printers/${encodeURIComponent(printerName)}/status`
       );
-      return result.online || false;
+      return result.success ? result.online : false;
     } catch (error) {
       console.error('Printer status error:', error);
       return false;
+    }
+  }
+
+  /**
+   * Get detailed printer status
+   */
+  async getPrinterStatus(printerName: string): Promise<Printer | null> {
+    try {
+      const result = await this.apiClient.get<PrinterStatusResponse>(
+        `api/labels/printers/${encodeURIComponent(printerName)}/status`
+      );
+      if (result.success) {
+        return {
+          name: result.name,
+          online: result.online,
+          supported: result.supported,
+          mediaName: result.mediaName,
+        };
+      }
+      return null;
+    } catch (error) {
+      console.error('Get printer status error:', error);
+      return null;
     }
   }
 

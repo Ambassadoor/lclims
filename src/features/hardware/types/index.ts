@@ -31,9 +31,21 @@ export interface Printer {
   name: string;
   online: boolean;
   supported: boolean;
-  model?: string;
-  port?: string;
-  supportedMedia?: string[];
+  mediaName?: string;
+}
+
+export interface PrintersResponse {
+  success: boolean;
+  printers: Printer[];
+  count: number;
+}
+
+export interface PrinterStatusResponse {
+  success: boolean;
+  name: string;
+  online: boolean;
+  supported: boolean;
+  mediaName?: string;
 }
 
 export interface PrintServerHealth {

@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Typography, IconButton, Box, Menu, MenuItem } from '@m
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { useState } from 'react';
+import PrinterStatusWidget from '@/features/hardware/components/PrinterStatusWidget';
 
 interface NavbarProps {
   onMenuClick: () => void;
@@ -41,7 +42,10 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
           Laboratory Inventory Management System
         </Typography>
 
-        <Box>
+        {/* Printer Status Widget */}
+        <PrinterStatusWidget />
+
+        <Box sx={{ ml: 2 }}>
           <IconButton
             size="large"
             aria-label="account menu"

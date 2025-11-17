@@ -87,16 +87,18 @@ export default function ChemicalFormDialog({ open, onClose, onSave }: ChemicalFo
       locationMap.set(loc.id, loc);
     });
 
-    return locations.map((loc) => {
-      const buildPath = (location: typeof loc): string => {
-        if (!location.parent_id) {
-          return location.name;
-        }
-        const parent = locationMap.get(location.parent_id);
-        return parent ? `${buildPath(parent)} / ${location.name}` : location.name;
-      };
-      return buildPath(loc);
-    }).sort();
+    return locations
+      .map((loc) => {
+        const buildPath = (location: typeof loc): string => {
+          if (!location.parent_id) {
+            return location.name;
+          }
+          const parent = locationMap.get(location.parent_id);
+          return parent ? `${buildPath(parent)} / ${location.name}` : location.name;
+        };
+        return buildPath(loc);
+      })
+      .sort();
   }, [locations]);
 
   const handleChange =
