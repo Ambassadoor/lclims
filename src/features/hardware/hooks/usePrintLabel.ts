@@ -21,7 +21,7 @@ export function usePrintLabel(options?: UsePrintLabelOptions) {
       try {
         // Get selected printer from localStorage if not explicitly provided
         const printerToUse = printOptions.printer || localStorage.getItem(STORAGE_KEY) || undefined;
-        
+
         const result = await printerService.print({
           ...printOptions,
           printer: printerToUse,
