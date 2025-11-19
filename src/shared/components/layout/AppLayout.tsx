@@ -2,6 +2,7 @@
 
 import { Box } from '@mui/material';
 import { useState } from 'react';
+import { SessionProvider } from 'next-auth/react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
@@ -13,22 +14,24 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-      <Navbar onMenuClick={handleDrawerToggle} />
-      <Sidebar open={sidebarOpen} onClose={handleDrawerToggle} />
+    <SessionProvider>
+      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+        <Navbar onMenuClick={handleDrawerToggle} />
+        <Sidebar open={sidebarOpen} onClose={handleDrawerToggle} />
 
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          mt: 8,
-          backgroundColor: 'background.default',
-          minHeight: '100vh',
-        }}
-      >
-        {children}
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            mt: 8,
+            backgroundColor: 'background.default',
+            minHeight: '100vh',
+          }}
+        >
+          {children}
+        </Box>
       </Box>
-    </Box>
+    </SessionProvider>
   );
 }
